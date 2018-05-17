@@ -39,10 +39,16 @@ injectGlobal`
     line-height: 30px;
   }
   a {
-    color: green;
+    color: #ed421c;
     :hover, :focus, :active {
-      color: red;
+      color: #e87761;
     }
+  }
+  button {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 30px;
+    letter-spacing: 0.5px;
   }
   
 

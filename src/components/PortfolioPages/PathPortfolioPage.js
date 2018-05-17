@@ -42,7 +42,7 @@ class PathPortfolioPage extends React.Component {
         mainHeading={this.props.title}
         keywords={this.props.subHeading}
         description="A redesign of Jobmine, a job board for the University of Waterloo."
-        background={this.props.theme.colors.background.pathGradient}
+        background={this.props.gradient}
         next={this.props.next}
         previous={this.props.previous}
       >
@@ -66,8 +66,10 @@ class PathPortfolioPage extends React.Component {
           <IntroImage src={jobmineOld} alt={jobmineOld} />
         </TextGroup>
         <TextGroup heading="Goal:">
-          Redesign Jobmine to have a better user experience, with a focus on
-          Human Factors.
+          <MainText>
+            Redesign Jobmine to have a better user experience, with a focus on
+            Human Factors.
+          </MainText>
         </TextGroup>
       </PortfolioPage>
     );

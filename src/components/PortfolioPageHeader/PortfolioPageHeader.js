@@ -75,7 +75,7 @@ const PortfolioPageHeader = props => (
     <Wrapper background={props.background}>
       {props.previous && (
         <ChangePageBigLeft>
-          <ChangePage link={props.previous.link} title={props.previous.title} />
+          <ChangePage page={props.previous} />
         </ChangePageBigLeft>
       )}
       <Content>
@@ -85,20 +85,13 @@ const PortfolioPageHeader = props => (
           <Description>{props.description}</Description>
         </React.Fragment>
         <ChangePageSmall>
-          {props.previous && (
-            <ChangePage
-              link={props.previous.link}
-              title={props.previous.title}
-            />
-          )}
-          {props.next && (
-            <ChangePage link={props.next.link} title={props.next.title} />
-          )}
+          {props.previous && <ChangePage page={props.previous} />}
+          {props.next && <ChangePage page={props.next} next />}
         </ChangePageSmall>
       </Content>
       {props.next && (
         <ChangePageBigRight>
-          <ChangePage link={props.next.link} title={props.next.title} />
+          <ChangePage page={props.next} next />
         </ChangePageBigRight>
       )}
     </Wrapper>

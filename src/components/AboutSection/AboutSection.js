@@ -13,7 +13,8 @@ import AvatarThree from "assets/jessie3.png";
 import Resume from "assets/resume.pdf";
 
 const TextAvatarGroup = styled.div`
-  ${props => props.theme.flex.center};
+  ${props => props.theme.flex.flexStart};
+  align-items: center;
   width: 100%;
   @media (max-width: ${props => props.theme.breakpoints.md}) {
     flex-direction: column;
@@ -22,11 +23,12 @@ const TextAvatarGroup = styled.div`
   margin-bottom: ${props => props.theme.padding.fourtyEight};
 `;
 
+const TextWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 const MainText = styled.p``;
-//
-// const Link = styled.button`
-//   color: ${props => props.theme.colors.primary};
-// `;
 
 const AvatarText = MainText.extend`
   @media (max-width: ${props => props.theme.breakpoints.md}) {
@@ -61,47 +63,53 @@ class AboutSection extends React.Component {
         >
           <TextAvatarGroup>
             <AvatarImage src={AvatarOne} alt="AvatarOne" />
-            <AvatarText>
+            <TextWrapper>
               <Heading>Hi, I&#39;m Jessie!</Heading>
-              I&#39;m a third year student studying Systems Design Engineering
-              at the University of Waterloo, and an aspiring engineer and
-              designer. I&#39;ve had the privilege of completing 4 outstanding
-              tech internships in 3 different countries, and am currently in
-              search of a new internship opportunity for September to December
-              2018. Check out my résumé{" "}
-              <a
-                onClick={() => {
-                  window.open(Resume);
-                }}
-              >
-                here
-              </a>{" "}
-              to learn more about what I&#39;ve done!
-            </AvatarText>
+              <AvatarText>
+                I&#39;m a third year student studying Systems Design Engineering
+                at the University of Waterloo, and an aspiring engineer and
+                designer. I&#39;ve had the privilege of completing 4 outstanding
+                tech internships in 3 different countries, and am currently in
+                search of a new internship opportunity for September to December
+                2018. Check out my résumé{" "}
+                <a
+                  onClick={() => {
+                    window.open(Resume);
+                  }}
+                >
+                  here
+                </a>{" "}
+                to learn more about what I&#39;ve done!
+              </AvatarText>
+            </TextWrapper>
           </TextAvatarGroup>
           <TextAvatarGroup>
             <AvatarImage src={AvatarTwo} alt="AvatarTwo" />
-            <AvatarText>
+            <TextWrapper>
               <Heading>What do I do?</Heading>
-              I spend most of my days working towards my degree, and am
-              especially interested in learning and understanding the design
-              process. I love a good challenge, and am eager to continue
-              exploring the different aspects of engineering.
-              <br />
-              <br />
-              <Link to="/portfolio">
-                <PrimaryButton>View My Portfolio</PrimaryButton>
-              </Link>
-            </AvatarText>
+              <AvatarText>
+                I spend most of my days working towards my degree, and am
+                especially interested in learning and understanding the design
+                process. I love a good challenge, and am eager to continue
+                exploring the different aspects of engineering.
+                <br />
+                <br />
+                <Link to="/portfolio">
+                  <PrimaryButton>View My Portfolio</PrimaryButton>
+                </Link>
+              </AvatarText>
+            </TextWrapper>
           </TextAvatarGroup>
           <TextAvatarGroup>
             <AvatarImage src={AvatarThree} alt="AvatarThree" />
-            <AvatarText>
+            <TextWrapper>
               <Heading>And in my spare time?</Heading>
-              EAT. I hope to continue travelling, trying new cuisines, and going
-              to as many restaurants as I can on the world top 50 list. I guess
-              I play some sports too to compensate.
-            </AvatarText>
+              <AvatarText>
+                EAT. I hope to continue travelling, trying new cuisines, and
+                going to as many restaurants as I can on the world top 50 list.
+                I guess I play some sports too to compensate.
+              </AvatarText>
+            </TextWrapper>
           </TextAvatarGroup>
         </MainSection>
       </React.Fragment>

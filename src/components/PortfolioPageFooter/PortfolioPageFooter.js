@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import * as PropShapes from "utils/propShapes";
 import { ContentWrapper } from "components/ContentWrapper";
 import { DefaultButton } from "components/Button";
-import { ChangePage } from "components/ChangePage";
+// import { ChangePage } from "components/ChangePage";
 
 const Wrapper = styled.header`
   ${props => props.theme.flex.center};
@@ -27,28 +27,28 @@ const Content = styled(ContentWrapper)`
   flex-wrap: wrap;
 `;
 
-const StyledChangePage = styled.div`
-  @media (min-width: ${props => props.theme.breakpoints.xl}) {
-    display: none;
-  }
-`;
+// const StyledChangePage = styled.div`
+//   @media (min-width: ${props => props.theme.breakpoints.xl}) {
+//     display: none;
+//   }
+// `;
 
 const PortfolioPageFooter = props => (
   <Wrapper background={props.background}>
     <Content>
-      {props.previous && (
+      {/* {props.previous && (
         <StyledChangePage>
-          <ChangePage link={props.previous.link} title={props.previous.title} />
+          <ChangePage page={props.previous} />
         </StyledChangePage>
-      )}
+      )} */}
       <Link to="/portfolio">
         <DefaultButton>Back to Portfolio</DefaultButton>
       </Link>
-      {props.next && (
+      {/* {props.next && (
         <StyledChangePage>
-          <ChangePage link={props.next.link} title={props.next.title} />
+          <ChangePage page={props.next} next />
         </StyledChangePage>
-      )}
+      )} */}
     </Content>
   </Wrapper>
 );

@@ -3,17 +3,12 @@ const colors = {
   black: "#171717",
   grey: "#333333",
   blue: "#1D9696",
+  blueLight: "#60c1c1",
   yellowGreen: "#B4EC51",
-  cogniteBlue: "#749bad",
-  cogniteGrey: "#778084",
-  slikPurple: "#896b8c",
-  slikBlue: "#6d788e",
-  jobmineBlue: "#153154",
-  jobmineGrey: "#778084",
-  pathGreen: "#3a7048",
-  pathGrey: "#778084",
-  planItBlue: "#396770",
-  planItGreen: "#39705a"
+  red: "#ed421c",
+  redLight: "#e87761",
+  redDark: "#330b03",
+  orange: "#f4a142"
 };
 
 export default {
@@ -35,8 +30,12 @@ export default {
     maxWidth: "920px"
   },
   colors: {
-    primary: colors.blue,
-    primaryHover: colors.yellowGreen,
+    primary: colors.red,
+    primaryHover: colors.redLight,
+    primaryDark: colors.redDark,
+    primaryGradient: `linear-gradient(to bottom right, ${colors.red}, ${
+      colors.orange
+    })`,
     text: {
       black: colors.black /* base */,
       white: colors.white
@@ -49,20 +48,8 @@ export default {
       blueGradient: `linear-gradient(to bottom right, ${colors.blue}, ${
         colors.yellowGreen
       })`,
-      cogniteGradient: `linear-gradient(to bottom right, ${
-        colors.cogniteBlue
-      }, ${colors.cogniteGrey})`,
-      slikGradient: `linear-gradient(to bottom right, ${colors.slikPurple}, ${
-        colors.slikBlue
-      })`,
-      jobmineGradient: `linear-gradient(to bottom right, ${
-        colors.jobmineBlue
-      }, ${colors.jobmineGrey})`,
-      pathGradient: `linear-gradient(to bottom right, ${colors.pathGreen}, ${
-        colors.pathGrey
-      })`,
-      planItGradient: `linear-gradient(to bottom right, ${colors.planItBlue}, ${
-        colors.planItGreen
+      redGradient: `linear-gradient(to bottom right, ${colors.red}, ${
+        colors.orange
       })`
     }
   },

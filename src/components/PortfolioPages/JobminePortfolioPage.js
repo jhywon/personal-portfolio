@@ -70,7 +70,7 @@ class JobminePortfolioPage extends React.Component {
         mainHeading={this.props.title}
         keywords={this.props.subHeading}
         description="A redesign of Jobmine, a job board for the University of Waterloo."
-        background={this.props.theme.colors.background.jobmineGradient}
+        background={this.props.gradient}
         next={this.props.next}
         previous={this.props.previous}
       >

@@ -28,9 +28,9 @@ class SlikPortfolioPage extends React.Component {
         mainHeading={this.props.title}
         keywords={this.props.subHeading}
         description="A redesign of the Slik Portfolio catalog, a boutique line of baths, shower doors, and low-profile bases."
+        background={this.props.gradient}
         next={this.props.next}
         previous={this.props.previous}
-        background={this.props.theme.colors.background.slikGradient}
       >
         <TextGroup heading="Background:">
           <MainText>

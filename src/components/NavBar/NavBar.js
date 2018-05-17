@@ -28,16 +28,16 @@ const Logo = styled(Link)`
 const CircleIconButton = styled.a`
   ${props => props.theme.flex.center};
   background: ${props =>
-    props.background || props.theme.colors.background.blueGradient};
+    props.background || props.theme.colors.primaryGradient};
   border-radius: 100%;
   width: 56px;
   height: 56px;
   z-index: 4;
   :hover {
-    background: ${props => props.theme.colors.background.blue};
-    -webkit-transition: all 0.8s ease;
-    -ms-transition: all 0.8s ease;
-    transition: all 0.8s ease;
+    background: ${props => props.theme.colors.primary};
+    -webkit-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
   }
 `;
 
@@ -63,7 +63,7 @@ const HamburgerMenu = styled.h3`
   ${props => props.theme.flex.center};
   background: ${props => props.theme.colors.background.grey};
   position: fixed;
-  z-index: 2;
+  z-index: 3;
   width: 100%;
   height: 100vh;
   left: 0;

@@ -31,6 +31,7 @@ const Overlay = styled.div`
   right: 0;
   height: 100%;
   width: 100%;
+  border-radius: 25px;
   opacity: 0;
   transition: 0.4s ease;
   background-color: ${props => props.theme.colors.background.black};

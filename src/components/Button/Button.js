@@ -6,7 +6,6 @@ const StyledButton = styled.button`
   border-radius: 5px;
   padding: ${props => props.theme.padding.eight}
     ${props => props.theme.padding.sixteen};
-  letter-spacing: 0.5px;
   transition: 0.3s all;
   cursor: pointer;
 `;

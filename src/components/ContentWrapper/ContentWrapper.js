@@ -9,6 +9,7 @@ const Content = styled.div`
   @media (max-width: ${props => props.theme.breakpoints.sm}) {
     margin: 0 ${props => props.theme.padding.thirtyTwo};
   }
+  z-index: 1;
 `;
 
 const ContentWrapper = props => <Content>{props.children}</Content>;

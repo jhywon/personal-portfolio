@@ -42,7 +42,7 @@ class PlanItPortfolioPage extends React.Component {
         mainHeading={this.props.title}
         keywords={this.props.subHeading}
         description="A design and implementation of Plan It, a one button puzzle block game."
-        background={this.props.theme.colors.background.planItGradient}
+        background={this.props.gradient}
         next={this.props.next}
         previous={this.props.previous}
       >
