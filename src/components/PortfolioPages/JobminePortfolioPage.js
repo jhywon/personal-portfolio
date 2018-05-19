@@ -1,30 +1,30 @@
-import React from "react";
-import styled, { withTheme } from "styled-components";
-import PropTypes from "prop-types";
+import React from 'react';
+import styled, { withTheme } from 'styled-components';
+import PropTypes from 'prop-types';
 
-import { PortfolioPage } from "components/PortfolioPage";
+import { PortfolioPage } from 'components/PortfolioPage';
 import {
   MainText,
   TextGroup,
-  MainTextSubHeading
-} from "components/PortfolioPageText";
+  MainTextSubHeading,
+} from 'components/PortfolioPageText';
 
-import jobmineOld from "assets/portfolio/jobmine/jobmineOld.png";
+import jobmineOld from 'assets/portfolio/jobmine/jobmineOld.png';
 
-import soc from "assets/portfolio/jobmine/1soc.jpg";
-import currentDesign from "assets/portfolio/jobmine/2currentDesign.JPG";
-import personas from "assets/portfolio/jobmine/3personas.JPG";
-import userRequirements from "assets/portfolio/jobmine/4userRequirements.JPG";
-import designWalkthrough from "assets/portfolio/jobmine/5designWalkthrough.JPG";
-import heuristicEvaluation from "assets/portfolio/jobmine/6heuristicEvaluation.JPG";
-import fta from "assets/portfolio/jobmine/7fta.JPG";
-import hta from "assets/portfolio/jobmine/8hta.JPG";
-import displayControls from "assets/portfolio/jobmine/9displayControls.JPG";
+import soc from 'assets/portfolio/jobmine/1soc.jpg';
+import currentDesign from 'assets/portfolio/jobmine/2currentDesign.JPG';
+import personas from 'assets/portfolio/jobmine/3personas.JPG';
+import userRequirements from 'assets/portfolio/jobmine/4userRequirements.JPG';
+import designWalkthrough from 'assets/portfolio/jobmine/5designWalkthrough.JPG';
+import heuristicEvaluation from 'assets/portfolio/jobmine/6heuristicEvaluation.JPG';
+import fta from 'assets/portfolio/jobmine/7fta.JPG';
+import hta from 'assets/portfolio/jobmine/8hta.JPG';
+import displayControls from 'assets/portfolio/jobmine/9displayControls.JPG';
 
-import jobmine1 from "assets/portfolio/jobmine/jobmine1.png";
-import jobmine2 from "assets/portfolio/jobmine/jobmine2.png";
-import jobmine3 from "assets/portfolio/jobmine/jobmine3.png";
-import jobmine4 from "assets/portfolio/jobmine/jobmine4.jpg";
+import jobmine1 from 'assets/portfolio/jobmine/jobmine1.png';
+import jobmine2 from 'assets/portfolio/jobmine/jobmine2.png';
+import jobmine3 from 'assets/portfolio/jobmine/jobmine3.png';
+import jobmine4 from 'assets/portfolio/jobmine/jobmine4.jpg';
 
 const FlexWrapper = styled.div`
   ${props => props.theme.flex.spaceBetween};
@@ -36,7 +36,7 @@ const IntroImage = styled.img`
   width: 100%;
 `;
 
-const SprintImageCaption = styled.div`
+const SprintImageGroup = styled.div`
   display: flex;
   flex-direction: column;
   width: 49%;
@@ -62,7 +62,7 @@ const SolutionProcessImage = styled.img`
 
 class JobminePortfolioPage extends React.Component {
   componentDidMount() {
-    document.title = "Jessie W | Jobmine";
+    document.title = 'Jessie W | Jobmine';
   }
   render() {
     return (
@@ -99,96 +99,112 @@ class JobminePortfolioPage extends React.Component {
         </TextGroup>
         <TextGroup heading="Process:">
           <FlexWrapper>
-            <SprintImageCaption>
+            <SprintImageGroup>
               <MainTextSubHeading>1. Situation of Concern</MainTextSubHeading>
               <ProcessImage src={soc} alt={soc} />
-              The first task was to define a situation of concern. This included
-              looking at the Fats, Assumptions, Critical Requirements, and the
-              Critical Constraints of People, Processes, Artifacts, Environment,
-              and Resources.
-            </SprintImageCaption>
+              <p>
+                The first task was to define a situation of concern. This
+                included looking at the Fats, Assumptions, Critical
+                Requirements, and the Critical Constraints of People, Processes,
+                Artifacts, Environment, and Resources.
+              </p>
+            </SprintImageGroup>
 
-            <SprintImageCaption>
+            <SprintImageGroup>
               <MainTextSubHeading>
                 2. Analysis of Current Design
               </MainTextSubHeading>
               <ProcessImage src={currentDesign} alt={currentDesign} />
-              Next, the current design was analyzed - both pros and cons. We
-              annoted sketches of the design, and noted that the biggest problem
-              with the design was the size of the font, and the poor usage of
-              the full screen.
-            </SprintImageCaption>
+              <p>
+                Next, the current design was analyzed - both pros and cons. We
+                annoted sketches of the design, and noted that the biggest
+                problem with the design was the size of the font, and the poor
+                usage of the full screen.
+              </p>
+            </SprintImageGroup>
 
-            <SprintImageCaption>
+            <SprintImageGroup>
               <MainTextSubHeading>3. Personas</MainTextSubHeading>
               <ProcessImage src={personas} alt={personas} />
-              A primary and secondary persona were then defined - Ming, a
-              student, and John, an employer. As depicted above, we went in
-              depth into each persona to make them as realistic as possible.
-              However, due to time and authorization constraints and no access
-              to an employer's point of view of Jobmine, John was not included
-              in the rest of the analysis.
-            </SprintImageCaption>
+              <p>
+                A primary and secondary persona were then defined - Ming, a
+                student, and John, an employer. As depicted above, we went in
+                depth into each persona to make them as realistic as possible.
+                However, due to time and authorization constraints and no access
+                to an employer's point of view of Jobmine, John was not included
+                in the rest of the analysis.
+              </p>
+            </SprintImageGroup>
 
-            <SprintImageCaption>
+            <SprintImageGroup>
               <MainTextSubHeading>4. User Requirements</MainTextSubHeading>
               <ProcessImage src={userRequirements} alt={userRequirements} />
-              We then analyzed the Safety, Performance of the system, and
-              Preference of the user, based on the description, and defined a
-              benchmark and a general testing procedure for each section. We
-              noticed that this tool was not ideal for our problem, as "Safety"
-              was not very relevant in software, versus a physical design. That
-              being said, we primarily focused on Security concerns with
-              Jobmine.
-            </SprintImageCaption>
+              <p>
+                We then analyzed the Safety, Performance of the system, and
+                Preference of the user, based on the description, and defined a
+                benchmark and a general testing procedure for each section. We
+                noticed that this tool was not ideal for our problem, as
+                "Safety" was not very relevant in software, versus a physical
+                design. That being said, we primarily focused on Security
+                concerns with Jobmine.
+              </p>
+            </SprintImageGroup>
 
-            <SprintImageCaption>
+            <SprintImageGroup>
               <MainTextSubHeading>5. Design Walkthrough</MainTextSubHeading>
               <ProcessImage src={designWalkthrough} alt={designWalkthrough} />
-              This design walkthrough looked at the Discoverability, Conceptual
-              Model, Feedback, Affordances, Signifiers, Mapping, and
-              Constraints. This helped us notice a lot of flaws in the design
-              that we missed in Part 2. Analysis of Current Design, specifically
-              regarding feedback and affordances.
-            </SprintImageCaption>
+              <p>
+                This design walkthrough looked at the Discoverability,
+                Conceptual Model, Feedback, Affordances, Signifiers, Mapping,
+                and Constraints. This helped us notice a lot of flaws in the
+                design that we missed in Part 2. Analysis of Current Design,
+                specifically regarding feedback and affordances.
+              </p>
+            </SprintImageGroup>
 
-            <SprintImageCaption>
+            <SprintImageGroup>
               <MainTextSubHeading>6. Heuristic Evaluation</MainTextSubHeading>
               <ProcessImage
                 src={heuristicEvaluation}
                 alt={heuristicEvaluation}
               />
-              Based on the 7 Principles of Universal Design, Jobmine was further
-              analyzed. Similar to some of the other tools, certain sections
-              were not very useful, for example, Low Physical Effort.
-            </SprintImageCaption>
+              <p>
+                Based on the 7 Principles of Universal Design, Jobmine was
+                further analyzed. Similar to some of the other tools, certain
+                sections were not very useful, for example, Low Physical Effort.
+              </p>
+            </SprintImageGroup>
 
-            <SprintImageCaption>
+            <SprintImageGroup>
               <MainTextSubHeading>7. Fault Tree Analysis</MainTextSubHeading>
               <ProcessImage src={fta} alt={fta} />
-              We made an FTA to break down the steps a user would make and where
-              faults could occur. We then sorted this into Technical,
-              Environmental, and User events, to better understand the source of
-              the problem and how to solve it.
-            </SprintImageCaption>
+              <p>
+                We made an FTA to break down the steps a user would make and
+                where faults could occur. We then sorted this into Technical,
+                Environmental, and User events, to better understand the source
+                of the problem and how to solve it.
+              </p>
+            </SprintImageGroup>
 
-            <SprintImageCaption>
+            <SprintImageGroup>
               <MainTextSubHeading>
                 8. Hierarchical Task Analysis
               </MainTextSubHeading>
               <ProcessImage src={hta} alt={hta} />
-              Similar to the FTA, we broke down every single step Ming had to
-              take when using Jobmine. This helped us find a lot of unnecessary
-              and repetitive steps, that could be improved upon.
-            </SprintImageCaption>
+              <p>
+                Similar to the FTA, we broke down every single step Ming had to
+                take when using Jobmine. This helped us find a lot of
+                unnecessary and repetitive steps, that could be improved upon.
+              </p>
+            </SprintImageGroup>
 
-            <SprintImageCaption>
+            <SprintImageGroup>
               <MainTextSubHeading>
                 9. Analysis of Display Controls
               </MainTextSubHeading>
               <ProcessImage src={displayControls} alt={displayControls} />
-              Lastly, we did an analysis of display controls.
-            </SprintImageCaption>
+              <p>Lastly, we did an analysis of display controls.</p>
+            </SprintImageGroup>
           </FlexWrapper>
         </TextGroup>
         <TextGroup heading="Proposed Solution:">
@@ -231,7 +247,7 @@ class JobminePortfolioPage extends React.Component {
 JobminePortfolioPage.propTypes = {
   title: PropTypes.string.isRequired,
   subHeading: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired
+  id: PropTypes.number.isRequired,
 };
 
 export default withTheme(JobminePortfolioPage);

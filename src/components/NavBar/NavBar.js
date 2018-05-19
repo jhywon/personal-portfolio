@@ -1,12 +1,12 @@
-import React from "react";
-import styled, { withTheme } from "styled-components";
-import PropTypes from "prop-types";
-import { Link, withRouter } from "react-router-dom";
-import { Icon } from "antd";
+import React from 'react';
+import styled, { withTheme } from 'styled-components';
+import PropTypes from 'prop-types';
+import { Link, withRouter } from 'react-router-dom';
+import { Icon } from 'antd';
 
-import { ContentWrapper } from "components/ContentWrapper";
+import { ContentWrapper } from 'components/ContentWrapper';
 
-import Resume from "assets/resume.pdf";
+import Resume from 'assets/resume.pdf';
 
 const Container = styled.div`
   ${props => props.theme.flex.spaceBetween};
@@ -14,7 +14,7 @@ const Container = styled.div`
 
 const Logo = styled(Link)`
   font-weight: 500;
-  font-size: 50px;
+  font-size: 40px;
   position: fixed;
   z-index: 2;
   left: ${props => props.theme.padding.fourtyEight};
@@ -23,6 +23,13 @@ const Logo = styled(Link)`
     display: none;
   }
   color: ${props => props.theme.colors.text.black};
+  text-decoration: underline;
+  :hover,
+  :active,
+  :focus {
+    text-decoration: underline;
+    color: ${props => props.theme.colors.primary};
+  }
 `;
 
 const CircleIconButton = styled.a`
@@ -59,7 +66,7 @@ const HamburgerMenuIcon = styled(Icon)`
   color: ${props => props.theme.colors.text.white};
 `;
 
-const HamburgerMenu = styled.h3`
+const HamburgerMenu = styled.h4`
   ${props => props.theme.flex.center};
   background: ${props => props.theme.colors.background.grey};
   position: fixed;
@@ -138,17 +145,17 @@ const SocialButton = props => (
 SocialButton.propTypes = {
   href: PropTypes.string,
   icon: PropTypes.node.isRequired,
-  color: PropTypes.string
+  color: PropTypes.string,
 };
 
 SocialButton.defaultProps = {
-  href: "",
-  color: null
+  href: '',
+  color: null,
 };
 
 class NavBar extends React.Component {
   state = {
-    isMenuOpen: false
+    isMenuOpen: false,
   };
 
   componentDidUpdate(prevProps) {
@@ -156,7 +163,7 @@ class NavBar extends React.Component {
       window.scrollTo(0, 0);
       // eslint-disable-next-line react/no-did-update-set-state
       this.setState({
-        isMenuOpen: false
+        isMenuOpen: false,
       });
     }
   }
@@ -168,22 +175,22 @@ class NavBar extends React.Component {
   mapLinks = component => {
     const Links = [
       {
-        title: "Home",
-        link: "/"
+        title: 'Home',
+        link: '/',
       },
       {
-        title: "About",
-        link: "/about"
+        title: 'About',
+        link: '/about',
       },
       {
-        title: "Portfolio",
-        link: "/portfolio"
-      }
+        title: 'Portfolio',
+        link: '/portfolio',
+      },
     ];
     const Component = component;
 
     return Links.map(link => (
-      <Component exact to={link.link} key={link.link}>
+      <Component to={link.link} key={link.link}>
         {link.title}
       </Component>
     ));
@@ -260,13 +267,13 @@ class NavBar extends React.Component {
 
 NavBar.propTypes = {
   location: PropTypes.shape({
-    pathname: PropTypes.string.isRequired
+    pathname: PropTypes.string.isRequired,
   }).isRequired,
-  background: PropTypes.func
+  background: PropTypes.func,
 };
 
 NavBar.defaultProps = {
-  background: null
+  background: null,
 };
 
 export default withRouter(withTheme(NavBar));

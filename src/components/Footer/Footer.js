@@ -29,7 +29,7 @@ const MainHeading = styled.h2`
   padding-bottom: ${props => props.theme.padding.twentyFour};
 `;
 
-const SubHeading = styled.h4`
+const SubHeading = styled.h5`
   padding-bottom: ${props => props.theme.padding.twentyFour};
 `;
 

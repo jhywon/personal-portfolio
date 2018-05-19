@@ -1,22 +1,24 @@
-import React from "react";
-import styled, { withTheme } from "styled-components";
-import PropTypes from "prop-types";
+import React from 'react';
+import styled, { withTheme } from 'styled-components';
+import PropTypes from 'prop-types';
 
-import { PortfolioPage } from "components/PortfolioPage";
+import { PortfolioPage } from 'components/PortfolioPage';
 import {
   MainText,
   TextGroup,
-  MainTextSubHeading
-} from "components/PortfolioPageText";
+  // MainTextSubHeading,
+} from 'components/PortfolioPageText';
 
-import OldHomeDesktop from "assets/portfolio/cognite/old/oldHomeDesktop.png";
-import OldHomeMobile from "assets/portfolio/cognite/old/oldHomeMobile.png";
-import jobmine1 from "assets/portfolio/jobmine/jobmine1.png";
-import jobmine2 from "assets/portfolio/jobmine/jobmine2.png";
+import OldHomeDesktop from 'assets/portfolio/cognite/old/oldHomeDesktop.png';
+import OldHomeMobile from 'assets/portfolio/cognite/old/oldHomeMobile.png';
+import NewHomeDesktop from 'assets/portfolio/cognite/new/home.png';
+// import NewAboutDesktop from 'assets/portfolio/cognite/new/about.png';
+import NewTeamDesktop from 'assets/portfolio/cognite/new/team.png';
 
 const FlexWrapper = styled.div`
   ${props => props.theme.flex.spaceBetween};
   flex-wrap: wrap;
+  max-width: 800px;
 `;
 
 const IntroImage = styled.img`
@@ -25,18 +27,25 @@ const IntroImage = styled.img`
   height: 100%;
 `;
 
-const SolutionProcessImage = styled.img`
-  width: 49%;
+// const SolutionProcessImage = styled.img`
+//   width: 49%;
+//   height: 100%;
+//   margin-bottom: ${props => props.theme.padding.sixteen};
+//   @media (max-width: ${props => props.theme.breakpoints.md}) {
+//     width: 100%;
+//   }
+// `;
+
+const Image = styled.img`
+  margin: ${props => props.theme.padding.sixteen} 0;
+  width: 100%;
   height: 100%;
-  margin-bottom: ${props => props.theme.padding.sixteen};
-  @media (max-width: ${props => props.theme.breakpoints.md}) {
-    width: 100%;
-  }
+  max-width: 800px;
 `;
 
 class CognitePortfolioPage extends React.Component {
   componentDidMount() {
-    document.title = "Jessie W | Cognite";
+    document.title = 'Jessie W | Cognite';
   }
   render() {
     return (
@@ -100,37 +109,38 @@ class CognitePortfolioPage extends React.Component {
             talent.
           </MainText>
         </TextGroup>
-        <TextGroup heading="Proposed Solution:">
+        <TextGroup heading="Team Page:">
+          <MainText>
+            The main goal of this redesign initiative was to better support
+            recruiting efforts. The biggest concern with the existing website
+            was the corporate impression it gave, This was due to both the
+            text-heavy design, and the lack of diversity and culture information
+            on the site. This was especially prevalent in the About page, where
+            the "team" was only executives and were all dressed the same.
+            <br />
+            <br />
+            My team and I proposed a more fun Team page, with "mug shots" on
+            everybody on the team (haha very funny). This would include everyone
+            at the company, and would also include a short biography with fun
+            facts about everyone.
+            <br />
+            <br />
+            The redesigned page is shown below:
+          </MainText>
+          <Image src={NewTeamDesktop} alt="about" />
+        </TextGroup>
+        <TextGroup heading="Final Design:">
           <MainText>
             After multiple iterations, a final design was approved and launched.
+            There are many other components to the website in the roadmap, but
+            regardless, this was a significant improvmeent to the previous site.
           </MainText>
-          <MainTextSubHeading>Test</MainTextSubHeading>
-          <FlexWrapper>
-            <SolutionProcessImage src={jobmine1} alt={jobmine1} />
-            <SolutionProcessImage src={jobmine2} alt={jobmine2} />
-          </FlexWrapper>
+          <Image src={NewHomeDesktop} alt="home" />
           <MainText>
-            Check out the live site{" "}
+            Check out the live site{' '}
             <a href="http://www.cognite.com" target="_new">
               here
             </a>!
-          </MainText>
-        </TextGroup>
-        <TextGroup heading="Results:">
-          <MainText>
-            This was a redesign completed for a school course, with certain
-            criteria that needed to be attained. All sprints were timed, and
-            there was no chance to do a second iteration. Often times, an
-            impulsive design decision had to be made, and this was not usually
-            the best choice.
-            <br />
-            <br />
-            That being said, the design is far from perfect, and there are many
-            changes I would make given the chance for the second iteration. I
-            felt some of the tools used in the sprint were not optimal for
-            redesigning Jobmine, but regardless, this was a great project in
-            which I learned and was able to apply a lot of UI/UX and Human
-            Factors skills.
           </MainText>
         </TextGroup>
       </PortfolioPage>
@@ -141,7 +151,7 @@ class CognitePortfolioPage extends React.Component {
 CognitePortfolioPage.propTypes = {
   title: PropTypes.string.isRequired,
   subHeading: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired
+  id: PropTypes.number.isRequired,
 };
 
 export default withTheme(CognitePortfolioPage);

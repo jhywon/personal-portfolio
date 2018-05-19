@@ -1,10 +1,10 @@
-import React from "react";
-import styled from "styled-components";
-import PropTypes from "prop-types";
+import React from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
-import * as PropShapes from "utils/propShapes";
-import { ContentWrapper } from "components/ContentWrapper";
-import { ChangePage } from "components/ChangePage";
+import * as PropShapes from 'utils/propShapes';
+import { ContentWrapper } from 'components/ContentWrapper';
+import { ChangePage } from 'components/ChangePage';
 
 const Wrapper = styled.header`
   ${props => props.theme.flex.center};
@@ -30,7 +30,7 @@ const ProjectTitle = styled.h2`
   }
 `;
 
-const Keywords = styled.h3`
+const Keywords = styled.h4`
   padding-bottom: ${props => props.theme.padding.sixteen};
   color: ${props => props.theme.colors.text.white};
   @media (max-width: ${props => props.theme.breakpoints.sm}) {
@@ -38,7 +38,7 @@ const Keywords = styled.h3`
   }
 `;
 
-const Description = styled.h4`
+const Description = styled.h5`
   color: ${props => props.theme.colors.text.white};
 `;
 
@@ -102,15 +102,15 @@ PortfolioPageHeader.propTypes = {
   mainHeading: PropTypes.string.isRequired,
   keywords: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  background: PropTypes.func,
+  background: PropTypes.string,
   previous: PropShapes.portfolioData,
-  next: PropShapes.portfolioData
+  next: PropShapes.portfolioData,
 };
 
 PortfolioPageHeader.defaultProps = {
   background: () => {},
-  previous: "",
-  next: ""
+  previous: '',
+  next: '',
 };
 
 export default PortfolioPageHeader;

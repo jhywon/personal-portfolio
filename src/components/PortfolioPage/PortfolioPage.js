@@ -1,11 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-import * as PropShapes from "utils/propShapes";
-import { PortfolioPageHeader } from "components/PortfolioPageHeader";
-import { PortfolioPageFooter } from "components/PortfolioPageFooter";
-import { ContentWrapper } from "components/ContentWrapper";
+import * as PropShapes from 'utils/propShapes';
+import { PortfolioPageHeader } from 'components/PortfolioPageHeader';
+import { PortfolioPageFooter } from 'components/PortfolioPageFooter';
+import { ContentWrapper } from 'components/ContentWrapper';
 
 const PortfolioSection = styled.div`
   ${props => props.theme.flex.center};
@@ -36,17 +36,17 @@ PortfolioPage.propTypes = {
   mainHeading: PropTypes.string.isRequired,
   keywords: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  background: PropTypes.func,
+  background: PropTypes.string,
   previous: PropShapes.portfolioData,
   next: PropShapes.portfolioData,
-  children: PropTypes.node
+  children: PropTypes.node,
 };
 
 PortfolioPage.defaultProps = {
   background: () => {},
   children: null,
-  previous: "",
-  next: ""
+  previous: '',
+  next: '',
 };
 
 export default PortfolioPage;

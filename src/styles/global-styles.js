@@ -1,5 +1,5 @@
-import { injectGlobal } from "styled-components";
-import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
+import { injectGlobal } from 'styled-components';
+import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
 
 injectGlobal`
   html,
@@ -23,12 +23,18 @@ injectGlobal`
     letter-spacing: 3px;
   }
   h3 {
+    font-size: 28px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+  h4 {
     font-size: 24px;
     font-weight: 300;
     text-transform: uppercase;
     letter-spacing: 2px;
   }
-  h4 {
+  h5 {
     font-size: 20px;
     font-weight: 300;
     letter-spacing: 1px;
@@ -50,10 +56,13 @@ injectGlobal`
     line-height: 30px;
     letter-spacing: 0.5px;
   }
-  
+
 
   ul {
     list-style: none;
     padding-left: 0;
+  }
+  li {
+    list-style: none;
   }
 `;

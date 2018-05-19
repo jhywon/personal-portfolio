@@ -1,34 +1,27 @@
-import React from "react";
-import styled, { withTheme } from "styled-components";
-import PropTypes from "prop-types";
+import React from 'react';
+import styled, { withTheme } from 'styled-components';
+import PropTypes from 'prop-types';
 
-import * as PropShapes from "utils/propShapes";
-import { Header } from "components/Header";
-import { MainSection } from "components/MainSection";
-import { PortfolioGridItem } from "components/PortfolioGridItem";
+import * as PropShapes from 'utils/propShapes';
+import { Header } from 'components/Header';
+import { MainSection } from 'components/MainSection';
+import { PortfolioGridItem } from 'components/PortfolioGridItem';
 
 const PortfolioGrid = styled.ul`
-  display: flex;
-  justify-content: space-between;
+  ${props => props.theme.flex.spaceBetween};
+  align-items: center;
   flex-wrap: wrap;
 `;
 
 class PortfolioSection extends React.Component {
   componentDidMount() {
-    document.title = "Jessie W | Portfolio";
+    document.title = 'Jessie W | Portfolio';
   }
   render() {
     return (
       <React.Fragment>
-        <Header
-          mainHeading="Projects"
-          background={this.props.theme.colors.background.white}
-          color={this.props.theme.colors.text.black}
-        />
-        <MainSection
-          background={this.props.theme.colors.background.white}
-          color={this.props.theme.colors.text.black}
-        >
+        <Header mainHeading="Projects" />
+        <MainSection>
           <PortfolioGrid>
             {this.props.content.map(page => (
               <PortfolioGridItem
@@ -50,10 +43,10 @@ PortfolioSection.propTypes = {
   content: PropTypes.arrayOf(PropShapes.portfolioData),
   theme: PropTypes.shape({
     colors: PropTypes.shape({
-      text: PropTypes.objectOf(PropTypes.func),
-      background: PropTypes.objectOf(PropTypes.func)
-    })
-  }).isRequired
+      text: PropTypes.objectOf(PropTypes.string),
+      background: PropTypes.objectOf(PropTypes.string),
+    }),
+  }).isRequired,
 };
 
 export default withTheme(PortfolioSection);

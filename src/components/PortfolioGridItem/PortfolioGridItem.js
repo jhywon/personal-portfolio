@@ -1,10 +1,10 @@
-import React from "react";
-import styled from "styled-components";
-import PropTypes from "prop-types";
+import React from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
-import Background from "assets/portfolio/planIt/planItPreview.png";
+import Background from 'assets/portfolio/planIt/planItPreview.png';
 
 const Container = styled(Link)`
   width: 100%;
@@ -20,6 +20,7 @@ const Container = styled(Link)`
 
 const Image = styled.img`
   width: 100%;
+  border-radius: 12px;
   display: block;
 `;
 
@@ -31,7 +32,7 @@ const Overlay = styled.div`
   right: 0;
   height: 100%;
   width: 100%;
-  border-radius: 25px;
+  border-radius: 12px;
   opacity: 0;
   transition: 0.4s ease;
   background-color: ${props => props.theme.colors.background.black};
@@ -48,12 +49,12 @@ const Text = styled.div`
   text-align: center;
 `;
 
-const MainHeading = styled.h2`
+const MainHeading = styled.h3`
   color: ${props => props.theme.colors.text.white};
   margin-bottom: 0;
 `;
 
-const SubHeading = styled.h4`
+const SubHeading = styled.h5`
   color: ${props => props.theme.colors.text.white};
 `;
 
@@ -73,14 +74,14 @@ PortfolioGridItem.propTypes = {
   mainHeading: PropTypes.string,
   subHeading: PropTypes.string,
   background: PropTypes.string,
-  link: PropTypes.string
+  link: PropTypes.string,
 };
 
 PortfolioGridItem.defaultProps = {
-  mainHeading: "",
-  subHeading: "",
+  mainHeading: '',
+  subHeading: '',
   background: Background,
-  link: ""
+  link: '',
 };
 
 export default PortfolioGridItem;

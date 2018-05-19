@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import PropTypes from "prop-types";
+import React from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const StyledButton = styled.button`
   border-radius: 5px;
@@ -27,6 +27,7 @@ const StyledSecondaryButton = StyledButton.extend``;
 const StyledDefaultButton = StyledButton.extend`
   color: ${props => props.theme.colors.text.black};
   background-color: ${props => props.theme.colors.background.white};
+  border-color: ${props => props.theme.colors.background.lightGrey};
   :hover,
   :focus,
   :active {
@@ -36,29 +37,33 @@ const StyledDefaultButton = StyledButton.extend`
 `;
 
 const PrimaryButton = props => (
-  <StyledPrimaryButton type="primary" size="large">
+  <StyledPrimaryButton type="primary" size="large" {...props}>
     {props.children}
   </StyledPrimaryButton>
 );
 
 PrimaryButton.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
 
 const SecondaryButton = props => (
-  <StyledSecondaryButton size="large">{props.children}</StyledSecondaryButton>
+  <StyledSecondaryButton size="large" {...props}>
+    {props.children}
+  </StyledSecondaryButton>
 );
 
 SecondaryButton.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
 
 const DefaultButton = props => (
-  <StyledDefaultButton size="large">{props.children}</StyledDefaultButton>
+  <StyledDefaultButton size="large" {...props}>
+    {props.children}
+  </StyledDefaultButton>
 );
 
 DefaultButton.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
 
 export { PrimaryButton, SecondaryButton, DefaultButton };
