@@ -31,16 +31,14 @@ const TextWrapper = styled.div`
   flex-direction: column;
 `;
 
-const MainText = styled.p``;
-
-const AvatarText = MainText.extend`
+const AvatarText = styled.p`
   @media (max-width: ${props => props.theme.breakpoints.md}) {
     width: 100%;
   }
 `;
 
 const AvatarImage = styled.img`
-  height: 150px;
+  height: 180px;
   width: auto;
   margin: 0 ${props => props.theme.padding.thirtyTwo} 0 0;
   @media (max-width: ${props => props.theme.breakpoints.md}) {
@@ -80,8 +78,7 @@ class AboutSection extends React.Component {
                 at the University of Waterloo, and an aspiring engineer and
                 designer. I&#39;ve had the privilege of completing 4 outstanding
                 tech internships in 3 different countries, and am currently in
-                search of a new internship for September to December 2018. Check
-                out my résumé{' '}
+                search of a new internship for Fall 2018. Check out my résumé{' '}
                 <a
                   onClick={() => {
                     window.open(Resume);
@@ -109,14 +106,13 @@ class AboutSection extends React.Component {
               <AvatarText>
                 I spend most of my days working towards my degree, and am
                 especially interested in learning and understanding the design
-                process. I love a good challenge, and am eager to continue
-                exploring the different aspects of engineering.
-                <br />
-                <br />
-                <Link to="/portfolio">
-                  <PrimaryButton>View My Portfolio</PrimaryButton>
-                </Link>
+                process. I enjoy working closely with users in creating a great
+                user experience. I love a good challenge, and am eager to
+                continue exploring the different aspects of engineering.
               </AvatarText>
+              <Link to="/portfolio">
+                <PrimaryButton>View My Portfolio</PrimaryButton>
+              </Link>
             </TextWrapper>
           </TextAvatarGroup>
           <TextAvatarGroup>
@@ -133,15 +129,14 @@ class AboutSection extends React.Component {
             <TextWrapper>
               <Heading>And in my spare time?</Heading>
               <AvatarText>
-                EAT. I hope to continue travelling, trying new cuisines, and
-                going to as many restaurants as I can on the world top 50 list.
-                I also like to play sports (mostly to compensate my heavy eating
-                habits).
-                <br />
-                <br />
-                I'm also kind of a board game nerd, especially word games. Some
-                of my favourites include Bang and Jaipur, but my all-time
-                favourite is still Scrabble.
+                I love playing board games, especially word games (my all-time
+                favourite is Scrabble). I also like to play sports - I swam
+                competitively for 11 years and am now on my school varsity
+                Dragonboat team. I'm really looking forward to competing at the
+                World Dragonboat Championships in Hungary this July!{' '}
+                <strong>Most importantly, I love to EAT</strong>. I hope to
+                continue travelling, trying new cuisines, and going to as many
+                restaurants as I can on the world top 50 list.
               </AvatarText>
             </TextWrapper>
           </TextAvatarGroup>

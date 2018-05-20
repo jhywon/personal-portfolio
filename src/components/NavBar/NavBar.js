@@ -7,6 +7,8 @@ import { Icon } from 'antd';
 import { ContentWrapper } from 'components/ContentWrapper';
 
 import Resume from 'assets/resume.pdf';
+import Burger from 'assets/hamburgerMenu.png';
+// import GithubIcon from 'assets/Icons/github.svg';
 
 const Container = styled.div`
   ${props => props.theme.flex.spaceBetween};
@@ -46,6 +48,10 @@ const CircleIconButton = styled.a`
     -ms-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
+`;
+
+const Image = styled.img`
+  width: 30px;
 `;
 
 const HamburgerButtonWrapper = CircleIconButton.extend`
@@ -207,7 +213,7 @@ class NavBar extends React.Component {
           {this.state.isMenuOpen ? (
             <HamburgerMenuIcon type="close" />
           ) : (
-            <HamburgerMenuIcon type="menu-unfold" />
+            <Image src={Burger} alt="burger " />
           )}
         </HamburgerButtonWrapper>
         {/* <NavBarWrapper>

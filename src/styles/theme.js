@@ -58,6 +58,7 @@ export default {
   padding: {
     four: '4px',
     eight: '8px',
+    twelve: '12px',
     sixteen: '16px',
     twentyFour: '24px',
     thirtyTwo: '32px',
