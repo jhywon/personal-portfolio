@@ -1,16 +1,16 @@
-import React from "react";
-import { Route } from "react-router-dom";
-import { ConnectedRouter } from "connected-react-router";
-import styled, { withTheme } from "styled-components";
-import { history } from "store";
+import React from 'react';
+import { Route } from 'react-router-dom';
+import { ConnectedRouter } from 'connected-react-router';
+import styled, { withTheme } from 'styled-components';
+import { history } from 'store';
 
-import portfolioData from "utils/portfolioData";
+import portfolioData from 'utils/portfolioData';
 
-import { HomeContainer, AboutContainer } from "containers";
+import { HomeContainer, AboutContainer } from 'containers';
 
 // import { Footer } from "components/Footer";
-import { NavBar } from "components/NavBar";
-import { PortfolioSection } from "components/PortfolioSection";
+import { NavBar } from 'components/NavBar';
+import { PortfolioSection } from 'components/PortfolioSection';
 
 const Container = styled.div`
   text-align: left;
@@ -37,6 +37,7 @@ function mapPortfolioPages() {
             primary={Page.primary}
             primaryLight={Page.primaryLight}
             logo={Page.logo}
+            background={Page.background}
           />
         )}
       />

@@ -9,8 +9,7 @@ import { ChangePage } from 'components/ChangePage';
 const Wrapper = styled.header`
   ${props => props.theme.flex.center};
   align-items: center;
-  background: ${props =>
-    props.background || props.theme.colors.background.black};
+  background-image: url(${props => props.background});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

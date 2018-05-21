@@ -8,7 +8,6 @@ import { ContentWrapper } from 'components/ContentWrapper';
 
 import Resume from 'assets/resume.pdf';
 import Burger from 'assets/hamburgerMenu.png';
-// import GithubIcon from 'assets/Icons/github.svg';
 
 const Container = styled.div`
   ${props => props.theme.flex.spaceBetween};
@@ -24,7 +23,10 @@ const Logo = styled(Link)`
   @media (max-width: ${props => props.theme.breakpoints.md}) {
     display: none;
   }
-  color: ${props => props.theme.colors.text.black};
+  color: ${props =>
+    props.isWhite
+      ? props.theme.colors.text.white
+      : props.theme.colors.text.black};
   text-decoration: underline;
   :hover,
   :active,
@@ -205,7 +207,12 @@ class NavBar extends React.Component {
   render() {
     return (
       <Container>
-        <Logo to="/">jw.</Logo>
+        <Logo
+          to="/"
+          isWhite={this.props.location.pathname.indexOf('/portfolio/') >= 0}
+        >
+          jw.
+        </Logo>
         <HamburgerButtonWrapper
           background={this.props.background}
           onClick={this.toggleMenu}

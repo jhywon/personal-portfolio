@@ -1,17 +1,17 @@
-import React from "react";
-import styled, { withTheme } from "styled-components";
-import PropTypes from "prop-types";
+import React from 'react';
+import styled, { withTheme } from 'styled-components';
+import PropTypes from 'prop-types';
 
-import { PortfolioPage } from "components/PortfolioPage";
+import { PortfolioPage } from 'components/PortfolioPage';
 import {
   MainText,
   TextGroup,
-  MainTextSubHeading
-} from "components/PortfolioPageText";
+  MainTextSubHeading,
+} from 'components/PortfolioPageText';
 
-import Game from "assets/portfolio/planIt/game.png";
-import GameHome from "assets/portfolio/planIt/gameHome.png";
-import GameRules from "assets/portfolio/planIt/gameRules.gif";
+import Game from 'assets/portfolio/planIt/game.png';
+import GameHome from 'assets/portfolio/planIt/gameHome.png';
+import GameRules from 'assets/portfolio/planIt/gameRules.gif';
 
 const FinalImages = styled.div`
   display: flex;
@@ -34,7 +34,7 @@ const GameImage = styled.img`
 
 class PlanItPortfolioPage extends React.Component {
   componentDidMount() {
-    document.title = "Jessie W | Plan It";
+    document.title = 'Jessie W | Plan It';
   }
   render() {
     return (
@@ -42,7 +42,7 @@ class PlanItPortfolioPage extends React.Component {
         mainHeading={this.props.title}
         keywords={this.props.subHeading}
         description="A design and implementation of Plan It, a one button puzzle block game."
-        background={this.props.gradient}
+        background={this.props.background}
         next={this.props.next}
         previous={this.props.previous}
       >
@@ -141,21 +141,21 @@ class PlanItPortfolioPage extends React.Component {
             Regardless, this was a very strong effort from myself and my team.
             Although the game mechanics were not perfect, the visual design of
             the game awed the judges. It was incredible to end up playing and
-            demonstrating our game on the{" "}
+            demonstrating our game on the{' '}
             <a
               href="https://www.instagram.com/p/BCWEhLZEp7q/?taken-by=uwstratford"
               target="_new"
             >
               3-storey
-            </a>{" "}
+            </a>{' '}
             wall, and was this was overall a great learning experience. This
-            game is far from perfect, but given the resource constraints, won us{" "}
+            game is far from perfect, but given the resource constraints, won us{' '}
             <a
               href="https://www.instagram.com/p/BCWOANfEpwM/?taken-by=uwstratford"
               target="_new"
             >
               3rd place overall
-            </a>{" "}
+            </a>{' '}
             at the hackathon, which we were extremely proud of :)
           </MainText>
         </TextGroup>
@@ -167,7 +167,7 @@ class PlanItPortfolioPage extends React.Component {
 PlanItPortfolioPage.propTypes = {
   title: PropTypes.string.isRequired,
   subHeading: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired
+  id: PropTypes.number.isRequired,
 };
 
 PlanItPortfolioPage.defaultProps = {};

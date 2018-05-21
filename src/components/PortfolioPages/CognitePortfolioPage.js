@@ -53,7 +53,7 @@ class CognitePortfolioPage extends React.Component {
         mainHeading={this.props.title}
         keywords={this.props.subHeading}
         description="A redesign of Cognite's company website."
-        background={this.props.gradient}
+        background={this.props.background}
         next={this.props.next}
         previous={this.props.previous}
       >

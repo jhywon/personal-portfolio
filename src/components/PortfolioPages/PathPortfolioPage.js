@@ -28,7 +28,7 @@ class PathPortfolioPage extends React.Component {
         mainHeading={this.props.title}
         keywords={this.props.subHeading}
         description="A redesign of Jobmine, a job board for the University of Waterloo."
-        background={this.props.gradient}
+        background={this.props.background}
         next={this.props.next}
         previous={this.props.previous}
       >

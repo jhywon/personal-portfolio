@@ -20,7 +20,7 @@ class PortfolioSection extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Header mainHeading="Projects" />
+        <Header mainHeading="Portfolio" />
         <MainSection>
           <PortfolioGrid>
             {this.props.content.map(page => (
