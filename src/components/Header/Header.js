@@ -15,7 +15,7 @@ const Wrapper = styled.header`
   padding: ${props => props.theme.padding.hundredTwenty} 0
     ${props => props.theme.padding.twentyFour};
   @media (max-width: ${props => props.theme.breakpoints.md}) {
-    padding: ${props => props.theme.padding.twentyFour} 0 0;
+    padding: ${props => props.theme.padding.fourtyEight} 0 0;
   }
 `;
 
