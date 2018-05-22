@@ -7,12 +7,12 @@ import { ContentWrapper } from 'components/ContentWrapper';
 
 import Resume from 'assets/resume.pdf';
 import Burger from 'assets/hamburgerMenu.png';
-import Close from 'assets/icons/close.svg';
-import Github from 'assets/icons/github.svg';
-import Instagram from 'assets/icons/instagram.svg';
-import LinkedIn from 'assets/icons/linkedin.svg';
-import Email from 'assets/icons/email.svg';
-import ResumeIcon from 'assets/icons/resume.svg';
+import Close from 'assets/icon/close.svg';
+import Github from 'assets/icon/github.svg';
+import Instagram from 'assets/icon/instagram.svg';
+import LinkedIn from 'assets/icon/linkedin.svg';
+import Email from 'assets/icon/email.svg';
+import ResumeIcon from 'assets/icon/resume.svg';
 
 const Container = styled.div`
   ${props => props.theme.flex.spaceBetween};
