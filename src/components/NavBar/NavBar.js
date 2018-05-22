@@ -2,12 +2,17 @@ import React from 'react';
 import styled, { withTheme } from 'styled-components';
 import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
-import { Icon } from 'antd';
 
 import { ContentWrapper } from 'components/ContentWrapper';
 
 import Resume from 'assets/resume.pdf';
 import Burger from 'assets/hamburgerMenu.png';
+import Close from 'assets/icons/close.svg';
+import Github from 'assets/icons/github.svg';
+import Instagram from 'assets/icons/instagram.svg';
+import LinkedIn from 'assets/icons/linkedin.svg';
+import Email from 'assets/icons/email.svg';
+import ResumeIcon from 'assets/icons/resume.svg';
 
 const Container = styled.div`
   ${props => props.theme.flex.spaceBetween};
@@ -49,10 +54,11 @@ const CircleIconButton = styled.a`
     -ms-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
+  padding: ${props => props.theme.padding.twelve};
 `;
 
-const Image = styled.img`
-  width: 30px;
+const CircleButtonIcon = styled.img`
+  width: ${props => (props.small ? '75%' : '100%')};
 `;
 
 const HamburgerButtonWrapper = CircleIconButton.extend`
@@ -71,12 +77,6 @@ const HamburgerButtonWrapper = CircleIconButton.extend`
   :active {
     background: ${props => props.hovercolor};
   }
-`;
-
-const HamburgerMenuIcon = styled(Icon)`
-  align-self: center;
-  height: initial;
-  color: ${props => props.theme.colors.text.white};
 `;
 
 const HamburgerMenu = styled.h4`
@@ -121,15 +121,9 @@ const SocialButtonWrapper = CircleIconButton.extend`
   background: ${props => props.theme.colors.primaryGradient};
 `;
 
-const SocialButtonIcon = styled(Icon)`
-  align-self: center;
-  height: initial;
-  color: ${props => props.theme.colors.text.white};
-`;
-
 const SocialButton = props => (
   <SocialButtonWrapper href={props.href} target="_new" {...props}>
-    <SocialButtonIcon type={props.icon} />
+    <CircleButtonIcon small={props.small} src={props.icon} alt={props.icon} />
   </SocialButtonWrapper>
 );
 
@@ -247,9 +241,9 @@ class NavBar extends React.Component {
           onClick={this.toggleMenu}
         >
           {this.state.isMenuOpen ? (
-            <HamburgerMenuIcon type="close" />
+            <CircleButtonIcon small src={Close} alt="close" />
           ) : (
-            <Image src={Burger} alt="burger " />
+            <CircleButtonIcon src={Burger} alt="burger " />
           )}
         </HamburgerButtonWrapper>
         {this.state.isMenuOpen && (
@@ -260,28 +254,29 @@ class NavBar extends React.Component {
                 <SocialButton
                   href="https://www.instagram.com/jessie.won/"
                   target="_new"
-                  icon="instagram"
+                  icon={Instagram}
                 />
                 <SocialButton
                   href="https://ca.linkedin.com/in/jhywon"
                   target="_new"
-                  icon="linkedin"
+                  icon={LinkedIn}
+                  small
                 />
                 <SocialButton
                   href="https://github.com/jessiewon"
                   target="_new"
-                  icon="github"
+                  icon={Github}
                 />
                 <SocialButton
                   href="mailto:jessiehywon@gmail.com?Subject=Hello"
                   target="_new"
-                  icon="mail"
+                  icon={Email}
                 />
                 <SocialButton
                   onClick={() => {
                     window.open(Resume);
                   }}
-                  icon="file-text"
+                  icon={ResumeIcon}
                 />
               </Buttons>
             </ContentWrapper>

@@ -23,12 +23,15 @@ const Wrapper = styled.header`
 `;
 
 const Content = styled.div`
-  ${props => props.theme.flex.spaceBetween};
   align-items: center;
+  ${props => props.theme.flex.spaceBetween};
 `;
 
 const StyledChangePage = styled.div`
   @media (min-width: ${props => props.theme.breakpoints.xl}) {
+    display: none;
+  }
+  @media (max-width: ${props => props.theme.breakpoints.sm}) {
     display: none;
   }
 `;

@@ -9,9 +9,11 @@ import { ContentWrapper } from 'components/ContentWrapper';
 
 const PortfolioSection = styled.div`
   ${props => props.theme.flex.center};
-  padding: ${props => props.theme.padding.eighty} 0;
+  padding: ${props => props.theme.padding.eighty} 0
+    ${props => props.theme.padding.fourtyEight};
   @media (max-width: ${props => props.theme.breakpoints.md}) {
-    padding: ${props => props.theme.padding.fourtyEight} 0;
+    padding: ${props => props.theme.padding.fourtyEight} 0
+      ${props => props.theme.padding.twentyFour};
   }
 `;
 

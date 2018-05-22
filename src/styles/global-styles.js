@@ -2,13 +2,18 @@ import { injectGlobal } from 'styled-components';
 import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
 
 injectGlobal`
+  @font-face {
+    font-family: PT Sans;
+    src: url(assets/Lato-Regular.ttf);
+  }
+
   html,
   body {
     height: 100%;
     width: 100%;
     margin: 0;
     padding: 0;
-    font-family: 'Lato', sans-serif;
+    font-family: Lato, sans-serif;
     background: #FCFCFC;
   }
 

@@ -31,6 +31,7 @@ const StyledLink = styled(Link)`
   @media (max-width: ${props => props.theme.breakpoints.sm}) {
     width: 70px;
     height: 70px;
+    box-shadow: none;
   }
 `;
 
