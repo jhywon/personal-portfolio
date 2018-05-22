@@ -7,7 +7,7 @@ import { Switch } from 'antd';
 import { ContentWrapper } from 'components/ContentWrapper';
 import { PrimaryButton } from 'components/Button';
 
-import Burger from 'assets/burger.svg';
+import Burger from 'assets/burger.png';
 import Fries from 'assets/fries.png';
 
 const Wrapper = styled.div`

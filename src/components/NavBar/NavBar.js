@@ -128,7 +128,7 @@ const SocialButtonIcon = styled(Icon)`
 `;
 
 const SocialButton = props => (
-  <SocialButtonWrapper color={props.color} href={props.href} target="_new">
+  <SocialButtonWrapper href={props.href} target="_new" {...props}>
     <SocialButtonIcon type={props.icon} />
   </SocialButtonWrapper>
 );
@@ -136,12 +136,10 @@ const SocialButton = props => (
 SocialButton.propTypes = {
   href: PropTypes.string,
   icon: PropTypes.node.isRequired,
-  color: PropTypes.string,
 };
 
 SocialButton.defaultProps = {
   href: '',
-  color: null,
 };
 
 class NavBar extends React.Component {
@@ -260,41 +258,29 @@ class NavBar extends React.Component {
               <HamburgerLinks>{this.mapLinks(HamburgerLink)}</HamburgerLinks>
               <Buttons>
                 <SocialButton
-                  href="https://www.facebook.com/jessie.won"
-                  target="_new"
-                  color={this.props.theme.colors.background.blueGradient}
-                  icon="facebook"
-                />
-                <SocialButton
                   href="https://www.instagram.com/jessie.won/"
                   target="_new"
-                  color={this.props.theme.colors.background.blueGradient}
                   icon="instagram"
                 />
                 <SocialButton
                   href="https://ca.linkedin.com/in/jhywon"
                   target="_new"
-                  color={this.props.theme.colors.background.blueGradient}
                   icon="linkedin"
                 />
                 <SocialButton
                   href="https://github.com/jessiewon"
                   target="_new"
-                  color={this.props.theme.colors.background.blueGradient}
                   icon="github"
                 />
                 <SocialButton
                   href="mailto:jessiehywon@gmail.com?Subject=Hello"
                   target="_new"
-                  color={this.props.theme.colors.background.blueGradient}
                   icon="mail"
                 />
                 <SocialButton
                   onClick={() => {
                     window.open(Resume);
                   }}
-                  target="_new"
-                  color={this.props.theme.colors.background.blueGradient}
                   icon="file-text"
                 />
               </Buttons>

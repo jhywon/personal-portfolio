@@ -8,16 +8,13 @@ import registerServiceWorker from 'registerServiceWorker';
 import theme from 'styles/theme';
 import configureStore from 'store';
 import Routes from './routes';
-import { BrowserRouter as Router } from 'react-router-dom';
 
 render(
-  <Router basename={process.env.PUBLIC_URL}>
-    <Provider store={configureStore()}>
-      <ThemeProvider theme={theme}>
-        <Routes />
-      </ThemeProvider>
-    </Provider>
-  </Router>,
+  <Provider store={configureStore()}>
+    <ThemeProvider theme={theme}>
+      <Routes />
+    </ThemeProvider>
+  </Provider>,
   document.getElementById('root')
 );
 registerServiceWorker();
