@@ -8,7 +8,6 @@ import portfolioData from 'utils/portfolioData';
 
 import { HomeContainer, AboutContainer } from 'containers';
 
-// import { Footer } from "components/Footer";
 import { NavBar } from 'components/NavBar';
 import { PortfolioSection } from 'components/PortfolioSection';
 
@@ -29,15 +28,9 @@ function mapPortfolioPages() {
           <Page.component
             key={Page.id}
             id={Page.id}
-            title={Page.title}
-            subHeading={Page.subHeading}
+            page={Page}
             next={portfolioData[next]}
             previous={portfolioData[previous]}
-            gradient={Page.gradient}
-            primary={Page.primary}
-            primaryLight={Page.primaryLight}
-            logo={Page.logo}
-            background={Page.background}
           />
         )}
       />
@@ -49,7 +42,7 @@ function Routes() {
   return (
     <ConnectedRouter history={history}>
       <React.Fragment>
-        <NavBar />
+        <NavBar portfolioData={portfolioData} />
         <Container>
           <Route exact path="/" component={HomeContainer} />
           <Route exact path="/about" component={AboutContainer} />
@@ -60,7 +53,6 @@ function Routes() {
           />
           {mapPortfolioPages()}
         </Container>
-        {/* <Footer /> */}
       </React.Fragment>
     </ConnectedRouter>
   );

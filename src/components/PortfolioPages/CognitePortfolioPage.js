@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { withTheme } from 'styled-components';
 import PropTypes from 'prop-types';
 
+import * as PropShapes from 'utils/propShapes';
 import { PortfolioPage } from 'components/PortfolioPage';
 import {
   MainText,
@@ -15,26 +16,39 @@ import NewHomeDesktop from 'assets/portfolio/cognite/new/home.png';
 // import NewAboutDesktop from 'assets/portfolio/cognite/new/about.png';
 import NewTeamDesktop from 'assets/portfolio/cognite/new/team.png';
 
+const PrimaryLink = styled.a`
+  color: ${props => props.color};
+  :hover,
+  :focus,
+  :active {
+    color: ${props => props.hovercolor};
+  }
+`;
+
 const FlexWrapper = styled.div`
   ${props => props.theme.flex.spaceBetween};
   flex-wrap: wrap;
-  max-width: 800px;
+`;
+
+const IntroImageWrapper = styled.div`
+  ${props => props.theme.flex.flexStart};
+  flex-direction: column;
+  width: 49%;
+  @media (max-width: ${props => props.theme.breakpoints.md}) {
+    width: 100%;
+  }
 `;
 
 const IntroImage = styled.img`
-  margin-top: ${props => props.theme.padding.sixteen};
-  width: 49%;
-  height: 100%;
+  width: 100%;
 `;
 
-// const SolutionProcessImage = styled.img`
-//   width: 49%;
-//   height: 100%;
-//   margin-bottom: ${props => props.theme.padding.sixteen};
-//   @media (max-width: ${props => props.theme.breakpoints.md}) {
-//     width: 100%;
-//   }
-// `;
+const MobileIntroImage = styled.img`
+  width: 50%;
+  @media (max-width: ${props => props.theme.breakpoints.md}) {
+    width: 75%;
+  }
+`;
 
 const Image = styled.img`
   margin: ${props => props.theme.padding.sixteen} 0;
@@ -50,12 +64,10 @@ class CognitePortfolioPage extends React.Component {
   render() {
     return (
       <PortfolioPage
-        mainHeading={this.props.title}
-        keywords={this.props.subHeading}
         description="A redesign of Cognite's company website."
-        background={this.props.background}
-        next={this.props.next}
+        page={this.props.page}
         previous={this.props.previous}
+        next={this.props.next}
       >
         <TextGroup heading="Background:">
           <MainText>
@@ -75,8 +87,14 @@ class CognitePortfolioPage extends React.Component {
             Front End Development and Design skills at the company.
           </MainText>
           <FlexWrapper>
-            <IntroImage src={OldHomeDesktop} alt="old home desktop" />
-            <IntroImage src={OldHomeMobile} alt="old home desktop" />
+            <IntroImageWrapper>
+              <h5>Old Home - Desktop</h5>
+              <IntroImage src={OldHomeDesktop} alt="old home desktop" />
+            </IntroImageWrapper>
+            <IntroImageWrapper>
+              <h5>Old Home - Mobile</h5>
+              <MobileIntroImage src={OldHomeMobile} alt="old home desktop" />
+            </IntroImageWrapper>
           </FlexWrapper>
         </TextGroup>
         <TextGroup heading="Goal:">
@@ -138,9 +156,14 @@ class CognitePortfolioPage extends React.Component {
           <Image src={NewHomeDesktop} alt="home" />
           <MainText>
             Check out the live site{' '}
-            <a href="http://www.cognite.com" target="_new">
+            <PrimaryLink
+              color={this.props.page.linkColor}
+              hovercolor={this.props.page.primaryLight}
+              href="http://www.cognite.com"
+              target="_new"
+            >
               here
-            </a>!
+            </PrimaryLink>!
           </MainText>
         </TextGroup>
       </PortfolioPage>
@@ -149,8 +172,9 @@ class CognitePortfolioPage extends React.Component {
 }
 
 CognitePortfolioPage.propTypes = {
-  title: PropTypes.string.isRequired,
-  subHeading: PropTypes.string.isRequired,
+  page: PropShapes.portfolioData.isRequired,
+  previous: PropShapes.portfolioData.isRequired,
+  next: PropShapes.portfolioData.isRequired,
   id: PropTypes.number.isRequired,
 };
 

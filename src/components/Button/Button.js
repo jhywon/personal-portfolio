@@ -31,8 +31,10 @@ const StyledDefaultButton = StyledButton.extend`
   :hover,
   :focus,
   :active {
-    color: ${props => props.theme.colors.primary};
-    border-color: ${props => props.theme.colors.primary};
+    background-color: ${props => props.borderColor};
+    color: ${props => props.theme.colors.background.white};
+    border-color: ${props =>
+      props.borderColor ? props.borderColor : props.theme.colors.primary};
   }
 `;
 

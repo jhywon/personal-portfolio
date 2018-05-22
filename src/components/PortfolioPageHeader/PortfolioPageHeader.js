@@ -71,7 +71,7 @@ const ChangePageSmall = styled.div`
 
 const PortfolioPageHeader = props => (
   <React.Fragment>
-    <Wrapper background={props.background}>
+    <Wrapper background={props.page.background}>
       {props.previous && (
         <ChangePageBigLeft>
           <ChangePage page={props.previous} />
@@ -79,8 +79,8 @@ const PortfolioPageHeader = props => (
       )}
       <Content>
         <React.Fragment>
-          <ProjectTitle>{props.mainHeading}</ProjectTitle>
-          <Keywords>{props.keywords}</Keywords>
+          <ProjectTitle>{props.page.title}</ProjectTitle>
+          <Keywords>{props.page.subHeading}</Keywords>
           <Description>{props.description}</Description>
         </React.Fragment>
         <ChangePageSmall>
@@ -98,18 +98,12 @@ const PortfolioPageHeader = props => (
 );
 
 PortfolioPageHeader.propTypes = {
-  mainHeading: PropTypes.string.isRequired,
-  keywords: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  background: PropTypes.string,
-  previous: PropShapes.portfolioData,
-  next: PropShapes.portfolioData,
+  page: PropShapes.portfolioData.isRequired,
+  previous: PropShapes.portfolioData.isRequired,
+  next: PropShapes.portfolioData.isRequired,
 };
 
-PortfolioPageHeader.defaultProps = {
-  background: () => {},
-  previous: '',
-  next: '',
-};
+PortfolioPageHeader.defaultProps = {};
 
 export default PortfolioPageHeader;

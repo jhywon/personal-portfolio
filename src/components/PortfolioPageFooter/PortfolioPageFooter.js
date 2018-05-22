@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import * as PropShapes from 'utils/propShapes';
@@ -34,7 +34,7 @@ const StyledChangePage = styled.div`
 `;
 
 const PortfolioPageFooter = props => (
-  <Wrapper background={props.background}>
+  <Wrapper background={props.page.background}>
     <ContentWrapper>
       <Content>
         {props.previous && (
@@ -43,7 +43,9 @@ const PortfolioPageFooter = props => (
           </StyledChangePage>
         )}
         <Link to="/portfolio">
-          <DefaultButton>Back to Portfolio</DefaultButton>
+          <DefaultButton borderColor={props.page.primary}>
+            Back to Portfolio
+          </DefaultButton>
         </Link>
         {props.next && (
           <StyledChangePage>
@@ -56,15 +58,11 @@ const PortfolioPageFooter = props => (
 );
 
 PortfolioPageFooter.propTypes = {
-  background: PropTypes.string,
-  previous: PropShapes.portfolioData,
-  next: PropShapes.portfolioData,
+  page: PropShapes.portfolioData.isRequired,
+  previous: PropShapes.portfolioData.isRequired,
+  next: PropShapes.portfolioData.isRequired,
 };
 
-PortfolioPageFooter.defaultProps = {
-  background: '',
-  previous: '',
-  next: '',
-};
+PortfolioPageFooter.defaultProps = {};
 
 export default PortfolioPageFooter;

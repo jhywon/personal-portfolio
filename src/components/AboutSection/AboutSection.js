@@ -7,12 +7,12 @@ import { MainSection } from 'components/MainSection';
 import { Header } from 'components/Header';
 import { PrimaryButton } from 'components/Button';
 
-import AvatarOne from 'assets/jessie.png';
-import AvatarOneHover from 'assets/jessie-1.png';
-import AvatarTwo from 'assets/jessie2.png';
-import AvatarTwoHover from 'assets/jessie2-1.png';
-import AvatarThree from 'assets/jessie3.png';
-import AvatarThreeHover from 'assets/jessie3-1.png';
+import AvatarOne from 'assets/about/jessie.png';
+import AvatarOneHover from 'assets/about/jessie-1.png';
+import AvatarTwo from 'assets/about/jessie2.png';
+import AvatarTwoHover from 'assets/about/jessie2-1.png';
+import AvatarThree from 'assets/about/jessie3.png';
+import AvatarThreeHover from 'assets/about/jessie3-1.png';
 import Resume from 'assets/resume.pdf';
 
 const TextAvatarGroup = styled.div`
@@ -107,8 +107,8 @@ class AboutSection extends React.Component {
                 I spend most of my days working towards my degree, and am
                 especially interested in learning and understanding the design
                 process. I enjoy working closely with users in creating a great
-                user experience. I love a good challenge, and am eager to
-                continue exploring the different aspects of engineering.
+                user experience, love a good challenge, and am eager to continue
+                exploring the different aspects of engineering.
               </AvatarText>
               <Link to="/portfolio">
                 <PrimaryButton>View My Portfolio</PrimaryButton>

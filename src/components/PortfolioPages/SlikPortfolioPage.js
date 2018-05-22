@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { withTheme } from 'styled-components';
 import PropTypes from 'prop-types';
 
+import * as PropShapes from 'utils/propShapes';
 import { PortfolioPage } from 'components/PortfolioPage';
 import {
   MainText,
@@ -11,6 +12,15 @@ import {
 
 import CollectionsOld from 'assets/portfolio/slikPortfolio/collectionsOld.jpg';
 import CollectionsNew from 'assets/portfolio/slikPortfolio/collectionsNew.jpg';
+
+const PrimaryLink = styled.a`
+  color: ${props => props.color};
+  :hover,
+  :focus,
+  :active {
+    color: ${props => props.hovercolor};
+  }
+`;
 
 const ImagesWrapper = styled.div`
   ${props => props.theme.flex.spaceBetween};
@@ -40,12 +50,10 @@ class SlikPortfolioPage extends React.Component {
   render() {
     return (
       <PortfolioPage
-        mainHeading={this.props.title}
-        keywords={this.props.subHeading}
         description="A redesign of the Slik Portfolio catalog, a boutique line of baths, shower doors, and low-profile bases."
-        background={this.props.background}
-        next={this.props.next}
+        page={this.props.page}
         previous={this.props.previous}
+        next={this.props.next}
       >
         <TextGroup heading="Background:">
           <MainText>
@@ -122,9 +130,14 @@ class SlikPortfolioPage extends React.Component {
           </ImagesWrapper>
           <MainText>
             Check out the live site{' '}
-            <a href="http://www.slikportfolio.com" target="_new">
+            <PrimaryLink
+              color={this.props.page.linkColor}
+              hovercolor={this.props.page.primaryLight}
+              href="http://www.slikportfolio.com"
+              target="_new"
+            >
               here
-            </a>!
+            </PrimaryLink>!
           </MainText>
         </TextGroup>
         <TextGroup heading="Comments:">
@@ -145,8 +158,9 @@ class SlikPortfolioPage extends React.Component {
 }
 
 SlikPortfolioPage.propTypes = {
-  title: PropTypes.string.isRequired,
-  subHeading: PropTypes.string.isRequired,
+  page: PropShapes.portfolioData.isRequired,
+  previous: PropShapes.portfolioData.isRequired,
+  next: PropShapes.portfolioData.isRequired,
   id: PropTypes.number.isRequired,
   theme: PropTypes.shape({
     colors: PropTypes.shape({

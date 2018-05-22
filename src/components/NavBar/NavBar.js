@@ -24,7 +24,7 @@ const Logo = styled(Link)`
     display: none;
   }
   color: ${props =>
-    props.isWhite
+    props.iswhite === 'true'
       ? props.theme.colors.text.white
       : props.theme.colors.text.black};
   text-decoration: underline;
@@ -32,20 +32,19 @@ const Logo = styled(Link)`
   :active,
   :focus {
     text-decoration: underline;
-    color: ${props => props.theme.colors.primary};
+    color: ${props => props.hovercolor};
   }
 `;
 
 const CircleIconButton = styled.a`
   ${props => props.theme.flex.center};
-  background: ${props =>
-    props.background || props.theme.colors.primaryGradient};
   border-radius: 100%;
   width: 56px;
   height: 56px;
   z-index: 4;
-  :hover {
-    background: ${props => props.theme.colors.primary};
+  :hover,
+  :focus,
+  :active {
     -webkit-transition: all 0.3s ease;
     -ms-transition: all 0.3s ease;
     transition: all 0.3s ease;
@@ -66,6 +65,12 @@ const HamburgerButtonWrapper = CircleIconButton.extend`
   top: 37px;
   opacity: 0.85;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 15px 0 rgba(0, 0, 0, 0.19);
+  background: ${props => props.background};
+  :hover,
+  :focus,
+  :active {
+    background: ${props => props.hovercolor};
+  }
 `;
 
 const HamburgerMenuIcon = styled(Icon)`
@@ -97,30 +102,6 @@ const HamburgerLink = styled(Link)`
   font-weight: 500;
 `;
 
-// const NavBarWrapper = styled.nav`
-//   color: ${props => props.theme.colors.text.dark};
-//   ${props => props.theme.dimensions.navbar};
-//   ${props => props.theme.flex.flexEnd};
-//   background: transparent;
-//   z-index: 1;
-//   position: fixed;
-//   width: 100%;
-//   right: ${props => props.theme.padding.thirtyTwo};
-//   @media (max-width: ${props => props.theme.breakpoints.sm}) {
-//     display: none;
-//   }
-// `;
-
-// const NavBarLinks = styled.div`
-//   ${props => props.theme.flex.center};
-// `;
-
-// const NavBarLink = styled(Link)`
-//   font-size: 20px;
-//   color: ${props => props.theme.colors.text.black};
-//   margin-left: ${props => props.theme.padding.sixteen};
-// `;
-
 const Buttons = styled.div`
   ${props => props.theme.flex.center};
   flex-wrap: wrap;
@@ -134,8 +115,10 @@ const SocialButtonWrapper = CircleIconButton.extend`
   &:focus {
     outline: none;
     text-decoration: none;
+    background: ${props => props.theme.colors.primary};
   }
   margin: ${props => props.theme.padding.eight};
+  background: ${props => props.theme.colors.primaryGradient};
 `;
 
 const SocialButtonIcon = styled(Icon)`
@@ -205,16 +188,64 @@ class NavBar extends React.Component {
   };
 
   render() {
+    let hamburgerColor;
+    let hamburgerColorHover;
+    if (this.props.location.pathname.indexOf('/portfolio/') >= 0) {
+      let portfolioPage;
+      switch (this.props.location.pathname) {
+        case '/portfolio/cognite': {
+          portfolioPage = this.props.portfolioData[0];
+          break;
+        }
+        case '/portfolio/slik': {
+          portfolioPage = this.props.portfolioData[1];
+          break;
+        }
+        case '/portfolio/jobmine': {
+          portfolioPage = this.props.portfolioData[2];
+          break;
+        }
+        case '/portfolio/path': {
+          portfolioPage = this.props.portfolioData[3];
+          break;
+        }
+        case '/portfolio/planit': {
+          portfolioPage = this.props.portfolioData[4];
+          break;
+        }
+        default: {
+          break;
+        }
+      }
+      hamburgerColor = portfolioPage.gradient;
+      hamburgerColorHover = portfolioPage.primary;
+    } else {
+      hamburgerColor = this.props.theme.colors.primaryGradient;
+      hamburgerColorHover = this.props.theme.colors.primary;
+    }
+
     return (
       <Container>
         <Logo
           to="/"
-          isWhite={this.props.location.pathname.indexOf('/portfolio/') >= 0}
+          iswhite={(
+            this.props.location.pathname.indexOf('/portfolio/') >= 0
+          ).toString()}
+          hovercolor={hamburgerColorHover}
         >
           jw.
         </Logo>
         <HamburgerButtonWrapper
-          background={this.props.background}
+          background={
+            this.state.isMenuOpen
+              ? this.props.theme.colors.primaryGradient
+              : hamburgerColor
+          }
+          hovercolor={
+            this.state.isMenuOpen
+              ? this.props.theme.colors.primary
+              : hamburgerColorHover
+          }
           onClick={this.toggleMenu}
         >
           {this.state.isMenuOpen ? (
@@ -223,9 +254,6 @@ class NavBar extends React.Component {
             <Image src={Burger} alt="burger " />
           )}
         </HamburgerButtonWrapper>
-        {/* <NavBarWrapper>
-          <NavBarLinks>{this.mapLinks(NavBarLink)}</NavBarLinks>
-        </NavBarWrapper> */}
         {this.state.isMenuOpen && (
           <HamburgerMenu>
             <ContentWrapper>

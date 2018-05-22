@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { withTheme } from 'styled-components';
 import PropTypes from 'prop-types';
 
+import * as PropShapes from 'utils/propShapes';
 import { PortfolioPage } from 'components/PortfolioPage';
 import {
   MainText,
@@ -12,6 +13,15 @@ import {
 import Game from 'assets/portfolio/planIt/game.png';
 import GameHome from 'assets/portfolio/planIt/gameHome.png';
 import GameRules from 'assets/portfolio/planIt/gameRules.gif';
+
+const PrimaryLink = styled.a`
+  color: ${props => props.color};
+  :hover,
+  :focus,
+  :active {
+    color: ${props => props.hovercolor};
+  }
+`;
 
 const FinalImages = styled.div`
   display: flex;
@@ -39,12 +49,10 @@ class PlanItPortfolioPage extends React.Component {
   render() {
     return (
       <PortfolioPage
-        mainHeading={this.props.title}
-        keywords={this.props.subHeading}
         description="A design and implementation of Plan It, a one button puzzle block game."
-        background={this.props.background}
-        next={this.props.next}
+        page={this.props.page}
         previous={this.props.previous}
+        next={this.props.next}
       >
         <TextGroup heading="Background:">
           <MainText>
@@ -142,20 +150,24 @@ class PlanItPortfolioPage extends React.Component {
             Although the game mechanics were not perfect, the visual design of
             the game awed the judges. It was incredible to end up playing and
             demonstrating our game on the{' '}
-            <a
+            <PrimaryLink
+              color={this.props.page.linkColor}
+              hovercolor={this.props.page.primaryLight}
               href="https://www.instagram.com/p/BCWEhLZEp7q/?taken-by=uwstratford"
               target="_new"
             >
               3-storey
-            </a>{' '}
+            </PrimaryLink>{' '}
             wall, and was this was overall a great learning experience. This
             game is far from perfect, but given the resource constraints, won us{' '}
-            <a
+            <PrimaryLink
+              color={this.props.page.linkColor}
+              hovercolor={this.props.page.primaryLight}
               href="https://www.instagram.com/p/BCWOANfEpwM/?taken-by=uwstratford"
               target="_new"
             >
               3rd place overall
-            </a>{' '}
+            </PrimaryLink>{' '}
             at the hackathon, which we were extremely proud of :)
           </MainText>
         </TextGroup>
@@ -165,8 +177,9 @@ class PlanItPortfolioPage extends React.Component {
 }
 
 PlanItPortfolioPage.propTypes = {
-  title: PropTypes.string.isRequired,
-  subHeading: PropTypes.string.isRequired,
+  page: PropShapes.portfolioData.isRequired,
+  previous: PropShapes.portfolioData.isRequired,
+  next: PropShapes.portfolioData.isRequired,
   id: PropTypes.number.isRequired,
 };
 

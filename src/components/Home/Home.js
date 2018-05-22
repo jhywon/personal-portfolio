@@ -62,7 +62,7 @@ class Home extends React.Component {
     const FloatingFood = this.state.isCheatDay ? Fries : Burger;
     const StartingValueMultiplier = window.innerWidth > 500 ? 2 : 0.5;
     const StartingValue = this.state.isCheatDay
-      ? 30 * StartingValueMultiplier
+      ? 25 * StartingValueMultiplier
       : 15 * StartingValueMultiplier;
     return (
       <React.Fragment>

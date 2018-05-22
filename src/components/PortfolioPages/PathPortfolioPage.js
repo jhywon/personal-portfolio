@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { withTheme } from 'styled-components';
 import PropTypes from 'prop-types';
 
+import * as PropShapes from 'utils/propShapes';
 import { PortfolioPage } from 'components/PortfolioPage';
 import {
   MainText,
@@ -25,12 +26,10 @@ class PathPortfolioPage extends React.Component {
   render() {
     return (
       <PortfolioPage
-        mainHeading={this.props.title}
-        keywords={this.props.subHeading}
         description="A redesign of Jobmine, a job board for the University of Waterloo."
-        background={this.props.background}
-        next={this.props.next}
+        page={this.props.page}
         previous={this.props.previous}
+        next={this.props.next}
       >
         <TextGroup heading="Background:">
           <MainText>
@@ -57,17 +56,17 @@ class PathPortfolioPage extends React.Component {
             Google Maps, and the GRT (Grand River Transit) applications to get
             around, but none of them allowed for the mapping of multiple
             destinations when using public transit.
-            <br />
-            <br />
-            <MainTextSubHeading>Scenario:</MainTextSubHeading>
+          </MainText>
+          <MainTextSubHeading>Scenario:</MainTextSubHeading>
+          <MainText>
             John is a student with a very busy schedule and relies on public
             transportation to get around. This Sunday, he needs to get
             groceries, get a haircut, and go to the pharmacy. He knows that
             groceries will take him about 1 hour, the pharmacy is a quick drop
             in and should take no longer than 15 minutes, and his haircut will
             take about 1 hour as well.
-            <br />
-            <br />
+          </MainText>
+          <MainText>
             He knows that he needs to get everything done today, but there is no
             way for him to map the best order and way to do this, since bussess
             genereally only come every 15-30 minutes. As a result, he searches
@@ -109,8 +108,9 @@ class PathPortfolioPage extends React.Component {
 }
 
 PathPortfolioPage.propTypes = {
-  title: PropTypes.string.isRequired,
-  subHeading: PropTypes.string.isRequired,
+  page: PropShapes.portfolioData.isRequired,
+  previous: PropShapes.portfolioData.isRequired,
+  next: PropShapes.portfolioData.isRequired,
   id: PropTypes.number.isRequired,
 };
 

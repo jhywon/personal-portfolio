@@ -18,35 +18,32 @@ const PortfolioSection = styled.div`
 const PortfolioPage = props => (
   <React.Fragment>
     <PortfolioPageHeader
-      mainHeading={props.mainHeading}
-      keywords={props.keywords}
-      description={props.description}
-      background={props.background}
+      page={props.page}
       previous={props.previous}
       next={props.next}
+      description={props.description}
     />
     <PortfolioSection>
       <ContentWrapper>{props.children}</ContentWrapper>
     </PortfolioSection>
-    <PortfolioPageFooter previous={props.previous} next={props.next} />
+    <PortfolioPageFooter
+      page={props.page}
+      previous={props.previous}
+      next={props.next}
+    />
   </React.Fragment>
 );
 
 PortfolioPage.propTypes = {
-  mainHeading: PropTypes.string.isRequired,
-  keywords: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  background: PropTypes.string,
-  previous: PropShapes.portfolioData,
-  next: PropShapes.portfolioData,
+  page: PropShapes.portfolioData.isRequired,
+  previous: PropShapes.portfolioData.isRequired,
+  next: PropShapes.portfolioData.isRequired,
   children: PropTypes.node,
 };
 
 PortfolioPage.defaultProps = {
-  background: () => {},
   children: null,
-  previous: '',
-  next: '',
 };
 
 export default PortfolioPage;

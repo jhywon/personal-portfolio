@@ -12,7 +12,7 @@ const Wrapper = styled.div`
 
 const StyledLink = styled(Link)`
   ${props => props.theme.flex.center};
-  background: ${props => props.primary};
+  background: ${props => props.gradient};
   border-radius: 100%;
   width: 80px;
   height: 80px;
@@ -21,8 +21,7 @@ const StyledLink = styled(Link)`
   :focus,
   :active {
     color: ${props => props.theme.colors.text.white};
-    background: ${props =>
-      props.primaryLight || props.theme.colors.primaryHover};
+    background: ${props => props.primary};
     -webkit-transition: all 0.3s ease;
     -ms-transition: all 0.3s ease;
     transition: all 0.3s ease;
@@ -44,8 +43,8 @@ const ChangePage = props => (
     {!props.next && <Icon type="caret-left" />}
     <StyledLink
       to={props.page.link}
+      gradient={props.page.gradient}
       primary={props.page.primary}
-      primaryLight={props.page.primaryLight}
     >
       <Logo
         small={props.page.title === 'Jobmine' || props.page.title === 'Path'}

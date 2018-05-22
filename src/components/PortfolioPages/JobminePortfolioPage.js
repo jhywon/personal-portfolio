@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { withTheme } from 'styled-components';
 import PropTypes from 'prop-types';
 
+import * as PropShapes from 'utils/propShapes';
 import { PortfolioPage } from 'components/PortfolioPage';
 import {
   MainText,
@@ -67,12 +68,10 @@ class JobminePortfolioPage extends React.Component {
   render() {
     return (
       <PortfolioPage
-        mainHeading={this.props.title}
-        keywords={this.props.subHeading}
         description="A redesign of Jobmine, a job board for the University of Waterloo."
-        background={this.props.background}
-        next={this.props.next}
+        page={this.props.page}
         previous={this.props.previous}
+        next={this.props.next}
       >
         <TextGroup heading="Background:">
           <MainText>
@@ -245,8 +244,9 @@ class JobminePortfolioPage extends React.Component {
 }
 
 JobminePortfolioPage.propTypes = {
-  title: PropTypes.string.isRequired,
-  subHeading: PropTypes.string.isRequired,
+  page: PropShapes.portfolioData.isRequired,
+  previous: PropShapes.portfolioData.isRequired,
+  next: PropShapes.portfolioData.isRequired,
   id: PropTypes.number.isRequired,
 };
 
