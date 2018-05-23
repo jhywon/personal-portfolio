@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
+import React from "react";
+import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const StyledButton = styled.button`
   border-radius: 5px;
@@ -13,12 +13,12 @@ const StyledButton = styled.button`
 const StyledPrimaryButton = StyledButton.extend`
   color: ${props => props.theme.colors.text.white};
   background-color: ${props => props.theme.colors.primary};
-  border: 2px solid ${props => props.theme.colors.primary};
+  border: 1px solid ${props => props.theme.colors.primary};
   :hover,
   :focus,
   :active {
     background-color: ${props => props.theme.colors.primaryHover};
-    border: 2px solid ${props => props.theme.colors.primaryHover};
+    border: 1px solid ${props => props.theme.colors.primaryHover};
   }
 `;
 
@@ -27,13 +27,13 @@ const StyledSecondaryButton = StyledButton.extend``;
 const StyledDefaultButton = StyledButton.extend`
   color: ${props => props.theme.colors.text.black};
   background-color: ${props => props.theme.colors.background.white};
-  border: 2px solid ${props => props.theme.colors.background.lightGrey};
+  border: 1px solid ${props => props.theme.colors.background.lightGrey};
   :hover,
   :focus,
   :active {
     background-color: ${props => props.borderColor};
     color: ${props => props.theme.colors.background.white};
-    border: 2px solid
+    border: 1px solid
       ${props =>
         props.borderColor ? props.borderColor : props.theme.colors.primary};
   }
@@ -46,7 +46,7 @@ const PrimaryButton = props => (
 );
 
 PrimaryButton.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired
 };
 
 const SecondaryButton = props => (
@@ -56,7 +56,7 @@ const SecondaryButton = props => (
 );
 
 SecondaryButton.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired
 };
 
 const DefaultButton = props => (
@@ -66,7 +66,7 @@ const DefaultButton = props => (
 );
 
 DefaultButton.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired
 };
 
 export { PrimaryButton, SecondaryButton, DefaultButton };
