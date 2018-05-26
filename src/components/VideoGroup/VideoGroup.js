@@ -3,7 +3,7 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 
 const Wrapper = styled.div`
-  margin-bottom: ${props => props.theme.padding.twentyFour};
+  margin-bottom: ${props => props.theme.padding.fourtyEight};
   iframe {
     width: 100%;
     height: 517.5px;

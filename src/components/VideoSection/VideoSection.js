@@ -53,7 +53,7 @@ class VideoSection extends React.Component {
               one day when I'm rich I'll be able to buy a cabin in the Alps and
               go there more often lol.
             </p>
-            <h5>Video under construction - stay tuned :)</h5>
+            <h4>Video under construction - stay tuned :)</h4>
           </VideoGroup>
           <VideoGroup title="Next Stop: Hong Kong 2019">
             <p>
