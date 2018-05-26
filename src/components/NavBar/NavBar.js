@@ -1,18 +1,18 @@
-import React from 'react';
-import styled, { withTheme } from 'styled-components';
-import PropTypes from 'prop-types';
-import { Link, withRouter } from 'react-router-dom';
+import React from "react";
+import styled, { withTheme } from "styled-components";
+import PropTypes from "prop-types";
+import { Link, withRouter } from "react-router-dom";
 
-import { ContentWrapper } from 'components/ContentWrapper';
+import { ContentWrapper } from "components/ContentWrapper";
 
-import Resume from 'assets/resume.pdf';
-import Burger from 'assets/hamburgerMenu.png';
-import Close from 'assets/icon/close.svg';
-import Github from 'assets/icon/github.svg';
-import Instagram from 'assets/icon/instagram.svg';
-import LinkedIn from 'assets/icon/linkedin.svg';
-import Email from 'assets/icon/email.svg';
-import ResumeIcon from 'assets/icon/resume.svg';
+import Resume from "assets/resume.pdf";
+import Burger from "assets/hamburgerMenu.png";
+import Close from "assets/icon/close.svg";
+import Github from "assets/icon/github.svg";
+import Instagram from "assets/icon/instagram.svg";
+import LinkedIn from "assets/icon/linkedin.svg";
+import Email from "assets/icon/email.svg";
+import ResumeIcon from "assets/icon/resume.svg";
 
 const Container = styled.div`
   ${props => props.theme.flex.spaceBetween};
@@ -29,7 +29,7 @@ const Logo = styled(Link)`
     display: none;
   }
   color: ${props =>
-    props.iswhite === 'true'
+    props.iswhite === "true"
       ? props.theme.colors.text.white
       : props.theme.colors.text.black};
   text-decoration: underline;
@@ -58,7 +58,7 @@ const CircleIconButton = styled.a`
 `;
 
 const CircleButtonIcon = styled.img`
-  width: ${props => (props.small ? '75%' : '100%')};
+  width: ${props => (props.small ? "75%" : "100%")};
 `;
 
 const HamburgerButtonWrapper = CircleIconButton.extend`
@@ -129,16 +129,16 @@ const SocialButton = props => (
 
 SocialButton.propTypes = {
   href: PropTypes.string,
-  icon: PropTypes.node.isRequired,
+  icon: PropTypes.node.isRequired
 };
 
 SocialButton.defaultProps = {
-  href: '',
+  href: ""
 };
 
 class NavBar extends React.Component {
   state = {
-    isMenuOpen: false,
+    isMenuOpen: false
   };
 
   componentDidUpdate(prevProps) {
@@ -146,7 +146,7 @@ class NavBar extends React.Component {
       window.scrollTo(0, 0);
       // eslint-disable-next-line react/no-did-update-set-state
       this.setState({
-        isMenuOpen: false,
+        isMenuOpen: false
       });
     }
   }
@@ -158,17 +158,21 @@ class NavBar extends React.Component {
   mapLinks = component => {
     const Links = [
       {
-        title: 'Home',
-        link: '/',
+        title: "Home",
+        link: "/"
       },
       {
-        title: 'About',
-        link: '/about',
+        title: "About",
+        link: "/about"
       },
       {
-        title: 'Portfolio',
-        link: '/portfolio',
+        title: "Portfolio",
+        link: "/portfolio"
       },
+      {
+        title: "Travel Videos",
+        link: "/travelvids"
+      }
     ];
     const Component = component;
 
@@ -182,26 +186,26 @@ class NavBar extends React.Component {
   render() {
     let hamburgerColor;
     let hamburgerColorHover;
-    if (this.props.location.pathname.indexOf('/portfolio/') >= 0) {
+    if (this.props.location.pathname.indexOf("/portfolio/") >= 0) {
       let portfolioPage;
       switch (this.props.location.pathname) {
-        case '/portfolio/cognite': {
+        case "/portfolio/cognite": {
           portfolioPage = this.props.portfolioData[0];
           break;
         }
-        case '/portfolio/slik': {
+        case "/portfolio/slik": {
           portfolioPage = this.props.portfolioData[1];
           break;
         }
-        case '/portfolio/jobmine': {
+        case "/portfolio/jobmine": {
           portfolioPage = this.props.portfolioData[2];
           break;
         }
-        case '/portfolio/path': {
+        case "/portfolio/path": {
           portfolioPage = this.props.portfolioData[3];
           break;
         }
-        case '/portfolio/planit': {
+        case "/portfolio/planit": {
           portfolioPage = this.props.portfolioData[4];
           break;
         }
@@ -221,7 +225,7 @@ class NavBar extends React.Component {
         <Logo
           to="/"
           iswhite={(
-            this.props.location.pathname.indexOf('/portfolio/') >= 0
+            this.props.location.pathname.indexOf("/portfolio/") >= 0
           ).toString()}
           hovercolor={hamburgerColorHover}
         >
@@ -289,13 +293,13 @@ class NavBar extends React.Component {
 
 NavBar.propTypes = {
   location: PropTypes.shape({
-    pathname: PropTypes.string.isRequired,
+    pathname: PropTypes.string.isRequired
   }).isRequired,
-  background: PropTypes.func,
+  background: PropTypes.func
 };
 
 NavBar.defaultProps = {
-  background: null,
+  background: null
 };
 
 export default withRouter(withTheme(NavBar));

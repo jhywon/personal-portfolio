@@ -1,18 +1,18 @@
-import React from 'react';
-import styled, { withTheme } from 'styled-components';
-import PropTypes from 'prop-types';
+import React from "react";
+import styled, { withTheme } from "styled-components";
+import PropTypes from "prop-types";
 
-import * as PropShapes from 'utils/propShapes';
-import { PortfolioPage } from 'components/PortfolioPage';
+import * as PropShapes from "utils/propShapes";
+import { PortfolioPage } from "components/PortfolioPage";
 import {
   MainText,
   TextGroup,
-  MainTextSubHeading,
-} from 'components/PortfolioPageText';
+  MainTextSubHeading
+} from "components/PortfolioPageText";
 
-import Game from 'assets/portfolio/planIt/game.png';
-import GameHome from 'assets/portfolio/planIt/gameHome.png';
-import GameRules from 'assets/portfolio/planIt/gameRules.gif';
+import Game from "assets/portfolio/planIt/game.png";
+import GameHome from "assets/portfolio/planIt/gameHome.png";
+import GameRules from "assets/portfolio/planIt/gameRules.gif";
 
 const PrimaryLink = styled.a`
   color: ${props => props.color};
@@ -30,7 +30,7 @@ const FinalImages = styled.div`
     justify-content: space-between;
     flex-direction: row;
   }
-  max-width: 800px;
+  max-width: ${props => props.theme.dimensions.maxPortfolioImageWidth};
 `;
 
 const GameImage = styled.img`
@@ -44,7 +44,7 @@ const GameImage = styled.img`
 
 class PlanItPortfolioPage extends React.Component {
   componentDidMount() {
-    document.title = 'Jessie W | Plan It';
+    document.title = "Jessie W | Plan It";
   }
   render() {
     return (
@@ -54,7 +54,7 @@ class PlanItPortfolioPage extends React.Component {
         previous={this.props.previous}
         next={this.props.next}
       >
-        <TextGroup heading="Background:">
+        <TextGroup heading="Background">
           <MainText>
             Awarded 3rd place at the UW Game Design Camp hackathon, hosted by
             the University of Waterloo in partnership with the Stratford
@@ -63,13 +63,13 @@ class PlanItPortfolioPage extends React.Component {
             puzzle game, Plan-It, for the 3-storey Christie® MicroTiles® wall.
           </MainText>
         </TextGroup>
-        <TextGroup heading="Goal:">
+        <TextGroup heading="Goal">
           <MainText>
             Design a 1 button video game for a 3-storey Christie® MicroTiles®
             wall in 48 hours.
           </MainText>
         </TextGroup>
-        <TextGroup heading="Process:">
+        <TextGroup heading="Process">
           <MainText>
             Being a hackathon, the requirements for the game were relatively
             open ended. The 3 main requirements were:
@@ -132,7 +132,7 @@ class PlanItPortfolioPage extends React.Component {
             <GameImage src={Game} alt="game" />
           </FinalImages>
         </TextGroup>
-        <TextGroup heading="Comments:">
+        <TextGroup heading="Comments">
           <MainText>
             In hindsight, the game that we completed was not very practical or
             feasible. More design resources should have been invested into the
@@ -149,7 +149,7 @@ class PlanItPortfolioPage extends React.Component {
             Regardless, this was a very strong effort from myself and my team.
             Although the game mechanics were not perfect, the visual design of
             the game awed the judges. It was incredible to end up playing and
-            demonstrating our game on the{' '}
+            demonstrating our game on the{" "}
             <PrimaryLink
               color={this.props.page.linkColor}
               hovercolor={this.props.page.primaryLight}
@@ -157,9 +157,9 @@ class PlanItPortfolioPage extends React.Component {
               target="_new"
             >
               3-storey
-            </PrimaryLink>{' '}
+            </PrimaryLink>{" "}
             wall, and was this was overall a great learning experience. This
-            game is far from perfect, but given the resource constraints, won us{' '}
+            game is far from perfect, but given the resource constraints, won us{" "}
             <PrimaryLink
               color={this.props.page.linkColor}
               hovercolor={this.props.page.primaryLight}
@@ -167,7 +167,7 @@ class PlanItPortfolioPage extends React.Component {
               target="_new"
             >
               3rd place overall
-            </PrimaryLink>{' '}
+            </PrimaryLink>{" "}
             at the hackathon, which we were extremely proud of :)
           </MainText>
         </TextGroup>
@@ -180,7 +180,7 @@ PlanItPortfolioPage.propTypes = {
   page: PropShapes.portfolioData.isRequired,
   previous: PropShapes.portfolioData.isRequired,
   next: PropShapes.portfolioData.isRequired,
-  id: PropTypes.number.isRequired,
+  id: PropTypes.number.isRequired
 };
 
 PlanItPortfolioPage.defaultProps = {};

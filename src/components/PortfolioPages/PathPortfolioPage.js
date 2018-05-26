@@ -1,17 +1,17 @@
-import React from 'react';
-import styled, { withTheme } from 'styled-components';
-import PropTypes from 'prop-types';
+import React from "react";
+import styled, { withTheme } from "styled-components";
+import PropTypes from "prop-types";
 
-import * as PropShapes from 'utils/propShapes';
-import { PortfolioPage } from 'components/PortfolioPage';
+import * as PropShapes from "utils/propShapes";
+import { PortfolioPage } from "components/PortfolioPage";
 import {
   MainText,
   TextGroup,
-  MainTextSubHeading,
-} from 'components/PortfolioPageText';
+  MainTextSubHeading
+} from "components/PortfolioPageText";
 
-import PathFinal from 'assets/portfolio/path/finalScreen.png';
-import Logo from 'assets/portfolio/path/circleLogo.png';
+import PathFinal from "assets/portfolio/path/finalScreen.png";
+import Logo from "assets/portfolio/path/circleLogo.png";
 
 const Image = styled.img`
   margin-top: ${props => props.theme.padding.sixteen};
@@ -20,7 +20,7 @@ const Image = styled.img`
 
 class PathPortfolioPage extends React.Component {
   componentDidMount() {
-    document.title = 'Jessie W | Path';
+    document.title = "Jessie W | Path";
   }
 
   render() {
@@ -31,7 +31,7 @@ class PathPortfolioPage extends React.Component {
         previous={this.props.previous}
         next={this.props.next}
       >
-        <TextGroup heading="Background:">
+        <TextGroup heading="Background">
           <MainText>
             At Finhacks, my team and I developed an Android application, Path.
             Path is a navigation tool that outputted the best public transit
@@ -42,12 +42,12 @@ class PathPortfolioPage extends React.Component {
             on the UI, designing the different mockups.
           </MainText>
         </TextGroup>
-        <TextGroup heading="Task:">
+        <TextGroup heading="Task">
           <MainText>
             Design / develop a product related to FinTech in 72 hours.
           </MainText>
         </TextGroup>
-        <TextGroup heading="Problem:">
+        <TextGroup heading="Problem">
           <MainText>
             Once the task was defined, my team and I began to evaluate everyday
             problems with regards to FinTech. As students, none of us owned a
@@ -75,7 +75,7 @@ class PathPortfolioPage extends React.Component {
             in him having to waste time waiting for busses and planning.
           </MainText>
         </TextGroup>
-        <TextGroup heading="Goal:">
+        <TextGroup heading="Goal">
           <MainText>
             Design and develop a mobile application that allows for the user to
             map multiple public transit routes at a time. This includes the
@@ -85,7 +85,7 @@ class PathPortfolioPage extends React.Component {
             possible is spent waiting for busses.
           </MainText>
         </TextGroup>
-        <TextGroup heading="Logo Design:">
+        <TextGroup heading="Logo Design">
           <MainText>
             Once the name of Path was decided, I was tasked to design a logo.
             After countless iterations, the logo below was finalized. This
@@ -94,10 +94,10 @@ class PathPortfolioPage extends React.Component {
           </MainText>
           <img src={Logo} alt="logo" />
         </TextGroup>
-        <TextGroup heading="Final Design:">
+        <TextGroup heading="Final Design">
           <MainText>
             The final design of the application is shown below. This was built
-            using <strong>Adobe Illustrator</strong> and{' '}
+            using <strong>Adobe Illustrator</strong> and{" "}
             <strong>Adobe Photoshop</strong>.
           </MainText>
           <Image src={PathFinal} alt="final design" />
@@ -111,7 +111,7 @@ PathPortfolioPage.propTypes = {
   page: PropShapes.portfolioData.isRequired,
   previous: PropShapes.portfolioData.isRequired,
   next: PropShapes.portfolioData.isRequired,
-  id: PropTypes.number.isRequired,
+  id: PropTypes.number.isRequired
 };
 
 export default withTheme(PathPortfolioPage);

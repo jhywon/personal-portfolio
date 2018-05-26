@@ -1,5 +1,5 @@
-import { injectGlobal } from 'styled-components';
-import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
+import { injectGlobal } from "styled-components";
+import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
 
 injectGlobal`
   @font-face {
@@ -14,7 +14,7 @@ injectGlobal`
     margin: 0;
     padding: 0;
     font-family: Lato, sans-serif;
-    background: #FCFCFC;
+    background: #FDFDFD;
   }
 
   h1 {
@@ -67,7 +67,15 @@ injectGlobal`
     list-style: none;
     padding-left: 0;
   }
+  ol {
+    @media (max-width: 768px) {
+      padding-left: 16px;
+    }
+  }
   li {
     list-style: none;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 30px;
   }
 `;

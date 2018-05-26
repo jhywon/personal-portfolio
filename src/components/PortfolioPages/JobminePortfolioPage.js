@@ -1,31 +1,31 @@
-import React from 'react';
-import styled, { withTheme } from 'styled-components';
-import PropTypes from 'prop-types';
+import React from "react";
+import styled, { withTheme } from "styled-components";
+import PropTypes from "prop-types";
 
-import * as PropShapes from 'utils/propShapes';
-import { PortfolioPage } from 'components/PortfolioPage';
+import * as PropShapes from "utils/propShapes";
+import { PortfolioPage } from "components/PortfolioPage";
 import {
   MainText,
   TextGroup,
-  MainTextSubHeading,
-} from 'components/PortfolioPageText';
+  MainTextSubHeading
+} from "components/PortfolioPageText";
 
-import jobmineOld from 'assets/portfolio/jobmine/jobmineOld.png';
+import jobmineOld from "assets/portfolio/jobmine/jobmineOld.png";
 
-import soc from 'assets/portfolio/jobmine/1soc.jpg';
-import currentDesign from 'assets/portfolio/jobmine/2currentDesign.JPG';
-import personas from 'assets/portfolio/jobmine/3personas.JPG';
-import userRequirements from 'assets/portfolio/jobmine/4userRequirements.JPG';
-import designWalkthrough from 'assets/portfolio/jobmine/5designWalkthrough.JPG';
-import heuristicEvaluation from 'assets/portfolio/jobmine/6heuristicEvaluation.JPG';
-import fta from 'assets/portfolio/jobmine/7fta.JPG';
-import hta from 'assets/portfolio/jobmine/8hta.JPG';
-import displayControls from 'assets/portfolio/jobmine/9displayControls.JPG';
+import soc from "assets/portfolio/jobmine/1soc.jpg";
+import currentDesign from "assets/portfolio/jobmine/2currentDesign.JPG";
+import personas from "assets/portfolio/jobmine/3personas.JPG";
+import userRequirements from "assets/portfolio/jobmine/4userRequirements.JPG";
+import designWalkthrough from "assets/portfolio/jobmine/5designWalkthrough.JPG";
+import heuristicEvaluation from "assets/portfolio/jobmine/6heuristicEvaluation.JPG";
+import fta from "assets/portfolio/jobmine/7fta.JPG";
+import hta from "assets/portfolio/jobmine/8hta.JPG";
+import displayControls from "assets/portfolio/jobmine/9displayControls.JPG";
 
-import jobmine1 from 'assets/portfolio/jobmine/jobmine1.png';
-import jobmine2 from 'assets/portfolio/jobmine/jobmine2.png';
-import jobmine3 from 'assets/portfolio/jobmine/jobmine3.png';
-import jobmine4 from 'assets/portfolio/jobmine/jobmine4.jpg';
+import jobmine1 from "assets/portfolio/jobmine/jobmine1.png";
+import jobmine2 from "assets/portfolio/jobmine/jobmine2.png";
+import jobmine3 from "assets/portfolio/jobmine/jobmine3.png";
+import jobmine4 from "assets/portfolio/jobmine/jobmine4.jpg";
 
 const FlexWrapper = styled.div`
   ${props => props.theme.flex.spaceBetween};
@@ -63,7 +63,7 @@ const SolutionProcessImage = styled.img`
 
 class JobminePortfolioPage extends React.Component {
   componentDidMount() {
-    document.title = 'Jessie W | Jobmine';
+    document.title = "Jessie W | Jobmine";
   }
   render() {
     return (
@@ -73,7 +73,7 @@ class JobminePortfolioPage extends React.Component {
         previous={this.props.previous}
         next={this.props.next}
       >
-        <TextGroup heading="Background:">
+        <TextGroup heading="Background">
           <MainText>
             For my Human Factors in Design course, the major project was
             completing a redesign. Through a series of 1 hour design sprints,
@@ -82,7 +82,7 @@ class JobminePortfolioPage extends React.Component {
             sprints, proposed a redesign of Jobmine for our persona.
           </MainText>
         </TextGroup>
-        <TextGroup heading="Problem:">
+        <TextGroup heading="Problem">
           <MainText>
             Jobmine, a job board for the University of Waterloo, was being used
             by thousands of students every year. However, the poor user
@@ -90,13 +90,13 @@ class JobminePortfolioPage extends React.Component {
           </MainText>
           <IntroImage src={jobmineOld} alt={jobmineOld} />
         </TextGroup>
-        <TextGroup heading="Goal:">
+        <TextGroup heading="Goal">
           <MainText>
             Redesign Jobmine to have a better user experience, with a focus on
             Human Factors.
           </MainText>
         </TextGroup>
-        <TextGroup heading="Process:">
+        <TextGroup heading="Process">
           <FlexWrapper>
             <SprintImageGroup>
               <MainTextSubHeading>1. Situation of Concern</MainTextSubHeading>
@@ -206,7 +206,7 @@ class JobminePortfolioPage extends React.Component {
             </SprintImageGroup>
           </FlexWrapper>
         </TextGroup>
-        <TextGroup heading="Proposed Solution:">
+        <TextGroup heading="Proposed Solution">
           <FlexWrapper>
             <SolutionProcessImage src={jobmine1} alt={jobmine1} />
             <SolutionProcessImage src={jobmine2} alt={jobmine2} />
@@ -214,7 +214,7 @@ class JobminePortfolioPage extends React.Component {
             <SolutionProcessImage src={jobmine4} alt={jobmine4} />
           </FlexWrapper>
         </TextGroup>
-        <TextGroup heading="Comments:">
+        <TextGroup heading="Comments">
           <MainText>
             This was a redesign completed for a school course, with certain
             criteria that needed to be attained. All sprints were timed, and
@@ -247,7 +247,7 @@ JobminePortfolioPage.propTypes = {
   page: PropShapes.portfolioData.isRequired,
   previous: PropShapes.portfolioData.isRequired,
   next: PropShapes.portfolioData.isRequired,
-  id: PropTypes.number.isRequired,
+  id: PropTypes.number.isRequired
 };
 
 export default withTheme(JobminePortfolioPage);

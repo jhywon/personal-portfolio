@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
+import React from "react";
+import styled from "styled-components";
+import PropTypes from "prop-types";
 
-import { ContentWrapper } from 'components/ContentWrapper';
+import { ContentWrapper } from "components/ContentWrapper";
 
 const Wrapper = styled.header`
   ${props => props.theme.flex.center};
@@ -13,7 +13,7 @@ const Wrapper = styled.header`
   background-repeat: no-repeat;
   background-position: center;
   padding: ${props => props.theme.padding.hundredTwenty} 0
-    ${props => props.theme.padding.twentyFour};
+    ${props => props.theme.padding.sixteen};
   @media (max-width: ${props => props.theme.breakpoints.md}) {
     padding: ${props => props.theme.padding.fourtyEight} 0 0;
   }
@@ -23,28 +23,22 @@ const Title = styled.h2`
   padding-bottom: ${props => props.theme.padding.eight};
 `;
 
-const SubHeading = styled.h5`
-  padding-bottom: ${props => props.theme.padding.twentyFour};
-`;
-
 const Header = props => (
   <Wrapper>
     <ContentWrapper>
       <Title>{props.mainHeading}</Title>
-      {props.subHeading && <SubHeading>{props.subHeading}</SubHeading>}
+      {props.children}
     </ContentWrapper>
   </Wrapper>
 );
 
 Header.propTypes = {
   mainHeading: PropTypes.string.isRequired,
-  subHeading: PropTypes.string,
-  children: PropTypes.node,
+  children: PropTypes.node
 };
 
 Header.defaultProps = {
-  subHeading: '',
-  children: null,
+  children: null
 };
 
 export default Header;

@@ -1,17 +1,17 @@
-import React from 'react';
-import styled, { withTheme } from 'styled-components';
-import PropTypes from 'prop-types';
+import React from "react";
+import styled, { withTheme } from "styled-components";
+import PropTypes from "prop-types";
 
-import * as PropShapes from 'utils/propShapes';
-import { PortfolioPage } from 'components/PortfolioPage';
+import * as PropShapes from "utils/propShapes";
+import { PortfolioPage } from "components/PortfolioPage";
 import {
   MainText,
   TextGroup,
-  MainTextSubHeading,
-} from 'components/PortfolioPageText';
+  MainTextSubHeading
+} from "components/PortfolioPageText";
 
-import CollectionsOld from 'assets/portfolio/slikPortfolio/collectionsOld.jpg';
-import CollectionsNew from 'assets/portfolio/slikPortfolio/collectionsNew.jpg';
+import CollectionsOld from "assets/portfolio/slikPortfolio/collectionsOld.jpg";
+import CollectionsNew from "assets/portfolio/slikPortfolio/collectionsNew.jpg";
 
 const PrimaryLink = styled.a`
   color: ${props => props.color};
@@ -45,7 +45,7 @@ const Image = styled.img`
 
 class SlikPortfolioPage extends React.Component {
   componentDidMount() {
-    document.title = 'Jessie W | Slik';
+    document.title = "Jessie W | Slik";
   }
   render() {
     return (
@@ -55,7 +55,7 @@ class SlikPortfolioPage extends React.Component {
         previous={this.props.previous}
         next={this.props.next}
       >
-        <TextGroup heading="Background:">
+        <TextGroup heading="Background">
           <MainText>
             During my second internship at The Tomlin Group, I was tasked to
             upgrade the SLIK Portfolio physical catalog into a web platform.
@@ -70,7 +70,7 @@ class SlikPortfolioPage extends React.Component {
             the online catalog.
           </MainText>
         </TextGroup>
-        <TextGroup heading="Problem:">
+        <TextGroup heading="Problem">
           <MainText>
             Every time a Slik Portfolio product was updated, anything from a
             small tag change to adding a new product, the catalog pdf would need
@@ -79,14 +79,14 @@ class SlikPortfolioPage extends React.Component {
             product line.
           </MainText>
         </TextGroup>
-        <TextGroup heading="Goal:">
+        <TextGroup heading="Goal">
           <MainText>
             Design and implement an online catalog that would allow customers to
             browse through all products in the Slik Portfolio line, while
             aligning with the product vision and being easy to update.
           </MainText>
         </TextGroup>
-        <TextGroup heading="Implementation:">
+        <TextGroup heading="Implementation">
           <MainText>
             As aforementioned, solving this problem had been attempted by an
             external company, but the result did not align with the company
@@ -112,11 +112,11 @@ class SlikPortfolioPage extends React.Component {
             company preferred this interface over their current site.
             <br />
             <br />
-            The languages used in this project were:{' '}
+            The languages used in this project were:{" "}
             <strong>HTML, CSS, JQuery, PHP,</strong> and <strong>SQL</strong>.
           </MainText>
         </TextGroup>
-        <TextGroup heading="Final Design:">
+        <TextGroup heading="Final Design">
           <MainText>Here is a preview of the upgrade!</MainText>
           <ImagesWrapper>
             <ImageWrapper>
@@ -129,7 +129,7 @@ class SlikPortfolioPage extends React.Component {
             </ImageWrapper>
           </ImagesWrapper>
           <MainText>
-            Check out the live site{' '}
+            Check out the live site{" "}
             <PrimaryLink
               color={this.props.page.linkColor}
               hovercolor={this.props.page.primaryLight}
@@ -140,7 +140,7 @@ class SlikPortfolioPage extends React.Component {
             </PrimaryLink>!
           </MainText>
         </TextGroup>
-        <TextGroup heading="Comments:">
+        <TextGroup heading="Comments">
           <MainText>
             There have been many changes to the website since working at the
             Tomlin Group, but I was able to build a foundation for the team to
@@ -165,9 +165,9 @@ SlikPortfolioPage.propTypes = {
   theme: PropTypes.shape({
     colors: PropTypes.shape({
       text: PropTypes.objectOf(PropTypes.string),
-      background: PropTypes.objectOf(PropTypes.string),
-    }),
-  }).isRequired,
+      background: PropTypes.objectOf(PropTypes.string)
+    })
+  }).isRequired
 };
 
 export default withTheme(SlikPortfolioPage);
