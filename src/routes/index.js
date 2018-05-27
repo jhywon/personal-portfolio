@@ -1,5 +1,5 @@
 import React from "react";
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import { ConnectedRouter } from "connected-react-router";
 import styled, { withTheme } from "styled-components";
 import { history } from "store";
@@ -11,6 +11,7 @@ import { HomeContainer, AboutContainer } from "containers";
 import { NavBar } from "components/NavBar";
 import { PortfolioSection } from "components/PortfolioSection";
 import { VideoSection } from "components/VideoSection";
+import { NotFound } from "components/NotFound";
 
 const Container = styled.div`
   text-align: left;
@@ -18,8 +19,8 @@ const Container = styled.div`
 
 function mapPortfolioPages() {
   return portfolioData.map((Page, index) => {
-    const next = index === portfolioData.length - 1 ? 0 : index + 1;
-    const previous = index === 0 ? portfolioData.length - 1 : index - 1;
+    const next = index === portfolioData.length - 2 ? 0 : index + 1;
+    const previous = index === 0 ? portfolioData.length - 2 : index - 1;
     return (
       <Route
         exact
@@ -45,15 +46,18 @@ function Routes() {
       <React.Fragment>
         <NavBar portfolioData={portfolioData} />
         <Container>
-          <Route exact path="/" component={HomeContainer} />
-          <Route exact path="/about" component={AboutContainer} />
-          <Route
-            exact
-            path="/portfolio"
-            render={() => <PortfolioSection content={portfolioData} />}
-          />
-          <Route exact path="/travelvids" component={VideoSection} />
-          {mapPortfolioPages()}
+          <Switch>
+            <Route exact path="/" component={HomeContainer} />
+            <Route exact path="/about" component={AboutContainer} />
+            <Route
+              exact
+              path="/portfolio"
+              render={() => <PortfolioSection content={portfolioData} />}
+            />
+            <Route exact path="/travel" component={VideoSection} />
+            {mapPortfolioPages()}
+            <Route exact path="*" component={NotFound} />
+          </Switch>
         </Container>
       </React.Fragment>
     </ConnectedRouter>
