@@ -1,15 +1,17 @@
-import React from 'react';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
+import React from "react";
+import styled from "styled-components";
+import PropTypes from "prop-types";
 
-import * as PropShapes from 'utils/propShapes';
-import { ContentWrapper } from 'components/ContentWrapper';
-import { ChangePage } from 'components/ChangePage';
+import * as PropShapes from "utils/propShapes";
+import { ContentWrapper } from "components/ContentWrapper";
+import { ChangePage } from "components/ChangePage";
 
 const Wrapper = styled.header`
   ${props => props.theme.flex.center};
   align-items: center;
-  background-image: url(${props => props.background});
+  background: ${props =>
+    !props.background && props.theme.colors.background.black};
+  background-image: url(${props => props.background && props.background});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -72,7 +74,7 @@ const ChangePageSmall = styled.div`
 const PortfolioPageHeader = props => (
   <React.Fragment>
     <Wrapper background={props.page.background}>
-      {props.previous && (
+      {!props.page.hide && (
         <ChangePageBigLeft>
           <ChangePage page={props.previous} />
         </ChangePageBigLeft>
@@ -84,11 +86,11 @@ const PortfolioPageHeader = props => (
           <Description>{props.description}</Description>
         </React.Fragment>
         <ChangePageSmall>
-          {props.previous && <ChangePage page={props.previous} />}
-          {props.next && <ChangePage page={props.next} next />}
+          {!props.page.hide && <ChangePage page={props.previous} />}
+          {!props.page.hide && <ChangePage page={props.next} next />}
         </ChangePageSmall>
       </Content>
-      {props.next && (
+      {!props.page.hide && (
         <ChangePageBigRight>
           <ChangePage page={props.next} next />
         </ChangePageBigRight>
@@ -100,10 +102,13 @@ const PortfolioPageHeader = props => (
 PortfolioPageHeader.propTypes = {
   description: PropTypes.string.isRequired,
   page: PropShapes.portfolioData.isRequired,
-  previous: PropShapes.portfolioData.isRequired,
-  next: PropShapes.portfolioData.isRequired,
+  previous: PropShapes.portfolioData,
+  next: PropShapes.portfolioData
 };
 
-PortfolioPageHeader.defaultProps = {};
+PortfolioPageHeader.defaultProps = {
+  previous: {},
+  next: {}
+};
 
 export default PortfolioPageHeader;

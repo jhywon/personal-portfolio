@@ -170,8 +170,8 @@ class NavBar extends React.Component {
         link: "/portfolio"
       },
       {
-        title: "Travel Videos",
-        link: "/travelvids"
+        title: "Travel",
+        link: "/travel"
       }
     ];
     const Component = component;
@@ -209,7 +209,15 @@ class NavBar extends React.Component {
           portfolioPage = this.props.portfolioData[4];
           break;
         }
+        case "/portfolio/opsup": {
+          portfolioPage = this.props.portfolioData[5];
+          break;
+        }
         default: {
+          portfolioPage = {
+            gradient: this.props.theme.colors.primaryGradient,
+            primary: this.props.theme.colors.primary
+          };
           break;
         }
       }

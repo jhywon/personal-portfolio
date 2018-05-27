@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
+import React from "react";
+import styled from "styled-components";
+import PropTypes from "prop-types";
 
-import { ContentWrapper } from 'components/ContentWrapper';
+import { ContentWrapper } from "components/ContentWrapper";
 
 const Wrapper = styled.section`
   ${props => props.theme.flex.center};
@@ -10,6 +10,7 @@ const Wrapper = styled.section`
   background: ${props => props.theme.colors.background.white};
   padding: ${props => props.theme.padding.twentyFour} 0
     ${props => props.theme.padding.eighty};
+  min-height: 100vh;
 `;
 
 const Heading = styled.h2`
@@ -27,12 +28,12 @@ const MainSection = props => (
 
 MainSection.propTypes = {
   children: PropTypes.node,
-  heading: PropTypes.string,
+  heading: PropTypes.string
 };
 
 MainSection.defaultProps = {
-  children: '',
-  heading: '',
+  children: "",
+  heading: ""
 };
 
 export default MainSection;

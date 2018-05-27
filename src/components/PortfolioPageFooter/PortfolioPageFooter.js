@@ -1,12 +1,12 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 // import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-import * as PropShapes from 'utils/propShapes';
-import { ContentWrapper } from 'components/ContentWrapper';
-import { DefaultButton } from 'components/Button';
-import { ChangePage } from 'components/ChangePage';
+import * as PropShapes from "utils/propShapes";
+import { ContentWrapper } from "components/ContentWrapper";
+import { DefaultButton } from "components/Button";
+import { ChangePage } from "components/ChangePage";
 
 const Wrapper = styled.header`
   ${props => props.theme.flex.center};
@@ -40,7 +40,7 @@ const PortfolioPageFooter = props => (
   <Wrapper background={props.page.background}>
     <ContentWrapper>
       <Content>
-        {props.previous && (
+        {!props.page.hide && (
           <StyledChangePage>
             <ChangePage page={props.previous} />
           </StyledChangePage>
@@ -50,7 +50,7 @@ const PortfolioPageFooter = props => (
             Back to Portfolio
           </DefaultButton>
         </Link>
-        {props.next && (
+        {!props.page.hide && (
           <StyledChangePage>
             <ChangePage page={props.next} next />
           </StyledChangePage>
@@ -62,10 +62,13 @@ const PortfolioPageFooter = props => (
 
 PortfolioPageFooter.propTypes = {
   page: PropShapes.portfolioData.isRequired,
-  previous: PropShapes.portfolioData.isRequired,
-  next: PropShapes.portfolioData.isRequired,
+  previous: PropShapes.portfolioData,
+  next: PropShapes.portfolioData
 };
 
-PortfolioPageFooter.defaultProps = {};
+PortfolioPageFooter.defaultProps = {
+  previous: {},
+  next: {}
+};
 
 export default PortfolioPageFooter;

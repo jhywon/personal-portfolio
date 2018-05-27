@@ -76,9 +76,12 @@ class AboutSection extends React.Component {
               <AvatarText>
                 I&#39;m a third year student studying Systems Design Engineering
                 at the University of Waterloo, and an aspiring engineer and
-                designer. I&#39;ve had the privilege of completing 4 outstanding
-                tech internships in 3 different countries, and am currently in
-                search of a new internship for Fall 2018. Check out my résumé{" "}
+                designer. I love to eat, travel, and have had the privilege of
+                completing 4 outstanding tech internships in 3 different
+                countries. I'm currently in search of a new internship
+                opportunity for Fall 2018, and would love to chat about your
+                company's mission and what I can do to further it. Check out my
+                résumé{" "}
                 <a
                   onClick={() => {
                     window.open(Resume);
@@ -135,8 +138,9 @@ class AboutSection extends React.Component {
                 Dragonboat team. I'm really looking forward to competing at the
                 World Dragonboat Championships in Hungary this July!{" "}
                 <strong>Most importantly, I love to EAT</strong>. I hope to
-                continue travelling, trying new cuisines, and going to as many
-                restaurants as I can on the world top 50 list.
+                continue <Link to="/travel">travelling</Link>, trying new
+                cuisines, and going to as many restaurants as I can on the world
+                top 50 list.
               </AvatarText>
             </TextWrapper>
           </TextAvatarGroup>

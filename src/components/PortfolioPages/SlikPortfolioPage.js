@@ -161,7 +161,6 @@ SlikPortfolioPage.propTypes = {
   page: PropShapes.portfolioData.isRequired,
   previous: PropShapes.portfolioData.isRequired,
   next: PropShapes.portfolioData.isRequired,
-  id: PropTypes.number.isRequired,
   theme: PropTypes.shape({
     colors: PropTypes.shape({
       text: PropTypes.objectOf(PropTypes.string),

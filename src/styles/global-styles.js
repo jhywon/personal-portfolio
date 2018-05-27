@@ -3,7 +3,7 @@ import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
 
 injectGlobal`
   @font-face {
-    font-family: Lato;
+    font-family: Lato-Regular;
     src: url(assets/Lato-Regular.ttf);
   }
 

@@ -1,6 +1,5 @@
 import React from "react";
 import styled, { withTheme } from "styled-components";
-import PropTypes from "prop-types";
 
 import * as PropShapes from "utils/propShapes";
 import { PortfolioPage } from "components/PortfolioPage";
@@ -110,8 +109,7 @@ class PathPortfolioPage extends React.Component {
 PathPortfolioPage.propTypes = {
   page: PropShapes.portfolioData.isRequired,
   previous: PropShapes.portfolioData.isRequired,
-  next: PropShapes.portfolioData.isRequired,
-  id: PropTypes.number.isRequired
+  next: PropShapes.portfolioData.isRequired
 };
 
 export default withTheme(PathPortfolioPage);

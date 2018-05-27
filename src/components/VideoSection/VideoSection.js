@@ -6,13 +6,13 @@ import { VideoGroup } from "components/VideoGroup";
 
 class VideoSection extends React.Component {
   componentDidMount() {
-    document.title = "Jessie W | Travel Videos";
+    document.title = "Jessie W | Travel";
   }
 
   render() {
     return (
       <React.Fragment>
-        <Header mainHeading="Travel Videos">
+        <Header mainHeading="Travel">
           <h5>
             I've been doing a lot of travelling lately where I've met so many
             amazing people, had so many new experiences, and of course, ate so
@@ -57,8 +57,8 @@ class VideoSection extends React.Component {
           </VideoGroup>
           <VideoGroup title="Next Stop: Hong Kong 2019">
             <p>
-              I'm going to be doing a study exchange to the Chinese University
-              of Hong Kong next winter. I'm hoping to explore Korea, Japan, and
+              I'm going to be doing a study abroad to the Chinese University of
+              Hong Kong next winter. I'm hoping to explore Korea, Japan, and
               different parts of Southeast Asia while I'm there, and I can't
               wait!
             </p>
