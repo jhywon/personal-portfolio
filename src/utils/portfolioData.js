@@ -3,8 +3,7 @@ import {
   SlikPortfolioPage,
   JobminePortfolioPage,
   PathPortfolioPage,
-  PlanItPortfolioPage,
-  OpSupPortfolioPage
+  PlanItPortfolioPage
 } from "components/PortfolioPages";
 
 import CognitePreview from "assets/portfolio/cognite/cognitePreview.png";
@@ -95,18 +94,6 @@ const portfolioData = [
     primary: "#2a649f",
     primaryLight: "#225282",
     linkColor: "#409af5"
-  },
-  {
-    id: 6,
-    title: "Operations Support",
-    link: "/portfolio/opsup",
-    component: OpSupPortfolioPage,
-    subHeading: "Application Design & Development",
-    gradient: "linear-gradient(to bottom right, #4592B2, #8b9fa7)",
-    primary: "#4592B2",
-    primaryLight: "#397a96",
-    linkColor: "#64afcf",
-    hide: true
   }
 ];
 

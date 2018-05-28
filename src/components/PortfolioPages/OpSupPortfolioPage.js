@@ -1,17 +1,19 @@
 import React from "react";
-import { withTheme } from "styled-components";
+import styled, { withTheme } from "styled-components";
 import PropTypes from "prop-types";
 
 import * as PropShapes from "utils/propShapes";
 import { PortfolioPage } from "components/PortfolioPage";
 import {
-  // MainText,
-  TextGroup
-  // MainTextSubHeading
+  MainText,
+  TextGroup,
+  MainTextSubHeading
 } from "components/PortfolioPageText";
 
-// import CollectionsOld from "assets/portfolio/slikPortfolio/collectionsOld.jpg";
-// import CollectionsNew from "assets/portfolio/slikPortfolio/collectionsNew.jpg";
+import IvarAasen from "assets/portfolio/opsup/ivarAasen.png";
+import Mocks from "assets/portfolio/opsup/mocks.jpg";
+import Tags from "assets/portfolio/opsup/tags.jpg";
+import Pnids from "assets/portfolio/opsup/pnids.jpg";
 
 // const PrimaryLink = styled.a`
 //   color: ${props => props.color};
@@ -21,6 +23,30 @@ import {
 //     color: ${props => props.hovercolor};
 //   }
 // `;
+
+const FlexWrapper = styled.div`
+  ${props => props.theme.flex.spaceBetween};
+  flex-wrap: wrap;
+`;
+
+const HalfImageWrapper = styled.div`
+  ${props => props.theme.flex.flexStart};
+  width: 49%;
+  flex-direction: column;
+  margin: ${props => props.theme.padding.sixteen} 0;
+  @media (max-width: ${props => props.theme.breakpoints.md}) {
+    width: 100%;
+  }
+  img {
+    width: ${props => (props.mobile ? "60%" : "100%")};
+  }
+`;
+
+const Image = styled.img`
+  margin: ${props => props.theme.padding.sixteen} 0;
+  width: 100%;
+  max-width: ${props => props.theme.dimensions.maxPortfolioImageWidth};
+`;
 
 class OpSupPortfolioPage extends React.Component {
   componentDidMount() {
@@ -32,7 +58,47 @@ class OpSupPortfolioPage extends React.Component {
         description="The development of an application to enhance the processes of offshore oil workers."
         page={this.props.page}
       >
-        <TextGroup heading="UNDER CONSTRUCTION" />
+        <TextGroup heading="Background">
+          <MainText>
+            AkerBP is an oil exploration and development company, with multiple
+            offshore oil rigs. These oil rigs, including Ivar Aasen pictured
+            below, cost approximately $1 million USD to operate daily.
+            Furthermore, since they are remote, can only be accessed by
+            helicopter, and it costs $10000 USD to transport one oil worker to
+            the rig. Thus, there are 3 groups of workers who work 2 weeks shifts
+            on the rig.
+          </MainText>
+          <Image src={IvarAasen} alt="IvarAasen" />
+        </TextGroup>
+        <TextGroup heading="Problem Statement">
+          <MainText>
+            The operation of oil rigs is extremely costly, and mistakes are even
+            more expensive. Not only are there many human errors, but these
+            mistakes put the lives of many oil workers at risk.
+          </MainText>
+        </TextGroup>
+        <TextGroup heading="Mission">
+          <MainText>
+            Enabling the field worker to be as efficient as possible through
+            making relevant information available everywhere.
+          </MainText>
+        </TextGroup>
+        <TextGroup heading="Workshop">
+          <FlexWrapper>
+            <div>
+              <MainTextSubHeading>Tags</MainTextSubHeading>
+              <Image src={Tags} alt="Tags" />
+            </div>
+            <HalfImageWrapper>
+              <MainTextSubHeading>PNIDS</MainTextSubHeading>
+              <img src={Pnids} alt="Pnids" />
+            </HalfImageWrapper>
+            <HalfImageWrapper>
+              <MainTextSubHeading>Mockups</MainTextSubHeading>
+              <img src={Mocks} alt="Mocks" />
+            </HalfImageWrapper>
+          </FlexWrapper>
+        </TextGroup>
       </PortfolioPage>
     );
   }

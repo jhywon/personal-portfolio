@@ -39,7 +39,6 @@ const ImageWrapper = styled.div`
 
 const Image = styled.img`
   width: 100%;
-
   margin: ${props => props.theme.padding.sixteen} 0;
 `;
 

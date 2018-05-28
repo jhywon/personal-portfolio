@@ -210,7 +210,7 @@ class NavBar extends React.Component {
           break;
         }
         case "/portfolio/opsup": {
-          portfolioPage = this.props.portfolioData[5];
+          portfolioPage = this.props.portfolioData[0];
           break;
         }
         default: {
