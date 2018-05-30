@@ -14,6 +14,10 @@ import IvarAasen from "assets/portfolio/opsup/ivarAasen.png";
 import Mocks from "assets/portfolio/opsup/mocks.jpg";
 import Tags from "assets/portfolio/opsup/tags.jpg";
 import Pnids from "assets/portfolio/opsup/pnids.jpg";
+import PersonaOne from "assets/portfolio/opsup/persona1.png";
+import PersonaTwo from "assets/portfolio/opsup/persona2.png";
+import PersonaOneFull from "assets/portfolio/opsup/persona1Full.png";
+import PersonaTwoFull from "assets/portfolio/opsup/persona2Full.png";
 
 // const PrimaryLink = styled.a`
 //   color: ${props => props.color};
@@ -45,7 +49,9 @@ const HalfImageWrapper = styled.div`
 const Image = styled.img`
   margin: ${props => props.theme.padding.sixteen} 0;
   width: 100%;
-  max-width: ${props => props.theme.dimensions.maxPortfolioImageWidth};
+  max-width: ${props =>
+    props.full ? "100%" : props.theme.dimensions.maxPortfolioImageWidth};
+  cursor: ${props => props.onClick && "pointer"};
 `;
 
 class OpSupPortfolioPage extends React.Component {
@@ -82,6 +88,24 @@ class OpSupPortfolioPage extends React.Component {
             Enabling the field worker to be as efficient as possible through
             making relevant information available everywhere.
           </MainText>
+        </TextGroup>
+        <TextGroup heading="Personas">
+          <Image
+            full
+            onClick={() => {
+              window.open(PersonaOneFull);
+            }}
+            src={PersonaOne}
+            alt="persona1"
+          />
+          <Image
+            full
+            onClick={() => {
+              window.open(PersonaTwoFull);
+            }}
+            src={PersonaTwo}
+            alt="persona2"
+          />
         </TextGroup>
         <TextGroup heading="Workshop">
           <FlexWrapper>
