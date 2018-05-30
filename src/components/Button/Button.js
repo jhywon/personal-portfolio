@@ -8,6 +8,7 @@ const StyledButton = styled.button`
     ${props => props.theme.padding.sixteen};
   transition: 0.3s all;
   cursor: pointer;
+  font-family: "Lato", sans-serif;
 `;
 
 const StyledPrimaryButton = StyledButton.extend`

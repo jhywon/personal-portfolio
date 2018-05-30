@@ -40,14 +40,20 @@ injectGlobal`
     letter-spacing: 2px;
   }
   h5 {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 300;
     letter-spacing: 1px;
   }
+  h6 {
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+  }
   p {
-    font-size: 18px;
+    font-size: 19px;
     font-weight: 300;
     line-height: 30px;
+    font-family: 'Source Sans Pro', sans-serif;
   }
   a {
     color: #ed421c;
