@@ -18,6 +18,15 @@ import PersonaOne from "assets/portfolio/opsup/persona1.png";
 import PersonaTwo from "assets/portfolio/opsup/persona2.png";
 import PersonaOneFull from "assets/portfolio/opsup/persona1Full.png";
 import PersonaTwoFull from "assets/portfolio/opsup/persona2Full.png";
+import NotesOne from "assets/portfolio/opsup/sketches/notes1.png";
+import NotesTwo from "assets/portfolio/opsup/sketches/notes2.png";
+import SketchOne from "assets/portfolio/opsup/sketches/sketch1.png";
+import SketchTwo from "assets/portfolio/opsup/sketches/sketch2.png";
+import SketchThree from "assets/portfolio/opsup/sketches/sketch3.png";
+import SketchFour from "assets/portfolio/opsup/sketches/sketch4.png";
+import FlowOne from "assets/portfolio/opsup/sketches/flow1.png";
+import FlowTwo from "assets/portfolio/opsup/sketches/flow2.png";
+import FlowThree from "assets/portfolio/opsup/sketches/flow3.png";
 
 // const PrimaryLink = styled.a`
 //   color: ${props => props.color};
@@ -120,6 +129,45 @@ class OpSupPortfolioPage extends React.Component {
             <HalfImageWrapper>
               <MainTextSubHeading>Mockups</MainTextSubHeading>
               <img src={Mocks} alt="Mocks" />
+            </HalfImageWrapper>
+          </FlexWrapper>
+        </TextGroup>
+        <TextGroup heading="Notes">
+          <FlexWrapper>
+            <HalfImageWrapper>
+              <img src={NotesOne} alt="NotesOne" />
+            </HalfImageWrapper>
+            <HalfImageWrapper>
+              <img src={NotesTwo} alt="NotesTwo" />
+            </HalfImageWrapper>
+          </FlexWrapper>
+        </TextGroup>
+        <TextGroup heading="Sketches">
+          <FlexWrapper>
+            <HalfImageWrapper>
+              <img src={SketchOne} alt="SketchOne" />
+            </HalfImageWrapper>
+            <HalfImageWrapper>
+              <img src={SketchTwo} alt="SketchTwo" />
+            </HalfImageWrapper>
+            <HalfImageWrapper>
+              <img src={SketchThree} alt="SketchThree" />
+            </HalfImageWrapper>
+            <HalfImageWrapper>
+              <img src={SketchFour} alt="SketchFour" />
+            </HalfImageWrapper>
+          </FlexWrapper>
+        </TextGroup>
+        <TextGroup heading="Flows">
+          <FlexWrapper>
+            <HalfImageWrapper>
+              <img src={FlowOne} alt="FlowOne" />
+            </HalfImageWrapper>
+            <HalfImageWrapper>
+              <img src={FlowTwo} alt="FlowTwo" />
+            </HalfImageWrapper>
+            <HalfImageWrapper>
+              <img src={FlowThree} alt="FlowThree" />
             </HalfImageWrapper>
           </FlexWrapper>
         </TextGroup>
