@@ -40,7 +40,10 @@ class VideoSection extends React.Component {
               Aldo for all the laughs!
             </p>
           </VideoGroup>
-          <VideoGroup title="Norway 2018">
+          <VideoGroup
+            title="Norway 2018"
+            src="https://www.youtube.com/embed/WRYtYgK17n4"
+          >
             <p>
               I spent 4 months living in Norway while working as a Software
               Engineer Intern at{" "}
@@ -53,7 +56,6 @@ class VideoSection extends React.Component {
               one day when I'm rich I'll be able to buy a cabin in the Alps and
               go there more often lol.
             </p>
-            <h4>Video under construction - stay tuned :)</h4>
           </VideoGroup>
           <VideoGroup title="Next Stop: Hong Kong 2019">
             <p>
