@@ -16,10 +16,10 @@ class VideoSection extends React.Component {
           <h6>
             I've been doing a lot of travelling lately where I've met so many
             amazing people, had so many new experiences, and of course, ate so
-            much delicious food! I starting making short videos of my trips, and
+            much delicious food! I started making short videos of my trips, and
             while these are by no means high-quality or well-edited videos, I
             had a lot of fun making them. I guess they're just a way for me to
-            look back at all the good memories. Check them out!
+            look back at all the good memories. Check them out below!
           </h6>
         </Header>
         <MainSection>
