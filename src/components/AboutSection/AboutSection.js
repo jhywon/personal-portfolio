@@ -77,11 +77,10 @@ class AboutSection extends React.Component {
                 I&#39;m a third year student studying Systems Design Engineering
                 at the University of Waterloo, and an aspiring engineer and
                 designer. I love to eat, travel, and have had the privilege of
-                completing 4 outstanding tech internships in 3 different
-                countries. I'm currently in search of a new internship
-                opportunity for Fall 2018, and would love to chat about your
-                company's mission and what I can do to further it. Check out my
-                résumé{" "}
+                completing 4 tech internships in 3 different countries. I'm
+                currently in search of a new internship opportunity for Summer
+                2019, and would love to chat about your company's mission and
+                what I can do to further it. Check out my résumé{" "}
                 <a
                   onClick={() => {
                     window.open(Resume);
