@@ -40,7 +40,7 @@ class Home extends React.Component {
             <SubHeading>Designer, Engineer, and Major Foodie</SubHeading>
             <MainText>
               Currently studying in Waterloo and searching for a{" "}
-              <strong>Fall 2018</strong> internship opportunity
+              <strong>Summer 2019</strong> internship opportunity
             </MainText>
             <Links>
               <Link to="/about">
