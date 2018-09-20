@@ -42,7 +42,7 @@ const GameImage = styled.img`
   }
 `;
 
-class PlanItPortfolioPage extends React.Component {
+class PostCajonPortfolioPage extends React.Component {
   componentDidMount() {
     document.title = "Jessie W | Plan It";
   }
@@ -123,8 +123,7 @@ class PlanItPortfolioPage extends React.Component {
             <br />
             <br />
           </MainText>
-        </TextGroup>
-        <TextGroup heading="Final Design">
+          <MainTextSubHeading>Final Design:</MainTextSubHeading>
           <FinalImages>
             <GameImage src={GameHome} alt="home" />
             <GameImage src={GameRules} alt="rules" />
@@ -175,13 +174,13 @@ class PlanItPortfolioPage extends React.Component {
   }
 }
 
-PlanItPortfolioPage.propTypes = {
+PostCajonPortfolioPage.propTypes = {
   page: PropShapes.portfolioData.isRequired,
   previous: PropShapes.portfolioData.isRequired,
   next: PropShapes.portfolioData.isRequired,
   id: PropTypes.number.isRequired
 };
 
-PlanItPortfolioPage.defaultProps = {};
+PostCajonPortfolioPage.defaultProps = {};
 
-export default withTheme(PlanItPortfolioPage);
+export default withTheme(PostCajonPortfolioPage);

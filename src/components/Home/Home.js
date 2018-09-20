@@ -6,6 +6,8 @@ import { ContentWrapper } from "components/ContentWrapper";
 import { PrimaryButton } from "components/Button";
 import { AnimatedBackground } from "components/AnimatedBackground";
 
+import Resume from "assets/resume.pdf";
+
 const Wrapper = styled.div`
   ${props => props.theme.flex.center};
   color: ${props => props.theme.colors.text.black};
@@ -17,10 +19,15 @@ const MainHeading = styled.h1`
   margin-bottom: ${props => props.theme.padding.eight};
 `;
 
-const SubHeading = styled.h4``;
+const SubHeading = styled.h6`
+  font-weight: 400;
+`;
 
-const MainText = styled.h5`
+const MainText = styled.p`
+  margin-top: ${props => props.theme.padding.sixteen};
   margin-bottom: ${props => props.theme.padding.twentyFour};
+  font-size: 20px;
+  letter-spacing: 1px;
 `;
 
 const Links = styled.p``;
@@ -48,7 +55,14 @@ class Home extends React.Component {
               </Link>{" "}
               <Link to="/portfolio">
                 <PrimaryButton>Portfolio</PrimaryButton>
-              </Link>
+              </Link>{" "}
+              <PrimaryButton
+                onClick={() => {
+                  window.open(Resume);
+                }}
+              >
+                Resume
+              </PrimaryButton>
             </Links>
           </ContentWrapper>
         </Wrapper>

@@ -41,19 +41,20 @@ injectGlobal`
   }
   h5 {
     font-size: 22px;
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: 1px;
   }
   h6 {
+    font-weight: 600;
     font-size: 20px;
-    font-weight: 300;
-    letter-spacing: 0.5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
   }
   p {
-    font-size: 19px;
-    font-weight: 300;
+    font-size: 18px;
     line-height: 30px;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
+    font-family: 'Open Sans', sans-serif;
   }
   a {
     color: #ed421c;
@@ -81,7 +82,8 @@ injectGlobal`
   li {
     list-style: none;
     font-size: 18px;
-    font-weight: 300;
     line-height: 30px;
+    font-weight: 300;
+    font-family: 'Open Sans', sans-serif;
   }
 `;

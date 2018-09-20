@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 import { MainSection } from "components/MainSection";
 import { Header } from "components/Header";
-import { PrimaryButton } from "components/Button";
+// import { PrimaryButton } from "components/Button";
 
 import AvatarOne from "assets/about/jessie.png";
 import AvatarOneHover from "assets/about/jessie-1.png";
@@ -46,8 +46,8 @@ const AvatarImage = styled.img`
   }
 `;
 
-const Heading = styled.h4`
-  margin-bottom: ${props => props.theme.padding.twentyFour};
+const Heading = styled.h6`
+  margin-bottom: ${props => props.theme.padding.sixteen};
 `;
 
 class AboutSection extends React.Component {
@@ -75,20 +75,19 @@ class AboutSection extends React.Component {
               <Heading>Hi, I&#39;m Jessie!</Heading>
               <AvatarText>
                 I&#39;m a third year student studying Systems Design Engineering
-                at the University of Waterloo, and an aspiring engineer and
-                designer. I love to eat, travel, and have had the privilege of
-                completing 4 tech internships in 3 different countries. I'm
-                currently in search of a new internship opportunity for Summer
-                2019, and would love to chat about your company's mission and
-                what I can do to further it. Check out my résumé{" "}
+                at the University of Waterloo. I love to eat, travel, and have
+                had the privilege of completing 5 tech internships in 4
+                different countries. I'm currently in search of a new internship
+                for Summer 2019, and would love to chat about your company's
+                mission and what I can do to further it. Check out my{" "}
                 <a
                   onClick={() => {
                     window.open(Resume);
                   }}
                 >
-                  here
+                  résumé
                 </a>{" "}
-                to learn more about what I&#39;ve done!
+                to learn more about what I&#39;ve done.
               </AvatarText>
             </TextWrapper>
           </TextAvatarGroup>
@@ -107,14 +106,15 @@ class AboutSection extends React.Component {
               <Heading>What do I do?</Heading>
               <AvatarText>
                 I spend most of my days working towards my degree, and am
-                especially interested in learning and understanding the design
-                process. I enjoy working closely with users in creating a great
-                user experience, love a good challenge, and am eager to continue
-                exploring the different aspects of engineering.
+                especially interested in learning and understanding the{" "}
+                <Link to="/portfolio">design</Link> process. I enjoy working
+                closely with users in creating a great user experience, love a
+                good challenge, and am eager to continue exploring the different
+                aspects of engineering.
               </AvatarText>
-              <Link to="/portfolio">
+              {/* <Link to="/portfolio">
                 <PrimaryButton>View My Portfolio</PrimaryButton>
-              </Link>
+              </Link> */}
             </TextWrapper>
           </TextAvatarGroup>
           <TextAvatarGroup>
@@ -131,15 +131,13 @@ class AboutSection extends React.Component {
             <TextWrapper>
               <Heading>And in my spare time?</Heading>
               <AvatarText>
-                I love playing board games, especially word games (my all-time
-                favourite is Scrabble). I also like to play sports - I swam
-                competitively for 11 years and am now on my school varsity
-                Dragonboat team. I'm really looking forward to competing at the
-                World Dragonboat Championships in Hungary this July!{" "}
-                <strong>Most importantly, I love to EAT</strong>. I hope to
-                continue <Link to="/travel">travelling</Link>, trying new
-                cuisines, and going to as many restaurants as I can on the world
-                top 50 list.
+                <strong>I love to EAT</strong>. My favourite thing about food is
+                how each cuisine is so unique, from the flavour profile to the
+                ingredients used, and I love the huge part of culture it plays.
+                I hope to continue trying new foods, and going to as many
+                restaurants as I can. In the rare case that I'm not eating,
+                you'll probably find me playing board games, laughing at my own
+                jokes, or planning my next <Link to="/travel">trip</Link>.
               </AvatarText>
             </TextWrapper>
           </TextAvatarGroup>

@@ -12,7 +12,6 @@ import Github from "assets/icon/github.svg";
 import Instagram from "assets/icon/instagram.svg";
 import LinkedIn from "assets/icon/linkedin.svg";
 import Email from "assets/icon/email.svg";
-import ResumeIcon from "assets/icon/resume.svg";
 
 const Container = styled.div`
   ${props => props.theme.flex.spaceBetween};
@@ -97,6 +96,12 @@ const HamburgerLinks = styled.div`
 `;
 
 const HamburgerLink = styled(Link)`
+  color: ${props => props.theme.colors.text.white};
+  margin: ${props => props.theme.padding.sixteen} 0;
+  font-weight: 500;
+`;
+
+const HamburgerLinkResume = styled.a`
   color: ${props => props.theme.colors.text.white};
   margin: ${props => props.theme.padding.sixteen} 0;
   font-weight: 500;
@@ -209,6 +214,10 @@ class NavBar extends React.Component {
           portfolioPage = this.props.portfolioData[4];
           break;
         }
+        case "/portfolio/postcajon": {
+          portfolioPage = this.props.portfolioData[5];
+          break;
+        }
         case "/portfolio/opsup": {
           portfolioPage = this.props.portfolioData[0];
           break;
@@ -261,7 +270,18 @@ class NavBar extends React.Component {
         {this.state.isMenuOpen && (
           <HamburgerMenu>
             <ContentWrapper>
-              <HamburgerLinks>{this.mapLinks(HamburgerLink)}</HamburgerLinks>
+              <HamburgerLinks>
+                <React.Fragment>
+                  {this.mapLinks(HamburgerLink)}
+                  <HamburgerLinkResume
+                    onClick={() => {
+                      window.open(Resume);
+                    }}
+                  >
+                    Resume
+                  </HamburgerLinkResume>
+                </React.Fragment>
+              </HamburgerLinks>
               <Buttons>
                 <SocialButton
                   href="https://www.instagram.com/jessie.won/"
@@ -283,12 +303,6 @@ class NavBar extends React.Component {
                   href="mailto:jessiehywon@gmail.com?Subject=Hello"
                   target="_new"
                   icon={Email}
-                />
-                <SocialButton
-                  onClick={() => {
-                    window.open(Resume);
-                  }}
-                  icon={ResumeIcon}
                 />
               </Buttons>
             </ContentWrapper>

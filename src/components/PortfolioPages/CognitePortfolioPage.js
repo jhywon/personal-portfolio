@@ -5,8 +5,8 @@ import * as PropShapes from "utils/propShapes";
 import { PortfolioPage } from "components/PortfolioPage";
 import {
   MainText,
-  TextGroup,
-  MainTextSubHeading
+  TextGroup
+  // MainTextSubHeading
 } from "components/PortfolioPageText";
 
 import OldHomeDesktop from "assets/portfolio/cognite/old/oldHomeDesktop.png";
@@ -152,7 +152,8 @@ class CognitePortfolioPage extends React.Component {
               <img src={OldHomeMobile} alt="old home desktop" />
             </HalfImageWrapper>
           </FlexWrapper>
-          <MainTextSubHeading>Content Improvement</MainTextSubHeading>
+        </TextGroup>
+        <TextGroup heading="Content Improvement">
           <MainText>
             Before starting the design, a lot of updated and modernized content
             was required from the marketing teams. Generating this content would
@@ -213,10 +214,10 @@ class CognitePortfolioPage extends React.Component {
               target="_new"
             >
               team page
-            </PrimaryLink>. After further research, we found that many modern
-            companies were doing the same, so we proposed a page with photos and
-            a short biography of everyone, as shown in the preliminary mockup
-            below.
+            </PrimaryLink>
+            . After further research, we found that many modern companies were
+            doing the same, so we proposed a page with photos and a short
+            biography of everyone, as shown in the preliminary mockup below.
           </MainText>
           <FlexWrapper>
             <HalfImageWrapper>
@@ -241,7 +242,8 @@ class CognitePortfolioPage extends React.Component {
               target="_new"
             >
               here
-            </PrimaryLink>.
+            </PrimaryLink>
+            .
           </MainText>
           <Image src={NewTeamDesktop} alt="about" />
           <MainText>
@@ -297,7 +299,8 @@ class CognitePortfolioPage extends React.Component {
               target="_new"
             >
               here
-            </PrimaryLink>!
+            </PrimaryLink>
+            !
           </MainText>
         </TextGroup>
       </PortfolioPage>

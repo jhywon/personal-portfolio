@@ -1,10 +1,10 @@
-import React from 'react';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
+import React from "react";
+import styled from "styled-components";
+import PropTypes from "prop-types";
 
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-import Background from 'assets/portfolio/planIt/planItPreview.png';
+import Background from "assets/portfolio/planIt/planItPreview.png";
 
 const Container = styled(Link)`
   width: 100%;
@@ -74,14 +74,14 @@ PortfolioGridItem.propTypes = {
   mainHeading: PropTypes.string,
   subHeading: PropTypes.string,
   background: PropTypes.string,
-  link: PropTypes.string,
+  link: PropTypes.string
 };
 
 PortfolioGridItem.defaultProps = {
-  mainHeading: '',
-  subHeading: '',
+  mainHeading: "",
+  subHeading: "",
   background: Background,
-  link: '',
+  link: ""
 };
 
 export default PortfolioGridItem;

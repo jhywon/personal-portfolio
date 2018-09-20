@@ -1,20 +1,19 @@
-import React from 'react';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
+import React from "react";
+import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const Text = styled.p``;
 
 const Group = styled.div`
-  margin-bottom: ${props => props.theme.padding.thirtyTwo};
+  margin-bottom: ${props => props.theme.padding.fourtyEight};
 `;
 
-const Heading = styled.h3`
+const Heading = styled.h6`
   margin-bottom: ${props => props.theme.padding.sixteen};
   color: ${props => props.color};
-  font-weight: 400;
 `;
 
-const SubHeading = styled.h4`
+const SubHeading = styled.h5`
   margin-bottom: ${props => props.theme.padding.eight};
   margin-top: ${props => props.theme.padding.eight};
   color: ${props => props.color};
@@ -23,7 +22,7 @@ const SubHeading = styled.h4`
 const MainText = props => <Text>{props.children}</Text>;
 
 MainText.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired
 };
 
 const TextGroup = props => (
@@ -36,11 +35,11 @@ const TextGroup = props => (
 TextGroup.propTypes = {
   heading: PropTypes.string,
   color: PropTypes.string,
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired
 };
 
 TextGroup.defaultProps = {
-  heading: '',
+  heading: ""
 };
 
 const MainTextSubHeading = props => (
@@ -49,7 +48,7 @@ const MainTextSubHeading = props => (
 
 MainTextSubHeading.propTypes = {
   children: PropTypes.node.isRequired,
-  color: PropTypes.string,
+  color: PropTypes.string
 };
 
 export { MainText, TextGroup, MainTextSubHeading };

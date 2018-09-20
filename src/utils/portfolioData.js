@@ -4,6 +4,7 @@ import {
   JobminePortfolioPage,
   PathPortfolioPage,
   PlanItPortfolioPage
+  // PostCajonPortfolioPage
 } from "components/PortfolioPages";
 
 import CognitePreview from "assets/portfolio/cognite/cognitePreview.png";
@@ -95,6 +96,20 @@ const portfolioData = [
     primaryLight: "#225282",
     linkColor: "#409af5"
   }
+  // {
+  //   id: 6,
+  //   title: "Post Cajón",
+  //   link: "/portfolio/postcajon",
+  //   component: PostCajonPortfolioPage,
+  //   subHeading: "Electronic Drum Design & Development",
+  //   gridImage: PlanItPreview,
+  //   logo: PlanItLogo,
+  //   background: PlanItBackground,
+  //   gradient: "linear-gradient(to bottom right, brown, #2BA097)",
+  //   primary: "brown",
+  //   primaryLight: "brown",
+  //   linkColor: "brown"
+  // }
 ];
 
 export default portfolioData;
