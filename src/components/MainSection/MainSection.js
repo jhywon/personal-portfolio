@@ -9,7 +9,7 @@ const Wrapper = styled.section`
   color: ${props => props.theme.colors.text.black};
   background: ${props => props.theme.colors.background.white};
   padding: ${props => props.theme.padding.twentyFour} 0
-    ${props => props.theme.padding.eighty};
+    ${props => props.theme.padding.fourtyEight};
   min-height: 100vh;
 `;
 

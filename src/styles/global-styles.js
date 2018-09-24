@@ -41,7 +41,7 @@ injectGlobal`
   }
   h5 {
     font-size: 22px;
-    font-weight: 400;
+    font-weight: 300;
     letter-spacing: 1px;
   }
   h6 {
@@ -85,5 +85,9 @@ injectGlobal`
     line-height: 30px;
     font-weight: 300;
     font-family: 'Open Sans', sans-serif;
+  }
+
+  button {
+    outline: none;
   }
 `;

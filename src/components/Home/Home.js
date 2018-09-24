@@ -32,6 +32,12 @@ const MainText = styled.p`
 
 const Links = styled.p``;
 
+const ResumeButton = styled(PrimaryButton)`
+  @media (max-width: ${props => props.theme.breakpoints.sm}) {
+    margin-top: 6px;
+  }
+`;
+
 class Home extends React.Component {
   componentDidMount() {
     document.title = "Jessie Won";
@@ -56,13 +62,13 @@ class Home extends React.Component {
               <Link to="/portfolio">
                 <PrimaryButton>Portfolio</PrimaryButton>
               </Link>{" "}
-              <PrimaryButton
+              <ResumeButton
                 onClick={() => {
                   window.open(Resume);
                 }}
               >
                 Resume
-              </PrimaryButton>
+              </ResumeButton>
             </Links>
           </ContentWrapper>
         </Wrapper>
