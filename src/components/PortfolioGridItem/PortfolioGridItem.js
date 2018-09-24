@@ -20,7 +20,7 @@ const Container = styled(Link)`
 
 const Image = styled.img`
   width: 100%;
-  border-radius: 12px;
+  border-radius: 6px;
   display: block;
 `;
 
@@ -32,7 +32,7 @@ const Overlay = styled.div`
   right: 0;
   height: 100%;
   width: 100%;
-  border-radius: 12px;
+  border-radius: 6px;
   opacity: 0;
   transition: 0.4s ease;
   background-color: ${props => props.theme.colors.background.black};
