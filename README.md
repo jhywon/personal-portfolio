@@ -19,6 +19,19 @@ npm start
 
 ## Deploy to Production
 
+Make sure the ENV variable `REMOTE` is set. For example, run
+
+```shell
+REMOTE=ubuntu@ec2-xx-xx-xx-xx.us-east-2.compute.amazonaws.com
+```
+
+or put
+```bash
+export REMOTE=ubuntu@ec2-xx-xx-xx-xx.us-east-2.compute.amazonaws.com
+```
+
+in your `.bashrc` or `.zshrc`
+
 ```shell
 cd personal-website
 yarn build
