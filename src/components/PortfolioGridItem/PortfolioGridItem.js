@@ -8,10 +8,10 @@ import Background from "assets/portfolio/planIt/planItPreview.png";
 
 const Container = styled(Link)`
   width: 100%;
-  margin-bottom: ${props => props.theme.padding.thirtyTwo};
+  margin-bottom: ${props => props.theme.padding.sixteen};
   position: relative;
   @media (min-width: ${props => props.theme.breakpoints.md}) {
-    width: 48%;
+    width: 32%;
   }
   :hover > div {
     opacity: 0.85;
@@ -20,7 +20,7 @@ const Container = styled(Link)`
 
 const Image = styled.img`
   width: 100%;
-  border-radius: 6px;
+  border-radius: 4px;
   display: block;
 `;
 
@@ -32,7 +32,7 @@ const Overlay = styled.div`
   right: 0;
   height: 100%;
   width: 100%;
-  border-radius: 6px;
+  border-radius: 4px;
   opacity: 0;
   transition: 0.4s ease;
   background-color: ${props => props.theme.colors.background.black};

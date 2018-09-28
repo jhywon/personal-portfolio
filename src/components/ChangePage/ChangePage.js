@@ -1,10 +1,10 @@
-import React from 'react';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import { Icon } from 'antd';
+import React from "react";
+import styled from "styled-components";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+import { Icon } from "antd";
 
-import * as PropShapes from 'utils/propShapes';
+import * as PropShapes from "utils/propShapes";
 
 const Wrapper = styled.div`
   ${props => props.theme.flex.center};
@@ -36,7 +36,7 @@ const StyledLink = styled(Link)`
 `;
 
 const Logo = styled.img`
-  width: ${props => (props.small ? '35px' : '100%')};
+  width: ${props => (props.small ? "35px" : "100%")};
 `;
 
 const ChangePage = props => (
@@ -48,7 +48,7 @@ const ChangePage = props => (
       primary={props.page.primary}
     >
       <Logo
-        small={props.page.title === 'Jobmine' || props.page.title === 'Path'}
+        small={props.page.title === "Jobmine" || props.page.title === "Path"}
         src={props.page.logo}
         alt={props.page.title}
       />
@@ -59,11 +59,11 @@ const ChangePage = props => (
 
 ChangePage.propTypes = {
   page: PropShapes.portfolioData.isRequired,
-  next: PropTypes.bool,
+  next: PropTypes.bool
 };
 
 ChangePage.defaultProps = {
-  next: false,
+  next: false
 };
 
 export default ChangePage;
