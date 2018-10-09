@@ -25,7 +25,7 @@ class PathPortfolioPage extends React.Component {
   render() {
     return (
       <PortfolioPage
-        description="A redesign of Jobmine, a job board for the University of Waterloo."
+        description="The design of an Android application to optimize public transportation."
         page={this.props.page}
         previous={this.props.previous}
         next={this.props.next}

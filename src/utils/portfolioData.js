@@ -19,6 +19,7 @@ import SlikLogo from "assets/portfolio/slikPortfolio/logo.png";
 import JobmineLogo from "assets/portfolio/jobmine/logo.png";
 import PathLogo from "assets/portfolio/path/logo.png";
 import PlanItLogo from "assets/portfolio/planIt/logo.png";
+import PostCajonLogo from "assets/portfolio/postCajon/logo.png";
 
 import CogniteBackground from "assets/portfolio/cognite/background.png";
 import SlikBackground from "assets/portfolio/slikPortfolio/background.png";
@@ -102,14 +103,15 @@ const portfolioData = [
     title: "Post Cajón",
     link: "/portfolio/postcajon",
     component: PostCajonPortfolioPage,
-    subHeading: "Electronic Drum Design & Development",
+    // subHeading: "Electronic Drum Design & Development",
+    subHeading: "WORK IN PROGRESS",
     gridImage: PostCajonPreview,
-    logo: PlanItLogo,
-    background: PlanItBackground,
-    gradient: "linear-gradient(to bottom right, brown, orange)",
-    primary: "brown",
-    primaryLight: "brown",
-    linkColor: "brown"
+    logo: PostCajonLogo,
+    // background: "",
+    gradient: "linear-gradient(to bottom right, #C09B3E, #584208)",
+    primary: "#584208",
+    primaryLight: "#C09B3E",
+    linkColor: "#C09B3E"
   }
 ];
 

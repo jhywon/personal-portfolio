@@ -1,5 +1,6 @@
 export {
   MainText,
   TextGroup,
-  MainTextSubHeading
+  MainTextSubHeading,
+  MainTextAccent
 } from "./PortfolioPageText.js";
