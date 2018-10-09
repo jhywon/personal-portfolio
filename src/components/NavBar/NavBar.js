@@ -6,7 +6,7 @@ import { Link, withRouter } from "react-router-dom";
 import { ContentWrapper } from "components/ContentWrapper";
 
 import Resume from "assets/resume.pdf";
-import Burger from "assets/hamburgerMenu.png";
+import Burger from "assets/icon/hamburgerMenu.svg";
 import Close from "assets/icon/close.svg";
 import Github from "assets/icon/github.svg";
 import Instagram from "assets/icon/instagram.svg";
@@ -57,7 +57,7 @@ const CircleIconButton = styled.a`
 `;
 
 const CircleButtonIcon = styled.img`
-  width: ${props => (props.small ? "75%" : "100%")};
+  width: 100%;
 `;
 
 const HamburgerButtonWrapper = CircleIconButton.extend`
@@ -128,7 +128,7 @@ const SocialButtonWrapper = CircleIconButton.extend`
 
 const SocialButton = props => (
   <SocialButtonWrapper href={props.href} target="_new" {...props}>
-    <CircleButtonIcon small={props.small} src={props.icon} alt={props.icon} />
+    <CircleButtonIcon src={props.icon} alt={props.icon} />
   </SocialButtonWrapper>
 );
 
@@ -262,9 +262,9 @@ class NavBar extends React.Component {
           onClick={this.toggleMenu}
         >
           {this.state.isMenuOpen ? (
-            <CircleButtonIcon small src={Close} alt="close" />
+            <CircleButtonIcon src={Close} alt="close" />
           ) : (
-            <CircleButtonIcon src={Burger} alt="burger " />
+            <CircleButtonIcon src={Burger} alt="burger" />
           )}
         </HamburgerButtonWrapper>
         {this.state.isMenuOpen && (
@@ -292,7 +292,6 @@ class NavBar extends React.Component {
                   href="https://ca.linkedin.com/in/jhywon"
                   target="_new"
                   icon={LinkedIn}
-                  small
                 />
                 <SocialButton
                   href="https://github.com/jessiewon"

@@ -24,7 +24,17 @@ const StyledPrimaryButton = StyledButton.extend`
   }
 `;
 
-const StyledSecondaryButton = StyledButton.extend``;
+const StyledSecondaryButton = StyledButton.extend`
+  color: ${props => props.theme.colors.text.primary};
+  background-color: transparent;
+  border: 2px solid ${props => props.theme.colors.primary};
+  :hover,
+  :focus,
+  :active {
+    color: ${props => props.theme.colors.primaryHover};
+    border: 2px solid ${props => props.theme.colors.primaryHover};
+  }
+`;
 
 const StyledDefaultButton = StyledButton.extend`
   color: ${props => props.theme.colors.text.black};

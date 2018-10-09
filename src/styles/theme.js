@@ -28,7 +28,7 @@ export default {
       largeHeight: "48px",
       smallHeight: "32px"
     },
-    maxWidth: "960px",
+    maxWidth: "1060px",
     maxPortfolioImageWidth: "700px"
   },
   colors: {

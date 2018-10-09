@@ -3,8 +3,8 @@ import {
   SlikPortfolioPage,
   JobminePortfolioPage,
   PathPortfolioPage,
-  PlanItPortfolioPage
-  // PostCajonPortfolioPage
+  PlanItPortfolioPage,
+  PostCajonPortfolioPage
 } from "components/PortfolioPages";
 
 import CognitePreview from "assets/portfolio/cognite/cognitePreview.png";
@@ -12,12 +12,14 @@ import SlikPreview from "assets/portfolio/slikPortfolio/slikPortfolioPreview.png
 import JobminePreview from "assets/portfolio/jobmine/jobminePreview.png";
 import PathPreview from "assets/portfolio/path/pathPreview.png";
 import PlanItPreview from "assets/portfolio/planIt/planItPreview.png";
+import PostCajonPreview from "assets/portfolio/postCajon/postCajonPreview.png";
 
 import CogniteLogo from "assets/portfolio/cognite/logo.png";
 import SlikLogo from "assets/portfolio/slikPortfolio/logo.png";
 import JobmineLogo from "assets/portfolio/jobmine/logo.png";
 import PathLogo from "assets/portfolio/path/logo.png";
 import PlanItLogo from "assets/portfolio/planIt/logo.png";
+import PostCajonLogo from "assets/portfolio/postCajon/logo.png";
 
 import CogniteBackground from "assets/portfolio/cognite/background.png";
 import SlikBackground from "assets/portfolio/slikPortfolio/background.png";
@@ -95,21 +97,22 @@ const portfolioData = [
     primary: "#2a649f",
     primaryLight: "#225282",
     linkColor: "#409af5"
+  },
+  {
+    id: 6,
+    title: "Post Cajón",
+    link: "/portfolio/postcajon",
+    component: PostCajonPortfolioPage,
+    // subHeading: "Electronic Drum Design & Development",
+    subHeading: "WORK IN PROGRESS",
+    gridImage: PostCajonPreview,
+    logo: PostCajonLogo,
+    // background: "",
+    gradient: "linear-gradient(to bottom right, #C09B3E, #584208)",
+    primary: "#584208",
+    primaryLight: "#C09B3E",
+    linkColor: "#C09B3E"
   }
-  // {
-  //   id: 6,
-  //   title: "Post Cajón",
-  //   link: "/portfolio/postcajon",
-  //   component: PostCajonPortfolioPage,
-  //   subHeading: "Electronic Drum Design & Development",
-  //   gridImage: PlanItPreview,
-  //   logo: PlanItLogo,
-  //   background: PlanItBackground,
-  //   gradient: "linear-gradient(to bottom right, brown, #2BA097)",
-  //   primary: "brown",
-  //   primaryLight: "brown",
-  //   linkColor: "brown"
-  // }
 ];
 
 export default portfolioData;

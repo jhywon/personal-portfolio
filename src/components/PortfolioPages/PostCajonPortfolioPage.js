@@ -7,12 +7,17 @@ import { PortfolioPage } from "components/PortfolioPage";
 import {
   MainText,
   TextGroup,
-  MainTextSubHeading
+  MainTextSubHeading,
+  MainTextAccent
 } from "components/PortfolioPageText";
 
-import Game from "assets/portfolio/planIt/game.png";
-import GameHome from "assets/portfolio/planIt/gameHome.png";
-import GameRules from "assets/portfolio/planIt/gameRules.gif";
+import Cajon from "assets/portfolio/postCajon/cajon.png";
+import LFP from "assets/portfolio/postCajon/lfp.png";
+import LFPSketch from "assets/portfolio/postCajon/lfpSketch.jpg";
+import ProblemSpace from "assets/portfolio/postCajon/docs/mfpProblemSpace.pdf";
+// import AL from "assets/portfolio/postCajon/docs/AL.pdf";
+import PersonaInterviews from "assets/portfolio/postCajon/docs/personaInterviews.pdf";
+import UserManual from "assets/portfolio/postCajon/docs/userManual.pdf";
 
 const PrimaryLink = styled.a`
   color: ${props => props.color};
@@ -23,152 +28,249 @@ const PrimaryLink = styled.a`
   }
 `;
 
-const FinalImages = styled.div`
+const ImageFlexWrapper = styled.div`
+  ${props => props.theme.flex.spaceBetween};
   display: flex;
-  flex-direction: column;
-  @media (min-width: ${props => props.theme.breakpoints.sm}) {
-    justify-content: space-between;
-    flex-direction: row;
+  width: 100%;
+  @media (max-width: ${props => props.theme.breakpoints.md}) {
+    flex-direction: column;
   }
-  max-width: ${props => props.theme.dimensions.maxPortfolioImageWidth};
+  img {
+    width: ${props => props.width};
+    height: 100%;
+    @media (max-width: ${props => props.theme.breakpoints.md}) {
+      width: 100%;
+    }
+  }
 `;
 
-const GameImage = styled.img`
-  width: 31%;
-  height: 100%;
-  @media (max-width: ${props => props.theme.breakpoints.sm}) {
-    width: 50%;
-    margin-bottom: ${props => props.theme.padding.sixteen};
-  }
+const RequirementList = styled.ol`
+  margin-top: ${props => props.theme.padding.sixteen};
 `;
 
 class PostCajonPortfolioPage extends React.Component {
   componentDidMount() {
-    document.title = "Jessie W | Plan It";
+    document.title = "Jessie W | Post Cajón";
   }
   render() {
     return (
       <PortfolioPage
-        description="A design and implementation of Plan It, a one button puzzle block game."
+        // description="The design of an electronic cajón, a Peruvian drum."
         page={this.props.page}
         previous={this.props.previous}
         next={this.props.next}
       >
         <TextGroup heading="Background">
           <MainText>
-            Awarded 3rd place at the UW Game Design Camp hackathon, hosted by
-            the University of Waterloo in partnership with the Stratford
-            Accelerator Centre, The Games Institute, and the Canadian Digital
-            Media Network, my team and I created an interactive one button
-            puzzle game, Plan-It, for the 3-storey Christie® MicroTiles® wall.
+            The main project in my third year design course was to redesign and
+            digitize a non-Western instrument. Over the course of about 3
+            months, in groups of 6, we started with the Google Design Sprint,
+            then continued to rapid prototype and user test to reach the best
+            design possible.
           </MainText>
         </TextGroup>
-        <TextGroup heading="Goal">
+        <TextGroup heading="Selecting an Instrument">
           <MainText>
-            Design a 1 button video game for a 3-storey Christie® MicroTiles®
-            wall in 48 hours.
+            <ImageFlexWrapper>
+              <span>
+                The only requirement was to select a non-Western / orchestra
+                instrument. We did some research, and came up with a list of
+                feasible instruments. We discussed and voted on our favourites,
+                and narrowed it down to the following:
+                <RequirementList>
+                  <li>1. Bagpipes</li>
+                  <li>2. Cajon</li>
+                  <li>3. Rainstick</li>
+                  <li>4. Beatboxing</li>
+                  <li>5. Lute</li>
+                </RequirementList>
+                The Cajon, a peruvian drum, was selected because of it's
+                simplicity. It was realistic to build one in 3 months, and there
+                was a lot of freedom in improving it.
+              </span>
+              <img src={Cajon} alt="cajon" width="30%" />
+            </ImageFlexWrapper>
           </MainText>
         </TextGroup>
-        <TextGroup heading="Process">
+        {/* <TextGroup heading="Sprint Map">
           <MainText>
-            Being a hackathon, the requirements for the game were relatively
-            open ended. The 3 main requirements were:
-            <br />
-            <br />
-            1. Must be a 1-button video game.
-            <br />
-            2. Must fit on a 3-storey Christie® MicroTiles® wall.
-            <br />
-            3. Must be completed within 48 hours.
-            <br />
-            <br />
-            The most difficult design problem was brainstorming a game idea. It
-            was difficult to think of a new game that was to be played using
-            only 1 button, and also one that could be completed within the 48
-            hour time limit. After a long brainstorming session, and countless
-            ideas, we ended up on Plan-It.
-            <br />
-            <br />
-            The game Plan-It was inspired by tetris, and was themed around
-            building a planet. There were puzzle pieces that would alternate
-            coming from the top and bottom of the screen, and the player would
-            rotate the planet in the middle in order to align where the pieces
-            would land.
-            <br />
-            <br />I worked on a team of four, and we split into two teams of two
-            - one for design and one for development. I worked on the design
-            using Adobe Illustrator and Photoshop.
-            <br />
-            <br />
+            There were many problems associated with the ergonomics of the
+            cajón. We created a sprint map to better understand where to focus
+            our design efforts.
           </MainText>
-          <MainTextSubHeading>Design Challenges:</MainTextSubHeading>
-          <MainText>
-            The biggest challenge was definitely designing for such an oddly
-            shaped screen. The dimensions of the screen were 1204x4608. This was
-            long and vertical, but at the same time, could not be designed for
-            the same way one would design a mobile screen, since it's extremely
-            difficult for the user to be able to view the entire screen at once.
-            <br />
-            <br />A strong effort was made to design the game such that the
-            focus of the user would be in the middle 50% of the screen. The
-            remainder of the screen would be less important information.
-            <br />
-            <br />
-            Futhermore, due to the time constraints, not a lot of time was
-            invested in planning out the design. We needed to get it done as
-            soon as possible, so there is not too much of a process to document.
-            We put a bigger focus on UI rather than UX, and produced a
-            functional 1-button video game after 48 hours. Screenshots of the
-            game are shown below:
-            <br />
-            <br />
-          </MainText>
-          <MainTextSubHeading>Final Design:</MainTextSubHeading>
-          <FinalImages>
-            <GameImage src={GameHome} alt="home" />
-            <GameImage src={GameRules} alt="rules" />
-            <GameImage src={Game} alt="game" />
-          </FinalImages>
         </TextGroup>
+        <TextGroup heading="Problem Statement">
+          <MainText>
+            We then listed some problems we found the cajon:
+            <RequirementList>
+              <li>Posture Problems</li>
+              <li>Wrist Strain</li>
+              <li>Sound limitations - not a great solo instrument</li>
+              <li>Height limitations</li>
+            </RequirementList>
+            <MainTextAccent>
+              Develop an improved cajon that enhances the ergonomics of the
+              playing experience with respect to posture and strain while
+              increasing the portability and expressibility of the playing
+              experience.
+            </MainTextAccent>
+          </MainText>
+        </TextGroup>
+        <TextGroup heading="Low Fidelity Prototype (LFP)">
+          <MainText>
+            <ImageFlexWrapper>
+              <span>
+                On the second day of the Google Sprint, each member of the group
+                brought research to share with other members of possible things
+                to include in our solution. We learned that a lot of products
+                that involve physical user interactions haves similar ergonomic
+                issues. Thus, we could draw parallels by referencing the
+                ergonomic improvements of chairs, wrist-guards, etc... to get an
+                idea of how the ergonomics of the cajon could be improved. Then
+                we drew possible solutions based on our research. The following
+                components/enhancements were chosen (through a heat mapping
+                exercise) for our low fidelity prototype (LFP):
+                <RequirementList>
+                  <li>Back Support</li>
+                  <li>Adjustable Height</li>
+                  <li>Curved Top of Tapa (Wrist Support)</li>
+                  <li>Seating Cushion</li>
+                  <li>Adjustable Playing Surface</li>
+                </RequirementList>
+              </span>
+              <img src={LFP} alt="lfp" width="50%" />
+            </ImageFlexWrapper>
+            <img src={LFPSketch} alt="lfp sketch" width="50%" />
+          </MainText>
+        </TextGroup>
+        <TextGroup heading="User Testing pt. 1">
+          <MainText>
+            Concurrently, we also performed user interviews with casual cajon
+            players as well as a professor from Wilfred Laurier University who
+            specializes in creating instruments.
+            <MainTextSubHeading>Key Insights</MainTextSubHeading>
+            <RequirementList>
+              <li>
+                Lower back strain when bending down to reach lower areas of the
+                cajon
+              </li>
+              <li>Some cajons have cushions built in and it was comfortable</li>
+              <li>
+                Some wrist support would be beneficial for long period of time
+              </li>
+              <li>Does not see value in footrest</li>
+              <li>Handles for portability would be nice</li>
+              <li>Pedal/latch to change tuning/sound mid-song would be nice</li>
+              <li>
+                Cajon could have a looper - box-shape is limiting because with
+                other drums, people add things like shakers to their feet to add
+                to the music
+              </li>
+            </RequirementList>
+            In addition, we also performed some user-testing with members in our
+            class using our LFP.
+          </MainText>
+        </TextGroup>
+        <TextGroup heading="Medium Fidelity Prototype (MFP)">
+          <MainText>
+            As a group, we discussed about the next steps for our MFP and
+            realized that we had to clarify our design scope and focus. We
+            updated our requirements as follows:
+            <RequirementList>
+              <li>A design that suits 5th to 95th percentile heights</li>
+              <li>
+                Enhance player’s ability to play the cajon as a solo instrument
+              </li>
+              <li>
+                Increase ease of changing the sound of the cajon, as well as
+                extending the range of sounds
+              </li>
+              <li>More lightweight and portable than the original cajon</li>
+              <li>
+                Improves posture of all players Reduces strain due to repetitive
+                motion
+              </li>
+            </RequirementList>
+            <PrimaryLink
+              onClick={() => {
+                window.open(ProblemSpace);
+              }}
+            >
+              Problem Space
+            </PrimaryLink>{" "}
+          </MainText>
+        </TextGroup> */}
+        {/* <TextGroup heading="User Testing pt. 2">
+          <MainText>We tested ...</MainText>
+          <MainTextAccent>Then we had a revolation.</MainTextAccent>
+        </TextGroup> */}
+        <TextGroup heading="Additional Information">
+          <MainText>
+            <ul>
+              <li>
+                <PrimaryLink
+                  onClick={() => {
+                    window.open(UserManual);
+                  }}
+                >
+                  User Manual
+                </PrimaryLink>
+              </li>
+              <li>
+                <PrimaryLink
+                  onClick={() => {
+                    window.open(PersonaInterviews);
+                  }}
+                >
+                  Persona Interview Summary
+                </PrimaryLink>
+              </li>
+              {/* <li>
+                <PrimaryLink
+                  onClick={() => {
+                    window.open(AL);
+                  }}
+                >
+                  Accountability Log
+                </PrimaryLink>{" "}
+                - each work session was documented here, and it goes more
+                in-depth about our design process
+              </li> */}
+            </ul>
+          </MainText>
+        </TextGroup>
+        <TextGroup>
+          <MainTextAccent>
+            I'm currently updating this portfolio item. If you would like more
+            information about this project, shoot me an{" "}
+            <PrimaryLink href="mailto:jessiehywon@gmail.com?Subject=Hello">
+              email
+            </PrimaryLink>
+            !
+          </MainTextAccent>
+        </TextGroup>
+        {/*
         <TextGroup heading="Comments">
           <MainText>
-            In hindsight, the game that we completed was not very practical or
-            feasible. More design resources should have been invested into the
-            game mechanics, since the 1-button constraint limited a lot of
-            functionality. Tetris already uses 5 button controls, and we decided
-            to create a more complex version of Tetris, but with only button.
-            Breaking it down into a single-tap and double-tap helped, but it was
-            still a poor user experience when playing the game. However, this
-            was a great opportunity for us to try new designs, since given the
-            time constraint, we had to make very impulsive (and often poor)
-            decisions, then work with it!
+            This was probably my favourite design project I've done. User
+            testing proved to be extremely useful, and going to the machine shop
+            and building physical prototypes was definitely a change of pace for
+            me. It was nice to get out of the software space and try something
+            new.
             <br />
             <br />
-            Regardless, this was a very strong effort from myself and my team.
-            Although the game mechanics were not perfect, the visual design of
-            the game awed the judges. It was incredible to end up playing and
-            demonstrating our game on the{" "}
-            <PrimaryLink
-              color={this.props.page.linkColor}
-              hovercolor={this.props.page.primaryLight}
-              href="https://www.instagram.com/p/BCWEhLZEp7q/?taken-by=uwstratford"
-              target="_new"
-            >
-              3-storey
-            </PrimaryLink>{" "}
-            wall, and was this was overall a great learning experience. This
-            game is far from perfect, but given the resource constraints, won us{" "}
-            <PrimaryLink
-              color={this.props.page.linkColor}
-              hovercolor={this.props.page.primaryLight}
-              href="https://www.instagram.com/p/BCWOANfEpwM/?taken-by=uwstratford"
-              target="_new"
-            >
-              3rd place overall
-            </PrimaryLink>{" "}
-            at the hackathon, which we were extremely proud of :)
+            From a technical standpoint, the hardware design was not perfect as
+            we had a very limited budget. We spent about $80 on materials
+            throughout this entire process, thus we were unable to get perfect
+            mappings on the cajon. Similarly, the controls were hard to reach,
+            and were relatively low-fidelity (breadboard taped to the back of
+            the cajón).
+            <br />
+            <br />
+            All in all, this was a success. We were able to synthesize the sound
+            of a cajón, and build a significantly more ergonomic solution.
           </MainText>
-        </TextGroup>
+        </TextGroup> */}
       </PortfolioPage>
     );
   }

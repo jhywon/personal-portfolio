@@ -13,9 +13,18 @@ const Heading = styled.h6`
   color: ${props => props.color};
 `;
 
-const SubHeading = styled.h5`
+const SubHeading = styled.h4`
   margin-bottom: ${props => props.theme.padding.eight};
-  margin-top: ${props => props.theme.padding.eight};
+  margin-top: ${props => props.theme.padding.sixteen};
+  color: ${props => props.color};
+`;
+
+const Accent = styled.span`
+  margin-bottom: ${props => props.theme.padding.twentyFour};
+  margin-top: ${props => props.theme.padding.twentyFour};
+  line-height: 48px;
+  font-size: 32px;
+  font-weight: 300;
   color: ${props => props.color};
 `;
 
@@ -51,4 +60,15 @@ MainTextSubHeading.propTypes = {
   color: PropTypes.string
 };
 
-export { MainText, TextGroup, MainTextSubHeading };
+const MainTextAccent = props => (
+  <Accent color={props.color}>
+    <strong>{props.children}</strong>
+  </Accent>
+);
+
+MainTextAccent.propTypes = {
+  children: PropTypes.node.isRequired,
+  color: PropTypes.string
+};
+
+export { MainText, TextGroup, MainTextSubHeading, MainTextAccent };
