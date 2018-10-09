@@ -15,7 +15,7 @@ import Cajon from "assets/portfolio/postCajon/cajon.png";
 import LFP from "assets/portfolio/postCajon/lfp.png";
 import LFPSketch from "assets/portfolio/postCajon/lfpSketch.jpg";
 import ProblemSpace from "assets/portfolio/postCajon/docs/mfpProblemSpace.pdf";
-import AL from "assets/portfolio/postCajon/docs/AL.pdf";
+// import AL from "assets/portfolio/postCajon/docs/AL.pdf";
 import PersonaInterviews from "assets/portfolio/postCajon/docs/personaInterviews.pdf";
 import UserManual from "assets/portfolio/postCajon/docs/userManual.pdf";
 
@@ -225,7 +225,7 @@ class PostCajonPortfolioPage extends React.Component {
                   Persona Interview Summary
                 </PrimaryLink>
               </li>
-              <li>
+              {/* <li>
                 <PrimaryLink
                   onClick={() => {
                     window.open(AL);
@@ -235,7 +235,7 @@ class PostCajonPortfolioPage extends React.Component {
                 </PrimaryLink>{" "}
                 - each work session was documented here, and it goes more
                 in-depth about our design process
-              </li>
+              </li> */}
             </ul>
           </MainText>
         </TextGroup>
