@@ -16,6 +16,8 @@ import LFPGroup from "assets/portfolio/postCajon/lfpGroup.png";
 import SprintMapPreview from "assets/portfolio/postCajon/sprintMap.png";
 import MFPIteration from "assets/portfolio/postCajon/mfpIteration1.png";
 import MFPProblemSpace from "assets/portfolio/postCajon/mfpProblemSpace.png";
+import HFP from "assets/portfolio/postCajon/hfp.png";
+import HFPDimensions from "assets/portfolio/postCajon/hfpDimensions.png";
 
 import ProblemSpace from "assets/portfolio/postCajon/docs/mfpProblemSpace.pdf";
 import SprintMap from "assets/portfolio/postCajon/docs/sprintMap.pdf";
@@ -236,6 +238,11 @@ class PostCajonPortfolioPage extends React.Component {
           <MainText>We tested ...</MainText>
           <MainTextAccent>Then we had a revolation.</MainTextAccent>
         </TextGroup> */}
+        <TextGroup heading="High Fidelity Prototype (HFP)">
+          <MainText>Here's our HFP!</MainText>
+          <img src={HFPDimensions} alt="HFP Dimensions" width="100%" />
+          <img src={HFP} alt="HFP" width="100%" />
+        </TextGroup>
         <TextGroup heading="Additional Information">
           <MainText>
             <ul>
