@@ -108,10 +108,10 @@ const portfolioData = [
     gridImage: PostCajonPreview,
     logo: PostCajonLogo,
     // background: "",
-    gradient: "linear-gradient(to bottom right, #C09B3E, #584208)",
-    primary: "#584208",
-    primaryLight: "#C09B3E",
-    linkColor: "#C09B3E"
+    gradient: "linear-gradient(to bottom right, #F1C672, #754A2B)",
+    primary: "#754A2B",
+    primaryLight: "#F1C672",
+    linkColor: "#755b2b"
   }
 ];
 

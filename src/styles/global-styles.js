@@ -75,9 +75,7 @@ injectGlobal`
     padding-left: 0;
   }
   ol {
-    @media (max-width: 768px) {
-      padding-left: 16px;
-    }
+    
   }
   li {
     list-style: none;

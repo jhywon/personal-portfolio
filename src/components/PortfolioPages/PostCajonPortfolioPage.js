@@ -7,15 +7,19 @@ import { PortfolioPage } from "components/PortfolioPage";
 import {
   MainText,
   TextGroup,
-  MainTextSubHeading,
+  // MainTextSubHeading,
   MainTextAccent
 } from "components/PortfolioPageText";
 
 import Cajon from "assets/portfolio/postCajon/cajon.png";
-import LFP from "assets/portfolio/postCajon/lfp.png";
-import LFPSketch from "assets/portfolio/postCajon/lfpSketch.jpg";
+import LFPGroup from "assets/portfolio/postCajon/lfpGroup.png";
+import SprintMapPreview from "assets/portfolio/postCajon/sprintMap.png";
+import MFPIteration from "assets/portfolio/postCajon/mfpIteration1.png";
+import MFPProblemSpace from "assets/portfolio/postCajon/mfpProblemSpace.png";
+
 import ProblemSpace from "assets/portfolio/postCajon/docs/mfpProblemSpace.pdf";
-// import AL from "assets/portfolio/postCajon/docs/AL.pdf";
+import SprintMap from "assets/portfolio/postCajon/docs/sprintMap.pdf";
+import AL from "assets/portfolio/postCajon/docs/AL.pdf";
 import PersonaInterviews from "assets/portfolio/postCajon/docs/personaInterviews.pdf";
 import UserManual from "assets/portfolio/postCajon/docs/userManual.pdf";
 
@@ -35,17 +39,28 @@ const ImageFlexWrapper = styled.div`
   @media (max-width: ${props => props.theme.breakpoints.md}) {
     flex-direction: column;
   }
+  span {
+    padding-right: ${props => props.theme.padding.twentyFour};
+  }
   img {
     width: ${props => props.width};
     height: 100%;
     @media (max-width: ${props => props.theme.breakpoints.md}) {
       width: 100%;
+      padding: ${props => props.theme.padding.twentyFour} 0;
     }
   }
 `;
 
 const RequirementList = styled.ol`
   margin-top: ${props => props.theme.padding.sixteen};
+  li {
+    list-style-type: circle;
+  }
+`;
+
+const LinkImage = styled.img`
+  cursor: pointer;
 `;
 
 class PostCajonPortfolioPage extends React.Component {
@@ -78,11 +93,11 @@ class PostCajonPortfolioPage extends React.Component {
                 feasible instruments. We discussed and voted on our favourites,
                 and narrowed it down to the following:
                 <RequirementList>
-                  <li>1. Bagpipes</li>
-                  <li>2. Cajon</li>
-                  <li>3. Rainstick</li>
-                  <li>4. Beatboxing</li>
-                  <li>5. Lute</li>
+                  <li>Bagpipes</li>
+                  <li>Cajon</li>
+                  <li>Rainstick</li>
+                  <li>Beatboxing</li>
+                  <li>Lute</li>
                 </RequirementList>
                 The Cajon, a peruvian drum, was selected because of it's
                 simplicity. It was realistic to build one in 3 months, and there
@@ -92,44 +107,43 @@ class PostCajonPortfolioPage extends React.Component {
             </ImageFlexWrapper>
           </MainText>
         </TextGroup>
-        {/* <TextGroup heading="Sprint Map">
+        <TextGroup heading="Ideation">
           <MainText>
-            There were many problems associated with the ergonomics of the
-            cajón. We created a sprint map to better understand where to focus
-            our design efforts.
-          </MainText>
-        </TextGroup>
-        <TextGroup heading="Problem Statement">
-          <MainText>
-            We then listed some problems we found the cajon:
-            <RequirementList>
-              <li>Posture Problems</li>
-              <li>Wrist Strain</li>
-              <li>Sound limitations - not a great solo instrument</li>
-              <li>Height limitations</li>
-            </RequirementList>
-            <MainTextAccent>
-              Develop an improved cajon that enhances the ergonomics of the
-              playing experience with respect to posture and strain while
-              increasing the portability and expressibility of the playing
-              experience.
-            </MainTextAccent>
+            <ImageFlexWrapper>
+              <span>
+                We listed some problems we found the cajon:
+                <RequirementList>
+                  <li>Posture Problems</li>
+                  <li>Wrist Strain</li>
+                  <li>Sound limitations - not a great solo instrument</li>
+                  <li>Height limitations</li>
+                </RequirementList>
+                It was evident that there were many problems associated with the
+                ergonomics of the cajón. We created a sprint map to better
+                understand where to focus our design efforts.
+              </span>
+              <LinkImage
+                src={SprintMapPreview}
+                alt="sprint map"
+                onClick={() => {
+                  window.open(SprintMap);
+                }}
+                width="50%"
+              />
+            </ImageFlexWrapper>
           </MainText>
         </TextGroup>
         <TextGroup heading="Low Fidelity Prototype (LFP)">
           <MainText>
             <ImageFlexWrapper>
               <span>
-                On the second day of the Google Sprint, each member of the group
-                brought research to share with other members of possible things
-                to include in our solution. We learned that a lot of products
-                that involve physical user interactions haves similar ergonomic
-                issues. Thus, we could draw parallels by referencing the
-                ergonomic improvements of chairs, wrist-guards, etc... to get an
-                idea of how the ergonomics of the cajon could be improved. Then
-                we drew possible solutions based on our research. The following
-                components/enhancements were chosen (through a heat mapping
-                exercise) for our low fidelity prototype (LFP):
+                With the problem defined, we brainstormed methods to improve the
+                ergonomics by researching products with similar physical user
+                interactions. This included, chairs, wrist-guards, and other
+                drums. We drew possible solutions based on our research using{" "}
+                <strong>Crazy 8's</strong>. After some discussion and a heat
+                mapping exercise, the following components/enhancements were
+                chosen for our LFP:
                 <RequirementList>
                   <li>Back Support</li>
                   <li>Adjustable Height</li>
@@ -137,18 +151,23 @@ class PostCajonPortfolioPage extends React.Component {
                   <li>Seating Cushion</li>
                   <li>Adjustable Playing Surface</li>
                 </RequirementList>
+                Anthropometric data was used to define the dimensions of the
+                cajon. Most of this was based on the ergonomics of sitting, with
+                the size and shape of a standard cajon taken into consideration
+                as well.
               </span>
-              <img src={LFP} alt="lfp" width="50%" />
+              <img src={LFPGroup} alt="lfp" width="50%" />
             </ImageFlexWrapper>
-            <img src={LFPSketch} alt="lfp sketch" width="50%" />
           </MainText>
         </TextGroup>
         <TextGroup heading="User Testing pt. 1">
           <MainText>
-            Concurrently, we also performed user interviews with casual cajon
-            players as well as a professor from Wilfred Laurier University who
-            specializes in creating instruments.
-            <MainTextSubHeading>Key Insights</MainTextSubHeading>
+            While building and planning our LFP, we conducted user interviews
+            with cajon players and a music professor from Wilfred Laurier
+            University who specialized in percussion and building electronic
+            instruments. We also performed some user-testing with members in our
+            class using our LFP. The key insights from these interviews are
+            below:
             <RequirementList>
               <li>
                 Lower back strain when bending down to reach lower areas of the
@@ -159,23 +178,20 @@ class PostCajonPortfolioPage extends React.Component {
                 Some wrist support would be beneficial for long period of time
               </li>
               <li>Does not see value in footrest</li>
-              <li>Handles for portability would be nice</li>
-              <li>Pedal/latch to change tuning/sound mid-song would be nice</li>
+              <li>It is not very portable, handles could be nice</li>
               <li>
-                Cajon could have a looper - box-shape is limiting because with
-                other drums, people add things like shakers to their feet to add
-                to the music
+                Box-shape is limiting in sound - people sometimes add shakers to
+                their feet to add to the music
               </li>
+              <li>Pedal/latch to change tuning/sound mid-song would be nice</li>
             </RequirementList>
-            In addition, we also performed some user-testing with members in our
-            class using our LFP.
           </MainText>
         </TextGroup>
         <TextGroup heading="Medium Fidelity Prototype (MFP)">
           <MainText>
-            As a group, we discussed about the next steps for our MFP and
-            realized that we had to clarify our design scope and focus. We
-            updated our requirements as follows:
+            Based on the user testing feedback, we realized that our scope was
+            not well defined, and we needed clarify our focus. Our critical
+            requirements were updated to the following:
             <RequirementList>
               <li>A design that suits 5th to 95th percentile heights</li>
               <li>
@@ -191,15 +207,31 @@ class PostCajonPortfolioPage extends React.Component {
                 motion
               </li>
             </RequirementList>
-            <PrimaryLink
-              onClick={() => {
-                window.open(ProblemSpace);
-              }}
-            >
-              Problem Space
-            </PrimaryLink>{" "}
+            We then defined a new <strong>problem statement</strong>.
+            <MainTextAccent>
+              "Develop an improved cajon that enhances the ergonomics of the
+              playing experience with respect to posture and strain while
+              increasing the portability and expressibility of the playing
+              experience."
+            </MainTextAccent>
+            With more context, and a better defined scope, we brainstormed ways
+            to integrate our user feedback into the design. This included many
+            sketching sessions, workshops, additional research.
+            <br />
+            <br />
+            <ImageFlexWrapper>
+              <img src={MFPIteration} alt="MFP iterations" width="38%" />
+              <LinkImage
+                onClick={() => {
+                  window.open(ProblemSpace);
+                }}
+                src={MFPProblemSpace}
+                alt="MFP Problem Space"
+                width="60%"
+              />
+            </ImageFlexWrapper>
           </MainText>
-        </TextGroup> */}
+        </TextGroup>
         {/* <TextGroup heading="User Testing pt. 2">
           <MainText>We tested ...</MainText>
           <MainTextAccent>Then we had a revolation.</MainTextAccent>
@@ -212,6 +244,8 @@ class PostCajonPortfolioPage extends React.Component {
                   onClick={() => {
                     window.open(UserManual);
                   }}
+                  color={this.props.page.linkColor}
+                  hovercolor={this.props.page.primaryLight}
                 >
                   User Manual
                 </PrimaryLink>
@@ -221,21 +255,25 @@ class PostCajonPortfolioPage extends React.Component {
                   onClick={() => {
                     window.open(PersonaInterviews);
                   }}
+                  color={this.props.page.linkColor}
+                  hovercolor={this.props.page.primaryLight}
                 >
                   Persona Interview Summary
                 </PrimaryLink>
               </li>
-              {/* <li>
+              <li>
                 <PrimaryLink
                   onClick={() => {
                     window.open(AL);
                   }}
+                  color={this.props.page.linkColor}
+                  hovercolor={this.props.page.primaryLight}
                 >
                   Accountability Log
                 </PrimaryLink>{" "}
                 - each work session was documented here, and it goes more
                 in-depth about our design process
-              </li> */}
+              </li>
             </ul>
           </MainText>
         </TextGroup>
@@ -243,7 +281,11 @@ class PostCajonPortfolioPage extends React.Component {
           <MainTextAccent>
             I'm currently updating this portfolio item. If you would like more
             information about this project, shoot me an{" "}
-            <PrimaryLink href="mailto:jessiehywon@gmail.com?Subject=Hello">
+            <PrimaryLink
+              href="mailto:jessiehywon@gmail.com?Subject=Hello"
+              color={this.props.page.linkColor}
+              hovercolor={this.props.page.primaryLight}
+            >
               email
             </PrimaryLink>
             !

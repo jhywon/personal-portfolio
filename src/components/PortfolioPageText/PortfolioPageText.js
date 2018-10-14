@@ -19,12 +19,13 @@ const SubHeading = styled.h4`
   color: ${props => props.color};
 `;
 
-const Accent = styled.span`
+const Accent = styled.h5`
   margin-bottom: ${props => props.theme.padding.twentyFour};
   margin-top: ${props => props.theme.padding.twentyFour};
   line-height: 48px;
   font-size: 32px;
-  font-weight: 300;
+  font-weight: 400;
+  letter-spacing: 0px;
   color: ${props => props.color};
 `;
 
