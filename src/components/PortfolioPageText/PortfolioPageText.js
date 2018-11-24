@@ -29,6 +29,16 @@ const Accent = styled.h5`
   color: ${props => props.color};
 `;
 
+const Link = styled.a`
+  box-shadow: inset 0 -0.6em ${props => props.color};
+  :hover,
+  :focus,
+  :active {
+    box-shadow: inset 0 -0.6em ${props => props.hovercolor};
+    color: ${props => props.theme.colors.text.black};
+  }
+`;
+
 const MainText = props => <Text>{props.children}</Text>;
 
 MainText.propTypes = {
@@ -72,4 +82,16 @@ MainTextAccent.propTypes = {
   color: PropTypes.string
 };
 
-export { MainText, TextGroup, MainTextSubHeading, MainTextAccent };
+const PrimaryLink = props => (
+  <Link color={props.color} hovercolor={props.hovercolor}>
+    {props.children}
+  </Link>
+);
+
+PrimaryLink.propTypes = {
+  children: PropTypes.node.isRequired,
+  color: PropTypes.string,
+  hovercolor: PropTypes.string
+};
+
+export { MainText, TextGroup, MainTextSubHeading, MainTextAccent, PrimaryLink };

@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { withTheme } from "styled-components";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { Link as DefaultLink } from "react-router-dom";
 
 import { MainSection } from "components/MainSection";
 import { Header } from "components/Header";
@@ -50,6 +50,26 @@ const Heading = styled.h6`
   margin-bottom: ${props => props.theme.padding.sixteen};
 `;
 
+const Link = styled(DefaultLink)`
+  box-shadow: inset 0 -0.6em ${props => props.theme.colors.primaryHighlight};
+  :hover,
+  :focus,
+  :active {
+    box-shadow: inset 0 -0.6em ${props => props.theme.colors.primaryHighlightHover};
+    color: ${props => props.theme.colors.text.black};
+  }
+`;
+
+const ResumeLink = styled.a`
+  box-shadow: inset 0 -0.6em ${props => props.theme.colors.primaryHighlight};
+  :hover,
+  :focus,
+  :active {
+    box-shadow: inset 0 -0.6em ${props => props.theme.colors.primaryHighlightHover};
+    color: ${props => props.theme.colors.text.black};
+  }
+`;
+
 class AboutSection extends React.Component {
   componentDidMount() {
     document.title = "Jessie W | About";
@@ -74,19 +94,19 @@ class AboutSection extends React.Component {
             <TextWrapper>
               <Heading>Hi, I&#39;m Jessie!</Heading>
               <AvatarText>
-                I&#39;m a third year student studying Systems Design Engineering
-                at the University of Waterloo. I love to eat, travel, and have
-                had the privilege of completing 5 tech internships in 4
-                different countries. I'm currently in search of a new internship
-                for Summer 2019, and would love to chat about your company's
-                mission and what I can do to further it. Check out my{" "}
-                <a
+                I&#39;m a 4th year Systems Design Engineering student at the
+                University of Waterloo. I love to eat, travel, learn, draw,
+                snowboard, fish, play Catan..., well I guess you could say I
+                enjoy most things. I'm currently looking for a Summer 2019
+                internship, and would love to chat about your company's mission
+                and what I can do to further it. Check out my{" "}
+                <ResumeLink
                   onClick={() => {
                     window.open(Resume);
                   }}
                 >
-                  résumé
-                </a>{" "}
+                  resume
+                </ResumeLink>{" "}
                 to learn more about what I&#39;ve done.
               </AvatarText>
             </TextWrapper>
@@ -105,11 +125,11 @@ class AboutSection extends React.Component {
             <TextWrapper>
               <Heading>What do I do?</Heading>
               <AvatarText>
-                I spend most of my days working towards my degree, and am
+                I spend most of my time working towards my degree, and am
                 especially interested in learning and understanding the{" "}
                 <Link to="/portfolio">design</Link> process. I enjoy working
-                closely with users in creating a great user experience, love a
-                good challenge, and am eager to continue exploring the different
+                closely with users in creating a great experience, love a good
+                challenge, and am eager to continue exploring the different
                 aspects of engineering.
               </AvatarText>
               {/* <Link to="/portfolio">
@@ -131,11 +151,9 @@ class AboutSection extends React.Component {
             <TextWrapper>
               <Heading>And in my spare time?</Heading>
               <AvatarText>
-                <strong>I love to EAT</strong>. My favourite thing about food is
-                how each cuisine is so unique, from the flavour profile to the
-                ingredients used, and I love the huge part of culture it plays.
-                I hope to continue trying new foods, and going to as many
-                restaurants as I can. In the rare case that I'm not eating,
+                <strong>I love to EAT</strong>! One day I want to open a food
+                truck, and I hope to continue trying new foods and going to as
+                many restaurants as I can. In the rare case that I'm not eating,
                 you'll probably find me playing board games, laughing at my own
                 jokes, or planning my next <Link to="/travel">trip</Link>.
               </AvatarText>

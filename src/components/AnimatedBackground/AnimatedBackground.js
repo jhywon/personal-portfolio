@@ -48,9 +48,7 @@ class AnimatedBackground extends React.Component {
               shape: {
                 type: "image",
                 image: {
-                  src: FloatingFood,
-                  width: 100,
-                  height: 100
+                  src: FloatingFood
                 }
               },
               color: {

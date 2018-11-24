@@ -8,7 +8,8 @@ import {
   MainText,
   TextGroup,
   // MainTextSubHeading,
-  MainTextAccent
+  MainTextAccent,
+  PrimaryLink
 } from "components/PortfolioPageText";
 
 import Cajon from "assets/portfolio/postCajon/cajon.png";
@@ -24,15 +25,6 @@ import SprintMap from "assets/portfolio/postCajon/docs/sprintMap.pdf";
 import AL from "assets/portfolio/postCajon/docs/AL.pdf";
 import PersonaInterviews from "assets/portfolio/postCajon/docs/personaInterviews.pdf";
 import UserManual from "assets/portfolio/postCajon/docs/userManual.pdf";
-
-const PrimaryLink = styled.a`
-  color: ${props => props.color};
-  :hover,
-  :focus,
-  :active {
-    color: ${props => props.hovercolor};
-  }
-`;
 
 const ImageFlexWrapper = styled.div`
   ${props => props.theme.flex.spaceBetween};

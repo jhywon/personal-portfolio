@@ -10,30 +10,20 @@ const Wrapper = styled.section`
   background: ${props => props.theme.colors.background.white};
   padding: ${props => props.theme.padding.twentyFour} 0
     ${props => props.theme.padding.fourtyEight};
-  min-height: 100vh;
-`;
-
-const Heading = styled.h2`
-  margin-bottom: ${props => props.theme.padding.fourtyEight};
 `;
 
 const MainSection = props => (
   <Wrapper background={props.background} color={props.color}>
-    <ContentWrapper>
-      {props.heading && <Heading>{props.heading}</Heading>}
-      {props.children}
-    </ContentWrapper>
+    <ContentWrapper>{props.children}</ContentWrapper>
   </Wrapper>
 );
 
 MainSection.propTypes = {
-  children: PropTypes.node,
-  heading: PropTypes.string
+  children: PropTypes.node
 };
 
 MainSection.defaultProps = {
-  children: "",
-  heading: ""
+  children: ""
 };
 
 export default MainSection;

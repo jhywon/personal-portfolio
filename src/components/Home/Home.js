@@ -32,11 +32,21 @@ const MainText = styled.p`
 
 const Links = styled.p``;
 
-const ResumeButton = styled(PrimaryButton)`
-  @media (max-width: ${props => props.theme.breakpoints.sm}) {
-    margin-top: 6px;
+const StyledLink = styled.a`
+  box-shadow: inset 0 -0.6em ${props => props.theme.colors.primaryHighlight};
+  :hover,
+  :focus,
+  :active {
+    box-shadow: inset 0 -0.6em ${props => props.theme.colors.primaryHighlightHover};
+    color: ${props => props.theme.colors.text.black};
   }
 `;
+
+// const ResumeButton = styled(PrimaryButton)`
+//   @media (max-width: ${props => props.theme.breakpoints.sm}) {
+//     margin-top: 6px;
+//   }
+// `;
 
 class Home extends React.Component {
   componentDidMount() {
@@ -52,8 +62,15 @@ class Home extends React.Component {
             <MainHeading>Jessie Won</MainHeading>
             <SubHeading>Designer, Engineer, and Major Foodie</SubHeading>
             <MainText>
-              Currently a Product Design Intern @ PlanGrid and searching for a{" "}
-              <strong>Summer 2019</strong> internship opportunity
+              Currently a Product Design Intern @ PlanGrid and looking for a{" "}
+              <StyledLink
+                onClick={() => {
+                  window.open(Resume);
+                }}
+              >
+                Summer 2019
+              </StyledLink>{" "}
+              internship
             </MainText>
             <Links>
               <Link to="/about">
@@ -62,13 +79,13 @@ class Home extends React.Component {
               <Link to="/portfolio">
                 <PrimaryButton>Portfolio</PrimaryButton>
               </Link>{" "}
-              <ResumeButton
+              {/* <ResumeButton
                 onClick={() => {
                   window.open(Resume);
                 }}
               >
                 Resume
-              </ResumeButton>
+              </ResumeButton> */}
             </Links>
           </ContentWrapper>
         </Wrapper>

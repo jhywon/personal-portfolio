@@ -7,20 +7,12 @@ import { PortfolioPage } from "components/PortfolioPage";
 import {
   MainText,
   TextGroup,
-  MainTextSubHeading
+  MainTextSubHeading,
+  PrimaryLink
 } from "components/PortfolioPageText";
 
 import CollectionsOld from "assets/portfolio/slikPortfolio/collectionsOld.jpg";
 import CollectionsNew from "assets/portfolio/slikPortfolio/collectionsNew.jpg";
-
-const PrimaryLink = styled.a`
-  color: ${props => props.color};
-  :hover,
-  :focus,
-  :active {
-    color: ${props => props.hovercolor};
-  }
-`;
 
 const ImagesWrapper = styled.div`
   ${props => props.theme.flex.spaceBetween};
@@ -98,7 +90,7 @@ class SlikPortfolioPage extends React.Component {
             was also difficult to navigate between items, and ultimately, the
             design did not resemble that of a high-end product line.
           </MainText>
-          <MainTextSubHeading>PROCESS:</MainTextSubHeading>
+          <MainTextSubHeading>Process:</MainTextSubHeading>
           <MainText>
             In order to solve these problems, I first started off with simple
             sketches of a catalog template. I wanted something that was simple
@@ -119,11 +111,11 @@ class SlikPortfolioPage extends React.Component {
           <MainText>Here is a preview of the upgrade!</MainText>
           <ImagesWrapper>
             <ImageWrapper>
-              <h5>Old Collections Page:</h5>
+              <caption>Old Collections Page</caption>
               <Image src={CollectionsOld} alt="old-collections" />
             </ImageWrapper>
             <ImageWrapper>
-              <h5>New Collections Page:</h5>
+              <caption>New Collections Page</caption>
               <Image src={CollectionsNew} alt="new-collections" />
             </ImageWrapper>
           </ImagesWrapper>
@@ -136,7 +128,8 @@ class SlikPortfolioPage extends React.Component {
               target="_new"
             >
               here
-            </PrimaryLink>!
+            </PrimaryLink>
+            !
           </MainText>
         </TextGroup>
         <TextGroup heading="Comments">

@@ -31,9 +31,10 @@ const ProjectTitle = styled.h2`
   }
 `;
 
-const Keywords = styled.h4`
+const Keywords = styled.h6`
   padding-bottom: ${props => props.theme.padding.sixteen};
   color: ${props => props.theme.colors.text.white};
+  font-weight: 400;
   @media (max-width: ${props => props.theme.breakpoints.sm}) {
     padding-bottom: ${props => props.theme.padding.eight};
   }

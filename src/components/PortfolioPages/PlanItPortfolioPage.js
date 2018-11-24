@@ -7,21 +7,13 @@ import { PortfolioPage } from "components/PortfolioPage";
 import {
   MainText,
   TextGroup,
-  MainTextSubHeading
+  MainTextSubHeading,
+  PrimaryLink
 } from "components/PortfolioPageText";
 
 import Game from "assets/portfolio/planIt/game.png";
 import GameHome from "assets/portfolio/planIt/gameHome.png";
 import GameRules from "assets/portfolio/planIt/gameRules.gif";
-
-const PrimaryLink = styled.a`
-  color: ${props => props.color};
-  :hover,
-  :focus,
-  :active {
-    color: ${props => props.hovercolor};
-  }
-`;
 
 const FinalImages = styled.div`
   display: flex;

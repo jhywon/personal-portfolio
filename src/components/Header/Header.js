@@ -12,10 +12,9 @@ const Wrapper = styled.header`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  padding: ${props => props.theme.padding.eighty} 0
-    ${props => props.theme.padding.sixteen};
+  padding: ${props => props.theme.padding.hundred} 0 0;
   @media (max-width: ${props => props.theme.breakpoints.md}) {
-    padding: ${props => props.theme.padding.fourtyEight} 0 0;
+    padding: ${props => props.theme.padding.thirtyTwo} 0 0;
   }
 `;
 

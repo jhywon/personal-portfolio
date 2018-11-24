@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 import { MainSection } from "components/MainSection";
 import { PrimaryButton } from "components/Button";
-// import { AnimatedBackground } from "components/AnimatedBackground";
 
 import NotFoundAvatar from "assets/NotFoundAvatar.png";
 
@@ -14,7 +13,9 @@ const Content = styled.div`
   @media (min-width: ${props => props.theme.breakpoints.md}) {
     flex-direction: row;
     align-items: center;
+    margin-top: ${props => props.theme.padding.hundredTwenty};
   }
+  margin-top: ${props => props.theme.padding.eighty};
 `;
 
 const Text = styled.div`
@@ -32,7 +33,7 @@ const Number = styled.h1`
 `;
 
 const Avatar = styled.img`
-  width: 25%;
+  width: 20%;
   margin: 0 ${props => props.theme.padding.eighty} 0 0;
   @media (max-width: ${props => props.theme.breakpoints.sm}) {
     width: 50%;
@@ -50,24 +51,21 @@ class NotFound extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
-        {/* <AnimatedBackground /> */}
-        <MainSection>
-          <Content>
-            <Avatar src={NotFoundAvatar} alt="not found" />
-            <Text>
-              <Number>404</Number>
-              <Heading>
-                Oops! Sorry, this is embarrassing. I must have eaten the page
-                you were looking for.
-              </Heading>
-              <Link to="/">
-                <PrimaryButton>Back to Home</PrimaryButton>
-              </Link>
-            </Text>
-          </Content>
-        </MainSection>
-      </React.Fragment>
+      <MainSection>
+        <Content>
+          <Avatar src={NotFoundAvatar} alt="not found" />
+          <Text>
+            <Number>404</Number>
+            <Heading>
+              Oops! Sorry, this is embarrassing. I must have eaten the page you
+              were looking for.
+            </Heading>
+            <Link to="/">
+              <PrimaryButton>Back to Home</PrimaryButton>
+            </Link>
+          </Text>
+        </Content>
+      </MainSection>
     );
   }
 }

@@ -3,8 +3,7 @@ import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
 
 injectGlobal`
   @font-face {
-    font-family: Lato;
-    src: url(assets/Lato-Regular.ttf);
+    font-family: Nunito;
   }
 
   html,
@@ -13,10 +12,13 @@ injectGlobal`
     width: 100%;
     margin: 0;
     padding: 0;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Nunito', sans-serif;
     background: #FDFDFD;
   }
 
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lato', sans-serif;
+  }
   h1 {
     font-size: 52px;
     font-weight: 500;
@@ -34,10 +36,8 @@ injectGlobal`
     letter-spacing: 1.5px;
   }
   h4 {
-    font-size: 24px;
-    font-weight: 300;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    font-size: 20px;
+    font-weight: 400;
   }
   h5 {
     font-size: 22px;
@@ -54,14 +54,17 @@ injectGlobal`
     font-size: 18px;
     line-height: 30px;
     font-weight: 300;
-    font-family: 'Open Sans', sans-serif;
   }
   a {
-    color: #ed421c;
+    color: #171717;
     :hover, :focus, :active {
       color: #e87761;
     }
   }
+  caption {
+    font-size: 16px;
+  }
+
   button {
     font-size: 18px;
     font-weight: 300;
@@ -69,6 +72,10 @@ injectGlobal`
     letter-spacing: 0.5px;
   }
 
+  section {
+    padding: 0;
+    margin: 0;
+  }
 
   ul {
     list-style: none;
@@ -82,7 +89,6 @@ injectGlobal`
     font-size: 18px;
     line-height: 30px;
     font-weight: 300;
-    font-family: 'Open Sans', sans-serif;
   }
 
   button {

@@ -6,10 +6,10 @@ const Content = styled.div`
   margin: 0 ${props => props.theme.padding.fourtyEight};
   max-width: ${props => props.theme.dimensions.maxWidth};
   width: 100%;
-  @media (max-width: ${props => props.theme.breakpoints.sm}) {
-    margin: 0 ${props => props.theme.padding.thirtyTwo};
-  }
   z-index: 1;
+  @media (max-width: ${props => props.theme.breakpoints.sm}) {
+    margin: 0 ${props => props.theme.padding.twentyFour};
+  }
 `;
 
 const ContentWrapper = props => <Content>{props.children}</Content>;

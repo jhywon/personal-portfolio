@@ -24,6 +24,7 @@ const Logo = styled(Link)`
   z-index: 2;
   left: ${props => props.theme.padding.fourtyEight};
   top: ${props => props.theme.padding.twentyFour};
+  box-shadow: none;
   @media (max-width: ${props => props.theme.breakpoints.md}) {
     display: none;
   }
@@ -37,6 +38,7 @@ const Logo = styled(Link)`
   :focus {
     text-decoration: underline;
     color: ${props => props.hovercolor};
+    box-shadow: none;
   }
 `;
 
@@ -78,7 +80,7 @@ const HamburgerButtonWrapper = CircleIconButton.extend`
   }
 `;
 
-const HamburgerMenu = styled.h4`
+const HamburgerMenu = styled.h6`
   ${props => props.theme.flex.center};
   background: ${props => props.theme.colors.background.grey};
   position: fixed;

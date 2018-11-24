@@ -8,6 +8,8 @@ const colors = {
   yellowGreen: "#B4EC51",
   red: "#ed421c",
   redLight: "#e87761",
+  redLighter: "#ffc2b5",
+  redLightest: "#fccec4",
   redDark: "#8C2510",
   orange: "#f4a142"
 };
@@ -35,6 +37,8 @@ export default {
     primary: colors.red,
     primaryHover: colors.redLight,
     primaryDark: colors.redDark,
+    primaryHighlightHover: colors.redLighter,
+    primaryHighlight: colors.redLightest,
     primaryGradient: `linear-gradient(to bottom right, ${colors.red}, ${
       colors.orange
     })`,
@@ -66,6 +70,7 @@ export default {
     fourtyEight: "48px",
     sixtyFour: "64px",
     eighty: "80px",
+    hundred: "100px",
     hundredTwenty: "120px"
   },
   flex: {

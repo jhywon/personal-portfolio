@@ -5,7 +5,8 @@ import * as PropShapes from "utils/propShapes";
 import { PortfolioPage } from "components/PortfolioPage";
 import {
   MainText,
-  TextGroup
+  TextGroup,
+  PrimaryLink
   // MainTextSubHeading
 } from "components/PortfolioPageText";
 
@@ -21,15 +22,6 @@ import NewCareers from "assets/portfolio/cognite/new/newCareers.png";
 import TeamMock from "assets/portfolio/cognite/new/teamMock.png";
 import ColorPalette from "assets/portfolio/cognite/new/colorPalette.png";
 import StyleGuide from "assets/portfolio/cognite/new/styleGuide.pdf";
-
-const PrimaryLink = styled.a`
-  color: ${props => props.color};
-  :hover,
-  :focus,
-  :active {
-    color: ${props => props.hovercolor};
-  }
-`;
 
 const FlexWrapper = styled.div`
   ${props => props.theme.flex.spaceBetween};
@@ -75,6 +67,8 @@ const List = styled.ol`
   margin: ${props => props.theme.padding.sixteen} 0;
 `;
 
+const Caption = styled.caption``;
+
 class CognitePortfolioPage extends React.Component {
   componentDidMount() {
     document.title = "Jessie W | Cognite";
@@ -113,7 +107,7 @@ class CognitePortfolioPage extends React.Component {
             Cognite's recruiting efforts. I was the design lead of this project.
             <br />
             <br />
-            <strong>NOTE:</strong> This was not my main project while working at
+            <strong>Note:</strong> This was not my main project while working at
             Cognite. My primary project is under NDA, but I would love to chat
             about it if you're interested in learning more :)
           </MainText>
@@ -144,11 +138,11 @@ class CognitePortfolioPage extends React.Component {
           </MainText>
           <FlexWrapper>
             <HalfImageWrapper>
-              <h5>Old Home - Desktop</h5>
+              <Caption>Old Home - Desktop</Caption>
               <img src={OldHomeDesktop} alt="old home desktop" />
             </HalfImageWrapper>
             <HalfImageWrapper mobile>
-              <h5>Old Home - Mobile</h5>
+              <Caption>Old Home - Mobile</Caption>
               <img src={OldHomeMobile} alt="old home desktop" />
             </HalfImageWrapper>
           </FlexWrapper>
@@ -221,11 +215,11 @@ class CognitePortfolioPage extends React.Component {
           </MainText>
           <FlexWrapper>
             <HalfImageWrapper>
-              <h5>Old Team Section</h5>
+              <Caption>Old Team Section</Caption>
               <img src={OldTeam} alt="old team" />
             </HalfImageWrapper>
             <HalfImageWrapper>
-              <h5>New Team Mockup </h5>
+              <Caption>New Team Mockup </Caption>
               <img src={TeamMock} alt="team mock" />
             </HalfImageWrapper>
           </FlexWrapper>
@@ -290,18 +284,6 @@ class CognitePortfolioPage extends React.Component {
             regardless, this was a significant improvement to the previous site.
           </MainText>
           <Image src={NewHomeDesktop} alt="home" />
-          <MainText>
-            Check out the live site{" "}
-            <PrimaryLink
-              color={this.props.page.linkColor}
-              hovercolor={this.props.page.primaryLight}
-              href="http://www.cognite.com"
-              target="_new"
-            >
-              here
-            </PrimaryLink>
-            !
-          </MainText>
         </TextGroup>
       </PortfolioPage>
     );

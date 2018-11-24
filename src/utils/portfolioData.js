@@ -39,8 +39,8 @@ const portfolioData = [
     background: CogniteBackground,
     gradient: "linear-gradient(to bottom right, #4592B2, #8b9fa7)",
     primary: "#4592B2",
-    primaryLight: "#397a96",
-    linkColor: "#64afcf"
+    primaryLight: "#b4dced",
+    linkColor: "#cbe6f2"
   },
   {
     id: 2,
@@ -53,8 +53,8 @@ const portfolioData = [
     background: JobmineBackground,
     gradient: "linear-gradient(to bottom right, #1d4a83, #54a2c7)",
     primary: "#1d4a83",
-    primaryLight: "#163d6c",
-    linkColor: "#4387de"
+    primaryLight: "#aecbef",
+    linkColor: "#d4e4f7"
   },
   {
     id: 3,
@@ -67,8 +67,8 @@ const portfolioData = [
     background: SlikBackground,
     gradient: "linear-gradient(to bottom right, #a466c9, #516da4)",
     primary: "#a466c9",
-    primaryLight: "#713595",
-    linkColor: "#bc73e8"
+    primaryLight: "#d1b0e5",
+    linkColor: "#eddcf7"
   },
   {
     id: 4,
@@ -81,8 +81,8 @@ const portfolioData = [
     background: PathBackground,
     gradient: "linear-gradient(to bottom right, #319d4d, #84da6e)",
     primary: "#319d4d",
-    primaryLight: "#26813e",
-    linkColor: "#60d27d"
+    primaryLight: "#a0efb5",
+    linkColor: "#cbefd5"
   },
   {
     id: 5,
@@ -95,23 +95,22 @@ const portfolioData = [
     background: PlanItBackground,
     gradient: "linear-gradient(to bottom right, #2a649f, #2BA097)",
     primary: "#2a649f",
-    primaryLight: "#225282",
-    linkColor: "#409af5"
+    primaryLight: "#9bcdff",
+    linkColor: "#d2e4f7"
   },
   {
     id: 6,
     title: "Post Cajón",
     link: "/portfolio/postcajon",
     component: PostCajonPortfolioPage,
-    // subHeading: "Electronic Drum Design & Development",
-    subHeading: "WORK IN PROGRESS",
+    subHeading: "Electronic Drum Design & Development",
     gridImage: PostCajonPreview,
     logo: PostCajonLogo,
     // background: "",
     gradient: "linear-gradient(to bottom right, #F1C672, #754A2B)",
     primary: "#754A2B",
-    primaryLight: "#F1C672",
-    linkColor: "#755b2b"
+    primaryLight: "#e5c5b0",
+    linkColor: "#ead8cc"
   }
 ];
 

@@ -1,16 +1,16 @@
-import { createStore, applyMiddleware } from 'redux';
-import ReduxThunk from 'redux-thunk';
-import { composeWithDevTools } from 'redux-devtools-extension';
-import { createBrowserHistory } from 'history';
-import { connectRouter, routerMiddleware } from 'connected-react-router';
-import rootReducer from 'reducer';
+import { createStore, applyMiddleware } from "redux";
+import ReduxThunk from "redux-thunk";
+import { composeWithDevTools } from "redux-devtools-extension";
+import { createBrowserHistory } from "history";
+import { connectRouter, routerMiddleware } from "connected-react-router";
+import rootReducer from "reducer";
 
 export const history = createBrowserHistory();
 
 export default function configureStore(initialState = {}) {
   const middlewares = [routerMiddleware(history), ReduxThunk];
   const enhancers = [
-    applyMiddleware(...middlewares),
+    applyMiddleware(...middlewares)
     // other store enhancers if any
   ];
   const composeEnhancers = composeWithDevTools({
@@ -24,9 +24,9 @@ export default function configureStore(initialState = {}) {
   );
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers
-    module.hot.accept('../reducer', () => {
+    module.hot.accept("../reducer", () => {
       /* eslint-disable global-require */
-      const nextReducer = require('../reducer').default;
+      const nextReducer = require("../reducer").default;
       store.replaceReducer(nextReducer);
     });
   }
