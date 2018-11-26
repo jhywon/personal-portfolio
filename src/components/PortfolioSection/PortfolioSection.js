@@ -9,13 +9,23 @@ import { PortfolioGridItem } from "components/PortfolioGridItem";
 
 const StyledWrapper = styled.div`
   ${props => props.theme.flex.center};
-  padding-top: ${props => props.theme.padding.fourtyEight};
+  padding-top: ${props => props.theme.padding.eight};
 `;
 
 const PortfolioGrid = styled.ul`
   ${props => props.theme.flex.spaceBetween};
   align-items: center;
   flex-wrap: wrap;
+`;
+
+const StyledLink = styled.a`
+  box-shadow: inset 0 -0.6em ${props => props.theme.colors.primaryHighlight};
+  :hover,
+  :focus,
+  :active {
+    box-shadow: inset 0 -0.6em ${props => props.theme.colors.primaryHighlightHover};
+    color: ${props => props.theme.colors.text.black};
+  }
 `;
 
 class PortfolioSection extends React.Component {
@@ -25,7 +35,16 @@ class PortfolioSection extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Header mainHeading="Portfolio" />
+        <Header mainHeading="Portfolio">
+          <p>
+            Majority of the work at my previous companies is under NDA and is
+            not available on this website. Shoot me an{" "}
+            <StyledLink href="mailto:jessiehywon@gmail.com?Subject=Hello">
+              email
+            </StyledLink>{" "}
+            for more information about those projects!
+          </p>
+        </Header>
         <StyledWrapper>
           <ContentWrapper>
             <PortfolioGrid>

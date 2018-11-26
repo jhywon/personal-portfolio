@@ -83,7 +83,7 @@ MainTextAccent.propTypes = {
 };
 
 const PrimaryLink = props => (
-  <Link color={props.color} hovercolor={props.hovercolor}>
+  <Link color={props.color} hovercolor={props.hovercolor} {...props}>
     {props.children}
   </Link>
 );

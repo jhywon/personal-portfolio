@@ -209,15 +209,15 @@ class NavBar extends React.Component {
           break;
         }
         case "/portfolio/path": {
-          portfolioPage = this.props.portfolioData[3];
-          break;
-        }
-        case "/portfolio/planit": {
           portfolioPage = this.props.portfolioData[4];
           break;
         }
-        case "/portfolio/postcajon": {
+        case "/portfolio/planit": {
           portfolioPage = this.props.portfolioData[5];
+          break;
+        }
+        case "/portfolio/postcajon": {
+          portfolioPage = this.props.portfolioData[3];
           break;
         }
         case "/portfolio/opsup": {

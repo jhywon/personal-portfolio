@@ -111,11 +111,11 @@ class SlikPortfolioPage extends React.Component {
           <MainText>Here is a preview of the upgrade!</MainText>
           <ImagesWrapper>
             <ImageWrapper>
-              <caption>Old Collections Page</caption>
+              <p>Old Collections Page</p>
               <Image src={CollectionsOld} alt="old-collections" />
             </ImageWrapper>
             <ImageWrapper>
-              <caption>New Collections Page</caption>
+              <p>New Collections Page</p>
               <Image src={CollectionsNew} alt="new-collections" />
             </ImageWrapper>
           </ImagesWrapper>

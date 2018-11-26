@@ -67,7 +67,7 @@ const List = styled.ol`
   margin: ${props => props.theme.padding.sixteen} 0;
 `;
 
-const Caption = styled.caption``;
+const Caption = styled.p``;
 
 class CognitePortfolioPage extends React.Component {
   componentDidMount() {
@@ -227,17 +227,7 @@ class CognitePortfolioPage extends React.Component {
             However, the images of the team in blue shirts still gave a very
             corporate vibe. The idea of "mug shots" of everybody at the company
             (haha very funny) was proposed to enhance the start-up vibe of the
-            website. The page was iterated, and is shown below! It can also be
-            viewed{" "}
-            <PrimaryLink
-              color={this.props.page.linkColor}
-              hovercolor={this.props.page.primaryLight}
-              href="https://cognite.com/team/"
-              target="_new"
-            >
-              here
-            </PrimaryLink>
-            .
+            website. The page was iterated, and is shown below!
           </MainText>
           <Image src={NewTeamDesktop} alt="about" />
           <MainText>

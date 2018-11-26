@@ -82,7 +82,6 @@ injectGlobal`
     padding-left: 0;
   }
   ol {
-    
   }
   li {
     list-style: none;

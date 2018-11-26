@@ -72,6 +72,20 @@ const portfolioData = [
   },
   {
     id: 4,
+    title: "Post Cajón",
+    link: "/portfolio/postcajon",
+    component: PostCajonPortfolioPage,
+    subHeading: "Electronic Drum Design & Development",
+    gridImage: PostCajonPreview,
+    logo: PostCajonLogo,
+    // background: "",
+    gradient: "linear-gradient(to bottom right, #F1C672, #754A2B)",
+    primary: "#754A2B",
+    primaryLight: "#e5c5b0",
+    linkColor: "#ead8cc"
+  },
+  {
+    id: 5,
     title: "Path",
     link: "/portfolio/path",
     component: PathPortfolioPage,
@@ -85,7 +99,7 @@ const portfolioData = [
     linkColor: "#cbefd5"
   },
   {
-    id: 5,
+    id: 6,
     title: "Plan It",
     link: "/portfolio/planit",
     component: PlanItPortfolioPage,
@@ -97,20 +111,6 @@ const portfolioData = [
     primary: "#2a649f",
     primaryLight: "#9bcdff",
     linkColor: "#d2e4f7"
-  },
-  {
-    id: 6,
-    title: "Post Cajón",
-    link: "/portfolio/postcajon",
-    component: PostCajonPortfolioPage,
-    subHeading: "Electronic Drum Design & Development",
-    gridImage: PostCajonPreview,
-    logo: PostCajonLogo,
-    // background: "",
-    gradient: "linear-gradient(to bottom right, #F1C672, #754A2B)",
-    primary: "#754A2B",
-    primaryLight: "#e5c5b0",
-    linkColor: "#ead8cc"
   }
 ];
 
