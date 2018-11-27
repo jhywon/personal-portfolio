@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Particles from "react-particles-js";
-// import { Switch } from "antd";
+import { Switch } from "antd";
 
 import Burger from "assets/burger.png";
 import Fries from "assets/fries.png";
@@ -12,15 +12,15 @@ const StyledParticles = styled(Particles)`
   height: 99%;
 `;
 
-// const CheatDay = styled.div`
-//   position: fixed;
-//   right: ${props => props.theme.padding.twentyFour};
-//   bottom: ${props => props.theme.padding.twentyFour};
-// `;
+const CheatDay = styled.div`
+  position: fixed;
+  right: ${props => props.theme.padding.twentyFour};
+  bottom: ${props => props.theme.padding.twentyFour};
+`;
 
-// const CheatDaySwitch = styled(Switch)`
-//   margin-left: ${props => props.theme.padding.eight};
-// `;
+const CheatDaySwitch = styled(Switch)`
+  margin-left: ${props => props.theme.padding.eight};
+`;
 
 class AnimatedBackground extends React.Component {
   state = {
@@ -46,7 +46,7 @@ class AnimatedBackground extends React.Component {
                 value: StartingValue
               },
               shape: {
-                type: "circle",
+                type: "image",
                 image: {
                   src: FloatingFood
                 }
@@ -92,13 +92,13 @@ class AnimatedBackground extends React.Component {
             retina_detect: true
           }}
         />
-        {/* <CheatDay>
+        <CheatDay>
           Cheat Day
           <CheatDaySwitch
             defaultChecked={false}
             onChange={this.toggleCheatDay}
           />
-        </CheatDay> */}
+        </CheatDay>
       </React.Fragment>
     );
   }
