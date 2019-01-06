@@ -16,6 +16,7 @@ const PortfolioGrid = styled.ul`
   ${props => props.theme.flex.spaceBetween};
   align-items: center;
   flex-wrap: wrap;
+  margin-bottom: ${props => props.theme.padding.fourtyEight};
 `;
 
 const StyledLink = styled.a`
