@@ -224,6 +224,10 @@ class NavBar extends React.Component {
           portfolioPage = this.props.portfolioData[0];
           break;
         }
+        case "/portfolio/plangridInternational": {
+          portfolioPage = this.props.portfolioData[6];
+          break;
+        }
         default: {
           portfolioPage = {
             gradient: this.props.theme.colors.primaryGradient,

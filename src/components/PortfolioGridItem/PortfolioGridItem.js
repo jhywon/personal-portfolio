@@ -11,7 +11,7 @@ const Container = styled(Link)`
   margin-bottom: ${props => props.theme.padding.sixteen};
   position: relative;
   @media (min-width: ${props => props.theme.breakpoints.md}) {
-    width: 48%;
+    width: 49%;
   }
   @media (min-width: ${props => props.theme.breakpoints.lg}) {
     width: 32%;

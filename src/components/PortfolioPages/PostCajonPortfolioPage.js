@@ -44,7 +44,7 @@ const ImageFlexWrapper = styled.div`
     height: 100%;
     @media (max-width: ${props => props.theme.breakpoints.md}) {
       width: 100%;
-      padding: ${props => props.theme.padding.twentyFour} 0;
+      padding: ${props => props.theme.padding.sixteen} 0;
     }
   }
 `;
