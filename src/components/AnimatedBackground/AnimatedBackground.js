@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Particles from "react-particles-js";
 import { Switch } from "antd";
 
-import Burger from "assets/burger.png";
+import Burger from "assets/burger3.png";
 import Fries from "assets/fries.png";
 
 const StyledParticles = styled(Particles)`
