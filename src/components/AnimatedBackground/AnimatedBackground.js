@@ -4,7 +4,7 @@ import Particles from "react-particles-js";
 import { Switch } from "antd";
 
 import Burger from "assets/burger3.png";
-import Fries from "assets/fries.png";
+import Fries from "assets/fries2.png";
 
 const StyledParticles = styled(Particles)`
   position: absolute;
