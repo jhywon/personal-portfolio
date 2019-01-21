@@ -8,7 +8,7 @@ const colors = {
   yellowGreen: "#B4EC51",
   red: "#ed421c",
   redLight: "#e87761",
-  redLighter: "#ffc2b5",
+  redLighter: "#fcb2b6",
   redLightest: "#fccec4",
   redDark: "#8C2510",
   orange: "#f4a142"
@@ -85,6 +85,6 @@ export default {
     sm: "576px",
     md: "768px",
     lg: "992px",
-    xl: "1200px"
+    xl: "1400px"
   }
 };
