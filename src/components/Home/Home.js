@@ -60,9 +60,11 @@ class Home extends React.Component {
         <Wrapper>
           <ContentWrapper>
             <MainHeading>Jessie Won</MainHeading>
-            <SubHeading>Designer, Engineer, and Major Foodie</SubHeading>
+            {/* <SubHeading>Designer, Engineer, and Major Foodie</SubHeading> */}
+            <SubHeading>Aspiring Product Manager and Major Foodie</SubHeading>
             <MainText>
-              Currently studying @ University of Waterloo and looking for a{" "}
+              Currently studying engineering @ University of Waterloo and
+              looking for a{" "}
               <StyledLink
                 onClick={() => {
                   window.open(Resume);
