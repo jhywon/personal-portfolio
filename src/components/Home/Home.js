@@ -60,19 +60,19 @@ class Home extends React.Component {
         <Wrapper>
           <ContentWrapper>
             <MainHeading>Jessie Won</MainHeading>
-            {/* <SubHeading>Designer, Engineer, and Major Foodie</SubHeading> */}
-            <SubHeading>Aspiring Product Manager and Major Foodie</SubHeading>
+            <SubHeading>Product Manager and Major Foodie</SubHeading>
             <MainText>
-              Currently studying engineering @ University of Waterloo and
-              looking for a{" "}
+              Currently studying engineering @ University of Waterloo graduating
+              in{" "}
               <StyledLink
                 onClick={() => {
                   window.open(Resume);
                 }}
               >
-                Summer 2019
+                2020
               </StyledLink>{" "}
-              internship
+              <br />
+              Looking for a full-time product management role
             </MainText>
             <Links>
               <Link to="/about">

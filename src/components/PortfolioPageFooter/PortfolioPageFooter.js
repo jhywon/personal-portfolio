@@ -8,7 +8,7 @@ import { ContentWrapper } from "components/ContentWrapper";
 import { DefaultButton } from "components/Button";
 import { ChangePage } from "components/ChangePage";
 
-const Wrapper = styled.header`
+const Wrapper = styled.div`
   ${props => props.theme.flex.center};
   color: ${props => props.theme.colors.text.black};
   background: ${props =>
@@ -29,9 +29,6 @@ const Content = styled.div`
 
 const StyledChangePage = styled.div`
   @media (min-width: ${props => props.theme.breakpoints.xl}) {
-    display: none;
-  }
-  @media (max-width: ${props => props.theme.breakpoints.sm}) {
     display: none;
   }
 `;

@@ -7,29 +7,24 @@ import { ContentWrapper } from "components/ContentWrapper";
 import { ChangePage } from "components/ChangePage";
 
 const Wrapper = styled.header`
-  ${props => props.theme.flex.center};
+  ${props => props.theme.flex.spaceAround};
   align-items: center;
   background: ${props => props.background};
-  background-image: url(${props => props.background && props.background});
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
   height: ${props => props.theme.dimensions.portfolioHeader.height};
   overflow: hidden;
+  @media (max-width: ${props => props.theme.breakpoints.md}) {
+    height: ${props => props.theme.dimensions.portfolioHeader.heightSmall};
+  }
 `;
 
 const Content = styled(ContentWrapper)`
   ${props => props.theme.flex.spaceBetween};
   flex-direction: row;
   align-items: center;
-  height: 100%;
 `;
 
 const HeaderText = styled.div`
-  width: 45%;
-  @media (max-width: ${props => props.theme.breakpoints.md}) {
-    width: 100%;
-  }
+  width: 100%;
 `;
 
 const ProjectTitle = styled.h2`
@@ -54,20 +49,32 @@ const Description = styled.h5`
 `;
 
 const ImageWrapper = styled.div`
-  width: 45%;
-`;
-
-const Screenshot = styled.img`
-  width: 100%;
+  align-self: flex-start;
+  padding-top: ${props => props.theme.padding.hundred};
+  margin-left: ${props => props.theme.padding.fourtyEight};
   @media (max-width: ${props => props.theme.breakpoints.md}) {
     display: none;
   }
 `;
 
-// padding-top: 40%;
-//   @media (max-width: ${props => props.theme.breakpoints.lg}) {
-//     padding-top: 20%;
-//   }
+const ImageSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  background: ${props => props.background};
+  height: ${props => props.theme.dimensions.portfolioHeader.imageSectionHeight};
+  overflow: hidden;
+  @media (min-width: ${props => props.theme.breakpoints.md}) {
+    display: none;
+  }
+`;
+
+const ImageSectionWrapper = styled(ContentWrapper)`
+  width: unset;
+`;
+
+const Screenshot = styled.img`
+  width: 100%;
+`;
 
 const ChangePageBig = styled.div`
   @media (max-width: ${props => props.theme.breakpoints.xl}) {
@@ -86,25 +93,25 @@ const ChangePageBigRight = ChangePageBig.extend`
   right: 50px;
 `;
 
-const ChangePageSmall = styled.div`
-  ${props => props.theme.flex.spaceBetween};
-  margin-top: ${props => props.theme.padding.fourtyEight};
-  @media (min-width: ${props => props.theme.breakpoints.xl}) {
-    display: none;
-  }
-  @media (max-width: ${props => props.theme.breakpoints.sm}) {
-    margin-top: ${props => props.theme.padding.thirtyTwo};
-  }
-`;
+// const ChangePageSmall = styled.div`
+//   ${props => props.theme.flex.spaceBetween};
+//   margin-top: ${props => props.theme.padding.fourtyEight};
+//   @media (min-width: ${props => props.theme.breakpoints.xl}) {
+//     display: none;
+//   }
+//   @media (max-width: ${props => props.theme.breakpoints.sm}) {
+//     margin-top: ${props => props.theme.padding.thirtyTwo};
+//   }
+// `;
 
 const PortfolioPageHeader = props => (
   <React.Fragment>
+    {!props.page.hide && (
+      <ChangePageBigLeft>
+        <ChangePage page={props.previous} />
+      </ChangePageBigLeft>
+    )}
     <Wrapper background={props.page.primary}>
-      {!props.page.hide && (
-        <ChangePageBigLeft>
-          <ChangePage page={props.previous} />
-        </ChangePageBigLeft>
-      )}
       <Content>
         <HeaderText>
           <ProjectTitle>{props.page.title}</ProjectTitle>
@@ -119,12 +126,17 @@ const PortfolioPageHeader = props => (
           {!props.page.hide && <ChangePage page={props.next} next />}
         </ChangePageSmall> */}
       </Content>
-      {!props.page.hide && (
-        <ChangePageBigRight>
-          <ChangePage page={props.next} next />
-        </ChangePageBigRight>
-      )}
     </Wrapper>
+    <ImageSection background={props.page.primary}>
+      <ImageSectionWrapper>
+        <Screenshot src={props.page.screenShot} />
+      </ImageSectionWrapper>
+    </ImageSection>
+    {!props.page.hide && (
+      <ChangePageBigRight>
+        <ChangePage page={props.next} next />
+      </ChangePageBigRight>
+    )}
   </React.Fragment>
 );
 

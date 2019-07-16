@@ -66,7 +66,7 @@ class PostCajonPortfolioPage extends React.Component {
   render() {
     return (
       <PortfolioPage
-        description="The design of an electronic cajón (a Peruvian drum), with a focus on enhancing ergonomics and player expressability."
+        description="The design of an electronic cajón (a Peruvian drum), with a focus on improving ergonomics and player expressability."
         page={this.props.page}
         previous={this.props.previous}
         next={this.props.next}

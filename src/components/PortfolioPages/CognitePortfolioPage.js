@@ -76,7 +76,7 @@ class CognitePortfolioPage extends React.Component {
   render() {
     return (
       <PortfolioPage
-        description="A redesign of Cognite's company website."
+        description="A redesign of Cognite's company website to enhance recruitment."
         page={this.props.page}
         previous={this.props.previous}
         next={this.props.next}

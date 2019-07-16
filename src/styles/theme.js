@@ -20,7 +20,9 @@ export default {
       margin: "0 auto"
     },
     portfolioHeader: {
-      height: "550px"
+      height: "550px",
+      heightSmall: "400px",
+      imageSectionHeight: "200px"
     },
     navbar: {
       height: "64px",
