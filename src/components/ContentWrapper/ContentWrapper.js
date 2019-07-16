@@ -12,7 +12,7 @@ const Content = styled.div`
   }
 `;
 
-const ContentWrapper = props => <Content>{props.children}</Content>;
+const ContentWrapper = props => <Content {...props}>{props.children}</Content>;
 
 ContentWrapper.propTypes = {
   children: PropTypes.node

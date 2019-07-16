@@ -25,12 +25,20 @@ import PlanGridLogo from "assets/portfolio/plangridDice/logo.png";
 import PostCajonLogo from "assets/portfolio/postCajon/logo.png";
 
 import CogniteBackground from "assets/portfolio/cognite/background.png";
-import SlikBackground from "assets/portfolio/slikPortfolio/background.png";
+import SlikBackground from "assets/portfolio/slikPortfolio/background1.png";
 import JobmineBackground from "assets/portfolio/jobmine/background.png";
 import PathBackground from "assets/portfolio/path/background.png";
 import PlanItBackground from "assets/portfolio/planIt/background.png";
 import PlanGridBackground from "assets/portfolio/plangridDice/background.png";
 import PostCajonBackground from "assets/portfolio/postCajon/background.png";
+
+import CogniteScreenShot from "assets/portfolio/cognite/screenshot.png";
+import JobmineScreenShot from "assets/portfolio/jobmine/screenshot.png";
+import SlikScreenShot from "assets/portfolio/slikPortfolio/screenshot.png";
+import PathScreenShot from "assets/portfolio/path/screenshot.png";
+import PlanItScreenShot from "assets/portfolio/planIt/screenshot.png";
+import PlanGridScreenShot from "assets/portfolio/plangridDice/screenshot.png";
+import PostCajonScreenShot from "assets/portfolio/postCajon/screenshot2.png";
 
 const portfolioData = [
   {
@@ -44,8 +52,10 @@ const portfolioData = [
     background: CogniteBackground,
     gradient: "linear-gradient(to bottom right, #74C0D2, #8b9fa7)",
     primary: "#74C0D2",
+    primaryDark: "#4aafc7",
     primaryLight: "#b4dced",
-    linkColor: "#cbe6f2"
+    linkColor: "#cbe6f2",
+    screenShot: CogniteScreenShot
   },
   {
     id: 1,
@@ -58,8 +68,10 @@ const portfolioData = [
     background: JobmineBackground,
     gradient: "linear-gradient(to bottom right, #6C9CE2, #54a2c7)",
     primary: "#6C9CE2",
+    primaryDark: "#4aafc7",
     primaryLight: "#aecbef",
-    linkColor: "#d4e4f7"
+    linkColor: "#d4e4f7",
+    screenShot: JobmineScreenShot
   },
   {
     id: 2,
@@ -72,8 +84,10 @@ const portfolioData = [
     background: SlikBackground,
     gradient: "linear-gradient(to bottom right, #B69FD5, #516da4)",
     primary: "#B69FD5",
+    primaryDark: "#a07ecf",
     primaryLight: "#d1b0e5",
-    linkColor: "#eddcf7"
+    linkColor: "#eddcf7",
+    screenShot: SlikScreenShot
   },
   {
     id: 3,
@@ -86,8 +100,10 @@ const portfolioData = [
     background: PostCajonBackground,
     gradient: "linear-gradient(to bottom right, #E0CB7F, #754A2B)",
     primary: "#E0CB7F",
+    primaryDark: "#dbc05c",
     primaryLight: "#e5c5b0",
-    linkColor: "#ead8cc"
+    linkColor: "#ead8cc",
+    screenShot: PostCajonScreenShot
   },
   {
     id: 4,
@@ -100,8 +116,10 @@ const portfolioData = [
     background: PathBackground,
     gradient: "linear-gradient(to bottom right, #8acc3f, #399121)",
     primary: "#8acc3f",
+    primaryDark: "#75c914",
     primaryLight: "#a0efb5",
-    linkColor: "#cbefd5"
+    linkColor: "#cbefd5",
+    screenShot: PathScreenShot
   },
   {
     id: 5,
@@ -114,8 +132,10 @@ const portfolioData = [
     background: PlanItBackground,
     gradient: "linear-gradient(to bottom right, #68ABDB, #2BA097)",
     primary: "#68ABDB",
+    primaryDark: "#3f99d9",
     primaryLight: "#9bcdff",
-    linkColor: "#d2e4f7"
+    linkColor: "#d2e4f7",
+    screenShot: PlanItScreenShot
   },
   {
     id: 6,
@@ -128,8 +148,10 @@ const portfolioData = [
     background: PlanGridBackground,
     gradient: "linear-gradient(to bottom right, #99c944, #498AA9)",
     primary: "#a0ce4e",
+    primaryDark: "#93cf29",
     primaryLight: "#ccf28a",
-    linkColor: "#e0f7b2"
+    linkColor: "#e0f7b2",
+    screenShot: PlanGridScreenShot
   }
 ];
 

@@ -9,18 +9,27 @@ import { ChangePage } from "components/ChangePage";
 const Wrapper = styled.header`
   ${props => props.theme.flex.center};
   align-items: center;
-  background: ${props =>
-    !props.background && props.theme.colors.background.black};
+  background: ${props => props.background};
   background-image: url(${props => props.background && props.background});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   height: ${props => props.theme.dimensions.portfolioHeader.height};
+  overflow: hidden;
 `;
 
 const Content = styled(ContentWrapper)`
   ${props => props.theme.flex.spaceBetween};
   flex-direction: row;
+  align-items: center;
+  height: 100%;
+`;
+
+const HeaderText = styled.div`
+  width: 45%;
+  @media (max-width: ${props => props.theme.breakpoints.md}) {
+    width: 100%;
+  }
 `;
 
 const ProjectTitle = styled.h2`
@@ -43,6 +52,22 @@ const Keywords = styled.h6`
 const Description = styled.h5`
   color: ${props => props.theme.colors.text.white};
 `;
+
+const ImageWrapper = styled.div`
+  width: 45%;
+`;
+
+const Screenshot = styled.img`
+  width: 100%;
+  @media (max-width: ${props => props.theme.breakpoints.md}) {
+    display: none;
+  }
+`;
+
+// padding-top: 40%;
+//   @media (max-width: ${props => props.theme.breakpoints.lg}) {
+//     padding-top: 20%;
+//   }
 
 const ChangePageBig = styled.div`
   @media (max-width: ${props => props.theme.breakpoints.xl}) {
@@ -74,22 +99,25 @@ const ChangePageSmall = styled.div`
 
 const PortfolioPageHeader = props => (
   <React.Fragment>
-    <Wrapper background={props.page.background}>
+    <Wrapper background={props.page.primary}>
       {!props.page.hide && (
         <ChangePageBigLeft>
           <ChangePage page={props.previous} />
         </ChangePageBigLeft>
       )}
       <Content>
-        <React.Fragment>
+        <HeaderText>
           <ProjectTitle>{props.page.title}</ProjectTitle>
           <Keywords>{props.page.subHeading}</Keywords>
           <Description>{props.description}</Description>
-        </React.Fragment>
-        <ChangePageSmall>
+        </HeaderText>
+        <ImageWrapper>
+          <Screenshot src={props.page.screenShot} />
+        </ImageWrapper>
+        {/* <ChangePageSmall>
           {!props.page.hide && <ChangePage page={props.previous} />}
           {!props.page.hide && <ChangePage page={props.next} next />}
-        </ChangePageSmall>
+        </ChangePageSmall> */}
       </Content>
       {!props.page.hide && (
         <ChangePageBigRight>
