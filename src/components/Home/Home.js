@@ -69,7 +69,7 @@ class Home extends React.Component {
                   window.open(Resume);
                 }}
               >
-                2020
+                April 2020
               </StyledLink>{" "}
               <br />
               Looking for a full-time product management role
