@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { withTheme } from "styled-components";
 import PropTypes from "prop-types";
-import { Link as DefaultLink } from "react-router-dom";
+// import { Link as DefaultLink } from "react-router-dom";
 
 import { MainSection } from "components/MainSection";
 import { Header } from "components/Header";
@@ -46,19 +46,20 @@ const AvatarImage = styled.img`
   }
 `;
 
-const Heading = styled.h6`
+const Heading = styled.h5`
   margin-bottom: ${props => props.theme.padding.sixteen};
+  font-weight: 400;
 `;
 
-const Link = styled(DefaultLink)`
-  box-shadow: inset 0 -0.6em ${props => props.theme.colors.primaryHighlight};
-  :hover,
-  :focus,
-  :active {
-    box-shadow: inset 0 -0.6em ${props => props.theme.colors.primaryHighlightHover};
-    color: ${props => props.theme.colors.text.black};
-  }
-`;
+// const Link = styled(DefaultLink)`
+//   box-shadow: inset 0 -0.6em ${props => props.theme.colors.primaryHighlight};
+//   :hover,
+//   :focus,
+//   :active {
+//     box-shadow: inset 0 -0.6em ${props => props.theme.colors.primaryHighlightHover};
+//     color: ${props => props.theme.colors.text.black};
+//   }
+// `;
 
 const ResumeLink = styled.a`
   box-shadow: inset 0 -0.6em ${props => props.theme.colors.primaryHighlight};
@@ -82,32 +83,21 @@ class AboutSection extends React.Component {
         <MainSection>
           <TextAvatarGroup>
             <AvatarImage
-              src={AvatarOne}
+              src={AvatarThree}
               onMouseOver={e => {
-                e.currentTarget.src = AvatarOneHover;
+                e.currentTarget.src = AvatarThreeHover;
               }}
               onMouseOut={e => {
-                e.currentTarget.src = AvatarOne;
+                e.currentTarget.src = AvatarThree;
               }}
-              alt="AvatarOne"
+              alt="AvatarThree"
             />
             <TextWrapper>
-              <Heading>Hi, I&#39;m Jessie!</Heading>
+              <Heading>Hey, I&#39;m Jessie. It's nice to meet you!</Heading>
               <AvatarText>
-                I love to eat, play board games, and try new things! I&#39;ll be
-                graduating from the University of Waterloo in April and am
-                currently looking for an exciting full-time Product Manager
-                position! If you know a good fit, or just want to chat I would
-                love talk about how I can help over coffee or some delicious
-                food. Check out my{" "}
-                <ResumeLink
-                  onClick={() => {
-                    window.open(Resume);
-                  }}
-                >
-                  resume
-                </ResumeLink>{" "}
-                to learn more about my experiences.
+                I&#39;m a product manager who loves to eat, play board games,
+                and try new things. I enjoy solving problems and working closely
+                with users to create a great experience.
               </AvatarText>
             </TextWrapper>
           </TextAvatarGroup>
@@ -125,12 +115,25 @@ class AboutSection extends React.Component {
             <TextWrapper>
               <Heading>What do I do?</Heading>
               <AvatarText>
-                I spend most of my time working towards my degree, and am
+                {/* I spend most of my time working towards my degree, and am
                 especially interested in learning and understanding the{" "}
                 <Link to="/portfolio">design</Link> process. I enjoy working
-                closely with users in creating a great experience, love a good
-                challenge, and am eager to continue exploring the different
-                aspects of engineering.
+                closely with users in creating a great experience, building cool
+                products, and am always up for a new challenge. */}
+                {/* and I hope to continue trying new foods and going to as
+                many restaurants as I can. In the rare case that I'm not eating,
+                you'll probably find me playing board games, laughing at my own
+                jokes, or planning my next <Link to="/travel">trip</Link>. */}
+                {/* One day I want to open a food
+                truck, probably selling handmade dumplings inspired around the
+                world.  */}
+                I&#39;ve completed 6 internships on a variety of products, with
+                experience as a software engineer, UX designer, and product
+                manager. I love both tackling technical challenges and solving
+                user problems, and I like to use my diverse background to build
+                great products. I&#39;ll be graduating from the University of
+                Waterloo in April and am looking for an exciting full-time PM
+                position!
               </AvatarText>
               {/* <Link to="/portfolio">
                 <PrimaryButton>View My Portfolio</PrimaryButton>
@@ -139,23 +142,33 @@ class AboutSection extends React.Component {
           </TextAvatarGroup>
           <TextAvatarGroup>
             <AvatarImage
-              src={AvatarThree}
+              src={AvatarOne}
               onMouseOver={e => {
-                e.currentTarget.src = AvatarThreeHover;
+                e.currentTarget.src = AvatarOneHover;
               }}
               onMouseOut={e => {
-                e.currentTarget.src = AvatarThree;
+                e.currentTarget.src = AvatarOne;
               }}
-              alt="AvatarThree"
+              alt="AvatarOne"
             />
             <TextWrapper>
-              <Heading>And in my spare time?</Heading>
+              <Heading>So, what brings you here?</Heading>
               <AvatarText>
-                <strong>I love to EAT</strong>! One day I want to open a food
-                truck, and I hope to continue trying new foods and going to as
-                many restaurants as I can. In the rare case that I'm not eating,
-                you'll probably find me playing board games, laughing at my own
-                jokes, or planning my next <Link to="/travel">trip</Link>.
+                If you know a good fit, or just want to chat I would love talk
+                about how we can work together over some delicious food! Coffee
+                is fine too. Anyways, check out my{" "}
+                <ResumeLink
+                  onClick={() => {
+                    window.open(Resume);
+                  }}
+                >
+                  resume
+                </ResumeLink>{" "}
+                and don't hesitate to{" "}
+                <ResumeLink href="mailto:jessiehywon@gmail.com?Subject=Hello">
+                  reach out
+                </ResumeLink>
+                !
               </AvatarText>
             </TextWrapper>
           </TextAvatarGroup>

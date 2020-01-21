@@ -65,7 +65,7 @@ class Home extends React.Component {
               Systems Design Engineering @ University of Waterloo, graduating
               April 2020
               <br />
-              On the lookout for exciting full-time product management{" "}
+              On the lookout for exciting full-time PM{" "}
               <StyledLink
                 onClick={() => {
                   window.open(Resume);
