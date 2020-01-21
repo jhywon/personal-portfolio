@@ -70,7 +70,8 @@ class AnimatedBackground extends React.Component {
               events: {
                 onhover: {
                   enable: true,
-                  mode: ["grab", "repulse"]
+                  mode: ["grab"]
+                  // mode: ["repulse"]
                 },
                 onclick: {
                   enable: true,

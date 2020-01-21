@@ -19,7 +19,7 @@ const MainHeading = styled.h1`
   margin-bottom: ${props => props.theme.padding.eight};
 `;
 
-const SubHeading = styled.h6`
+const SubHeading = styled.h5`
   font-weight: 400;
 `;
 
@@ -60,19 +60,20 @@ class Home extends React.Component {
         <Wrapper>
           <ContentWrapper>
             <MainHeading>Jessie Won</MainHeading>
-            <SubHeading>Product Manager and Major Foodie</SubHeading>
+            <SubHeading>Product manager who loves to eat</SubHeading>
             <MainText>
-              Currently studying engineering @ University of Waterloo graduating
-              in{" "}
+              Systems Design Engineering @ University of Waterloo, graduating
+              April 2020
+              <br />
+              On the lookout for exciting full-time product management{" "}
               <StyledLink
                 onClick={() => {
                   window.open(Resume);
                 }}
               >
-                April 2020
+                opportunities
               </StyledLink>{" "}
-              <br />
-              Looking for a full-time product management role
+              !
             </MainText>
             <Links>
               <Link to="/about">

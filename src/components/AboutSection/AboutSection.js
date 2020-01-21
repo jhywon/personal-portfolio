@@ -94,12 +94,12 @@ class AboutSection extends React.Component {
             <TextWrapper>
               <Heading>Hi, I&#39;m Jessie!</Heading>
               <AvatarText>
-                I&#39;m a 4th year Systems Design Engineering student at the
-                University of Waterloo. I love to eat, travel, learn, draw,
-                snowboard, fish, play Catan..., well I guess you could say I
-                enjoy most things. I'm currently looking for a Summer 2019
-                internship, and would love to chat about your company's mission
-                and what I can do to further it. Check out my{" "}
+                I love to eat, play board games, and try new things! I&#39;ll be
+                graduating from the University of Waterloo in April and am
+                currently looking for an exciting full-time Product Manager
+                position! If you know a good fit, or just want to chat I would
+                love talk about how I can help over coffee or some delicious
+                food. Check out my{" "}
                 <ResumeLink
                   onClick={() => {
                     window.open(Resume);
@@ -107,7 +107,7 @@ class AboutSection extends React.Component {
                 >
                   resume
                 </ResumeLink>{" "}
-                to learn more about what I&#39;ve done.
+                to learn more about my experiences.
               </AvatarText>
             </TextWrapper>
           </TextAvatarGroup>
