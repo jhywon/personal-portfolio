@@ -62,7 +62,7 @@ const SubHeading = styled.h5`
 `;
 
 const PortfolioGridItem = props => (
-  <Container to={props.link}>
+  <Container to={props.link || "/portfolio"}>
     <Image src={props.background} />
     <Overlay>
       <Text>

@@ -24,7 +24,6 @@ const Accent = styled.h5`
   margin-top: ${props => props.theme.padding.twentyFour};
   line-height: 48px;
   font-size: 32px;
-  font-weight: 400;
   letter-spacing: 0px;
   color: ${props => props.color};
 `;

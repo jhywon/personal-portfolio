@@ -36,8 +36,8 @@ injectGlobal`
     letter-spacing: 1.5px;
   }
   h4 {
-    font-size: 20px;
-    font-weight: 400;
+    font-size: 18px;
+    font-weight: 500;
   }
   h5 {
     font-size: 22px;
@@ -46,7 +46,7 @@ injectGlobal`
   }
   h6 {
     font-weight: 600;
-    font-size: 20px;
+    font-size: 16px;
     letter-spacing: 2px;
     text-transform: uppercase;
   }
@@ -56,7 +56,7 @@ injectGlobal`
     font-weight: 300;
   }
   a {
-    color: #171717;
+    color: #2b2b2b;
     :hover, :focus, :active {
       color: #e87761;
     }

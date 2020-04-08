@@ -6,3 +6,4 @@ export { default as PlanGridPortfolioPage } from "./PlanGridPortfolioPage.js";
 export { default as PlanItPortfolioPage } from "./PlanItPortfolioPage.js";
 export { default as PostCajonPortfolioPage } from "./PostCajonPortfolioPage.js";
 export { default as SlikPortfolioPage } from "./SlikPortfolioPage.js";
+export { default as CanopiiPortfolioPage } from "./CanopiiPortfolioPage.js";

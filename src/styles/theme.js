@@ -1,6 +1,6 @@
 const colors = {
   white: "#ffffff",
-  black: "#171717",
+  black: "#2b2b2b",
   grey: "#333333",
   lightGrey: "#bbbbbb",
   blue: "#1D9696",
@@ -41,9 +41,7 @@ export default {
     primaryDark: colors.redDark,
     primaryHighlightHover: colors.redLighter,
     primaryHighlight: colors.redLightest,
-    primaryGradient: `linear-gradient(to bottom right, ${colors.red}, ${
-      colors.orange
-    })`,
+    primaryGradient: `linear-gradient(to bottom right, ${colors.red}, ${colors.orange})`,
     text: {
       black: colors.black /* base */,
       white: colors.white
@@ -54,12 +52,8 @@ export default {
       lightGrey: colors.lightGrey,
       grey: colors.grey,
       blue: colors.blue,
-      blueGradient: `linear-gradient(to bottom right, ${colors.blue}, ${
-        colors.yellowGreen
-      })`,
-      redGradient: `linear-gradient(to bottom right, ${colors.red}, ${
-        colors.orange
-      })`
+      blueGradient: `linear-gradient(to bottom right, ${colors.blue}, ${colors.yellowGreen})`,
+      redGradient: `linear-gradient(to bottom right, ${colors.red}, ${colors.orange})`
     }
   },
   padding: {
@@ -73,7 +67,8 @@ export default {
     sixtyFour: "64px",
     eighty: "80px",
     hundred: "100px",
-    hundredTwenty: "120px"
+    hundredTwenty: "120px",
+    twoHundred: "200px"
   },
   flex: {
     spaceBetween: "display: flex; justify-content: space-between",

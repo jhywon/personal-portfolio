@@ -5,7 +5,8 @@ import {
   PathPortfolioPage,
   PlanGridPortfolioPage,
   PlanItPortfolioPage,
-  PostCajonPortfolioPage
+  PostCajonPortfolioPage,
+  CanopiiPortfolioPage
 } from "components/PortfolioPages";
 
 import CognitePreview from "assets/portfolio/cognite/cognitePreview3.png";
@@ -15,6 +16,8 @@ import JobminePreview from "assets/portfolio/jobmine/jobminePreview3.png";
 import PlanItPreview from "assets/portfolio/planIt/planItPreview3.png";
 import PlanGridPreview from "assets/portfolio/plangridDice/plangridPreview3.png";
 import PostCajonPreview from "assets/portfolio/postCajon/postCajonPreview3.png";
+import CanopiiPreview from "assets/portfolio/canopii/canopiiPreview.png";
+import CKSavingsPreview from "assets/portfolio/cksavings/cksavingsPreview.png";
 
 import CogniteLogo from "assets/portfolio/cognite/logo.png";
 import SlikLogo from "assets/portfolio/slikPortfolio/logo.png";
@@ -23,6 +26,7 @@ import PathLogo from "assets/portfolio/path/logo.png";
 import PlanItLogo from "assets/portfolio/planIt/logo.png";
 import PlanGridLogo from "assets/portfolio/plangridDice/logo.png";
 import PostCajonLogo from "assets/portfolio/postCajon/logo.png";
+import CanopiiLogo from "assets/portfolio/canopii/logo.png";
 
 import CogniteScreenShot from "assets/portfolio/cognite/screenshot.png";
 import JobmineScreenShot from "assets/portfolio/jobmine/screenshot.png";
@@ -31,6 +35,7 @@ import PathScreenShot from "assets/portfolio/path/screenshot.png";
 import PlanItScreenShot from "assets/portfolio/planIt/screenshot.png";
 import PlanGridScreenShot from "assets/portfolio/plangridDice/screenshot.png";
 import PostCajonScreenShot from "assets/portfolio/postCajon/screenshot.png";
+import CanopiiScreenShot from "assets/portfolio/canopii/screenshot2.png";
 
 const portfolioData = [
   {
@@ -50,21 +55,6 @@ const portfolioData = [
   },
   {
     id: 1,
-    title: "Jobmine",
-    link: "/portfolio/jobmine",
-    component: JobminePortfolioPage,
-    subHeading: "UI/UX Design & Human Factors",
-    gridImage: JobminePreview,
-    logo: JobmineLogo,
-    gradient: "linear-gradient(to bottom right, #6C9CE2, #54a2c7)",
-    primary: "#6C9CE2",
-    primaryDark: "#5089de",
-    primaryLight: "#aecbef",
-    linkColor: "#d4e4f7",
-    screenShot: JobmineScreenShot
-  },
-  {
-    id: 2,
     title: "Slik",
     link: "/portfolio/slik",
     component: SlikPortfolioPage,
@@ -77,6 +67,21 @@ const portfolioData = [
     primaryLight: "#d1b0e5",
     linkColor: "#eddcf7",
     screenShot: SlikScreenShot
+  },
+  {
+    id: 2,
+    title: "Canopii",
+    link: "/portfolio/canopii",
+    component: CanopiiPortfolioPage,
+    subHeading: "App Design & Development",
+    gridImage: CanopiiPreview,
+    logo: CanopiiLogo,
+    gradient: "linear-gradient(to bottom right, #65B876, #BDE99A)",
+    primary: "#9CD78C",
+    primaryDark: "#65B876",
+    primaryLight: "#9CD78C",
+    linkColor: "#D7F2C1",
+    screenShot: CanopiiScreenShot
   },
   {
     id: 3,
@@ -137,6 +142,27 @@ const portfolioData = [
     primaryLight: "#ccf28a",
     linkColor: "#e0f7b2",
     screenShot: PlanGridScreenShot
+  },
+  {
+    id: 7,
+    title: "Jobmine",
+    link: "/portfolio/jobmine",
+    component: JobminePortfolioPage,
+    subHeading: "UI/UX Design & Human Factors",
+    gridImage: JobminePreview,
+    logo: JobmineLogo,
+    gradient: "linear-gradient(to bottom right, #6C9CE2, #54a2c7)",
+    primary: "#6C9CE2",
+    primaryDark: "#5089de",
+    primaryLight: "#aecbef",
+    linkColor: "#d4e4f7",
+    screenShot: JobmineScreenShot
+  },
+  {
+    id: 8,
+    title: "Credit Karma Savings",
+    subHeading: "Updates in progress",
+    gridImage: CKSavingsPreview
   }
 ];
 

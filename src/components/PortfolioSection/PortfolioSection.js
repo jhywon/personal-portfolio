@@ -51,14 +51,21 @@ class PortfolioSection extends React.Component {
             <PortfolioGrid>
               {this.props.content.map(page => (
                 <React.Fragment key={page.id}>
-                  {!page.hide && (
-                    <PortfolioGridItem
-                      background={page.gridImage}
-                      link={page.link}
-                      mainHeading={page.title}
-                      subHeading={page.subHeading}
-                    />
-                  )}
+                  {!page.hide &&
+                    (page.link ? (
+                      <PortfolioGridItem
+                        background={page.gridImage}
+                        link={page.link}
+                        mainHeading={page.title}
+                        subHeading={page.subHeading}
+                      />
+                    ) : (
+                      <PortfolioGridItem
+                        background={page.gridImage}
+                        mainHeading={page.title}
+                        subHeading={page.subHeading}
+                      />
+                    ))}
                 </React.Fragment>
               ))}
             </PortfolioGrid>
