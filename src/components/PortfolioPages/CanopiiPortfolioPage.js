@@ -7,15 +7,22 @@ import { PortfolioPage } from "components/PortfolioPage";
 import {
   MainText,
   TextGroup,
-  // MainTextSubHeading,
+  MainTextSubHeading,
   MainTextAccent,
   PrimaryLink
 } from "components/PortfolioPageText";
 
 import Personas from "assets/portfolio/canopii/personas.png";
 import SOC from "assets/portfolio/canopii/soc.png";
+import UserFlow from "assets/portfolio/canopii/userflow.png";
+import Wireframes from "assets/portfolio/canopii/wireframes.png";
+import Iterations from "assets/portfolio/canopii/iterationstakephoto.png";
 import HomeSettingsFAQ from "assets/portfolio/canopii/HomeSettingsFAQ.png";
+import MockupsOld from "assets/portfolio/canopii/mockupsold.png";
+import Mockups from "assets/portfolio/canopii/mockups.png";
 import TeamPhoto from "assets/portfolio/canopii/team1.jpg";
+
+import IDFinal from "assets/portfolio/canopii/542designs.png";
 
 import ConferencePaper461 from "assets/portfolio/canopii/docs/461ConferencePaper.pdf";
 import ConferencePaper462 from "assets/portfolio/canopii/docs/462ConferencePaper.pdf";
@@ -56,7 +63,6 @@ const LinkImage = styled.img`
 const SmallImage = styled.img`
   width: ${props => props.width};
   height: 100%;
-  padding-bottom: ${props => props.theme.padding.thirtyTwo};
   @media (max-width: ${props => props.theme.breakpoints.md}) {
     width: 100%;
     padding: ${props => props.theme.padding.sixteen} 0;
@@ -174,17 +180,68 @@ class PostCajonPortfolioPage extends React.Component {
           </MainTextAccent>
         </TextGroup>
         <TextGroup heading="Goals and Objectives">
+          <MainText>
+            This project was a combination of core engineering design courses
+            and interface design course. In the engineering design courses (SYDE
+            461/462), the primary objectives were:
+          </MainText>
           <RequirementList>
-            <li>Posture Problems</li>
-            <li>Wrist Strain</li>
-            <li>Sound limitations - not a great solo instrument</li>
-            <li>Height limitations</li>
+            <li>
+              Automate the extraction of tree features such as species and
+              location
+            </li>
+            <li>Make the solution available for residents to use</li>
+            <li>
+              Make the data collected accessible to Kitchener and compatible
+              with their existing street tree inventory
+            </li>
+          </RequirementList>
+          <MainText>
+            The Interface Design (SYDE 542) course was an extension of this
+            project, focused on improving social engagement. Since this would be
+            a citizen science project reliant on volunteers and residents,
+            community engagement would be very important. It also has proven
+            benefits such as higher awareness surrounding sustainability issues
+            and an increased community capacity to fight climate change. The
+            primary objectives were:
+          </MainText>
+          <RequirementList>
+            <li>Educate users about urban forestry and the environment</li>
+            <li>Encourage users to tag trees</li>
+            <li>Increase awareness about urban forest development</li>
+            <li>
+              Increase the number of trees tagged and added to Kitchener’s tree
+              inventory
+            </li>
           </RequirementList>
         </TextGroup>
-        <TextGroup heading="Early Design Methods">
-          <MainText>Some of the early design methods used were</MainText>
+        <TextGroup heading="User Research">
+          <MainText>
+            After the problem scope was defined and background research was
+            conducted, interviews were done to better understand the needs and
+            motivations of our users. Results are summarized below.
+          </MainText>
+          <MainTextAccent>
+            "I'd do it if it was a one-time thing that took less than 20
+            minutes."
+          </MainTextAccent>
+          <RequirementList>
+            <li>At most 2 private trees per property</li>
+            <li>
+              Users only had detailed knowledge of trees they planted themselves
+            </li>
+            <li>Reasons for planting trees were primarily aesthetic</li>
+            <li>
+              All users were willing to share information about trees to city
+              but only if convenient
+            </li>
+          </RequirementList>
         </TextGroup>
         <TextGroup heading="Personas">
+          <MainText>
+            Two personas were built to represent our target users, with the
+            primary user being homeowners.
+          </MainText>
           <LinkImage
             src={Personas}
             alt="personas"
@@ -194,26 +251,106 @@ class PostCajonPortfolioPage extends React.Component {
             }}
           />
         </TextGroup>
+        <TextGroup heading="User Flow and Navigation">
+          <MainText>
+            The primary function of Canopii would be to tag a tree. This would
+            involve taking an image of a tree for both image recognition and for
+            additional species verification if necessary. Then, users would go
+            through some manual steps for species verification, inputting
+            location, and extra tree data but reviewing and submitting. The
+            initial proposed flow is shown below.
+          </MainText>
+          <Center>
+            <SmallImage src={UserFlow} alt="userflow" width="100%" />
+          </Center>
+          <MainText>
+            <br /> Additional screens to enhance the UX would be a Home screen
+            and a Settings screen for adjusting between manual and automatic
+            identification flows. Since there were three main features, this was
+            the proposed navigation.
+          </MainText>
+        </TextGroup>
+        <TextGroup heading="Wireframes">
+          <MainText>
+            First, wireframes were created to lay out content and functionality.
+            This helped establish the basic structure of a page before adding
+            visual design and content.
+          </MainText>
+          <Center>
+            <SmallImage src={Wireframes} alt="wireframes" width="85%" />
+          </Center>
+        </TextGroup>
+        <TextGroup heading="Iterations and Design Refinement">
+          <MainText>
+            Then, iterations of higher fidelity mockups were done. This included
+            adding colour and visual design.
+          </MainText>
+          <Center>
+            <SmallImage src={MockupsOld} alt="old mocks" width="75%" />
+          </Center>
+          <MainText>
+            <br />
+            As the design progressed, numerous iterations and tweaks were done
+            on each screen to refine the design. This included using various
+            fonts, colours, and controls. An example of some iterations of the
+            Take Photo screen are shown.
+          </MainText>
+          <Center>
+            <SmallImage
+              src={Iterations}
+              alt="iterations take photo"
+              width="75%"
+            />
+          </Center>
+        </TextGroup>
         <TextGroup heading="Designed Solution">
+          <MainText>
+            At the end of the 8 months, we built Canopii. The main tree tagging
+            flow can be shown below. Our image processing had a 90.5% Top 5
+            species accuracy for trees native to Kitchener and we were able to
+            collect data on species, location, and tree type.
+          </MainText>
+          <Center>
+            <SmallImage src={Mockups} alt="mockups" width="100%" />
+          </Center>
+          <MainText>
+            <br />
+            The loading, home, settings, and FAQ screens are shown below.
+          </MainText>
           <Center>
             <SmallImage
               src={HomeSettingsFAQ}
               alt="home settings faq"
-              width="90%"
+              width="65%"
             />
           </Center>
         </TextGroup>
-        <TextGroup heading="SYDE 542 Interface Design">
+        <TextGroup heading="Home Screen">
           <MainText>
-            SYDE 542 was an interface design course, where my project of focus
-            was also Canopii. In this course, I focused on improving social
-            engagement.
+            As previously mentioned, SYDE 542 was focused on improving social
+            engagement. This final home screen design was not implemented due to
+            time restrictions.
           </MainText>
+          <Center>
+            <SmallImage src={IDFinal} alt="542 mocks" width="55%" />
+          </Center>
         </TextGroup>
         <TextGroup heading="Team">
           <MainText>
-            Each member of our team had various responsibilities. Pictured from
-            left to right:
+            We worked with{" "}
+            <PrimaryLink
+              nClick={() => {
+                window.open(
+                  "https://www.linkedin.com/in/iivkovic/?originalSubdomain=ca"
+                );
+              }}
+              color={this.props.page.linkColor}
+              hovercolor={this.props.page.primaryLight}
+            >
+              Professor Igor Ivkovic
+            </PrimaryLink>{" "}
+            on this project, with each team member owning various components.
+            Pictured from left to right:
           </MainText>
           <ImageFlexWrapper>
             <img src={TeamPhoto} alt="team" width="50%" />
@@ -240,6 +377,57 @@ class PostCajonPortfolioPage extends React.Component {
               </MainText>
             </span>
           </ImageFlexWrapper>
+        </TextGroup>
+        <TextGroup heading="Conclusions">
+          <MainText>
+            The design goals were fulfilled and an application that enabled
+            untrained residents to tag a tree was built. The data collected
+            would be able to help Kitchener plan their urban forests. Regarding
+            the home screen design, adding a slight level of gamification would
+            encourage behaviour, and dedicating FAQs to urban forestry would
+            educate users on the importance of this project. Overall, Canopii
+            was a success!
+          </MainText>
+        </TextGroup>
+        <TextGroup heading="Recommendations and Next Steps">
+          <MainTextSubHeading>
+            Implement and Test Home Screen
+          </MainTextSubHeading>
+          <MainText>
+            The home screens designed should be implemented into the product.
+            Additional testing should be done to measure whether or not it
+            encourages tree tagging and increases the number of trees tagged.
+            Since there are many feature options for encouraging users, such as
+            the recently tagged trees and leaderboard, more thorough testing
+            should be done on which is more effective. Then, the order of the
+            information displayed can be adjusted if necessary.
+          </MainText>
+          <MainTextSubHeading>Explore City Integrations</MainTextSubHeading>
+          <MainText>
+            While the data collected can be accessed and used by the City of
+            Kitchener, there are no direct integrations with the government.
+            This is a great opportunity for improvement and encouraging
+            residents to contribute to the tree inventory. For example, Canopii
+            can be a platform where users can directly request tree maintenance
+            and plantings. Another option could be notifications on endangered
+            species or invasive species. Once a tree is identified, if the City
+            has important information about certain trees, such as ash trees
+            being at risk of the Emerald Ash Borer, this could be communicated
+            to residents. This is a very different perspective of creating
+            incentive and should definitely be explored moving forward.
+          </MainText>
+          <MainTextSubHeading>
+            Conduct More In-Person Testing
+          </MainTextSubHeading>
+          <MainText>
+            Unfortunately, this project was done during Winter, which limited
+            in-person testing for live trees. More importantly, the project was
+            done during the COVID-19 pandemic. Due to social distancing
+            measures, in-person testing was limited. Instead, cognitive
+            walkthroughs and usability tests were conducted via Google Hangouts.
+            If this project were to continue, increased testing with a physical
+            prototype would give better insights for improvements.
+          </MainText>
         </TextGroup>
         <TextGroup heading="Additional Information">
           <MainText>
